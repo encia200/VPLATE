@@ -10,7 +10,7 @@ import android.widget.TextView
  */
 class VideoViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
     var VideoImage : ImageView = itemView!!.findViewById(R.id.item_image) as ImageView
-    var VideoNamge : TextView = itemView!!.findViewById(R.id.itemTitle) as TextView
+    var VideoName : TextView = itemView!!.findViewById(R.id.itemTitle) as TextView
     var VideoStory : TextView = itemView!!.findViewById(R.id.itemStory) as TextView
     var VideoTime : TextView = itemView!!.findViewById(R.id.itemTime) as TextView
 
