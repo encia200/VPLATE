@@ -15,8 +15,6 @@ import com.sw.vplate.R
 import com.sw.vplate.VideoAdapter
 import com.sw.vplate.VideoData
 
-
-
 /**
  * Created by SM-PC on 2018-01-01.
  */
@@ -48,10 +46,10 @@ class HomeFragment: Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-//        val idx : Int = mainRecycler!!.getChildAdapterPosition(v)
+//       val idx : Int = mainRecycler!!.getChildAdapterPosition(v)
 
-//        val name : String? = templateDatas!!.get(idx).VideoName
-//        Toast.makeText(context, name, Toast.LENGTH_SHORT).show()
+//       val name : String? = templateDatas!!.get(idx).VideoName
+//       Toast.makeText(context, name, Toast.LENGTH_SHORT).show()
 
         // 비디오 자동재생하는 다이얼로그
         val dialog = Dialog(activity)
@@ -72,11 +70,6 @@ class HomeFragment: Fragment(), View.OnClickListener {
             dialog.dismiss()
         }
 
-
-
         dialog.show()
     }
-
-
-
 }
