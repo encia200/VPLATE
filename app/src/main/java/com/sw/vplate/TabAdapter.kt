@@ -28,7 +28,6 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
         this.fifthTab = FifthFragment()
     }
 
-
     override fun getItem(position: Int): Fragment? {
         when(position) {
             0 -> {
@@ -39,7 +38,6 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
             }
             1 -> {
                 val bundle = Bundle()
-
 
                 return secondTab
             }
