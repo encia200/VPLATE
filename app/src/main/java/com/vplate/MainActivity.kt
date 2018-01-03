@@ -3,7 +3,6 @@ package com.vplate
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
-import com.vplate.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,21 +11,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // sm: 탭 추가
-        mainTab.addTab(mainTab.newTab().setText("Tab1"))
-        mainTab.addTab(mainTab.newTab().setText("Tab2"))
-        mainTab.addTab(mainTab.newTab().setText("Home"))
-        mainTab.addTab(mainTab.newTab().setText("Tab4"))
-        mainTab.addTab(mainTab.newTab().setText("Tab5"))
+        // 탭 추가
+        main_tab.addTab(main_tab.newTab().setText("Tab1"))
+        main_tab.addTab(main_tab.newTab().setText("Tab2"))
+        main_tab.addTab(main_tab.newTab().setText("Home"))
+        main_tab.addTab(main_tab.newTab().setText("Tab4"))
+        main_tab.addTab(main_tab.newTab().setText("Tab5"))
 
-        var tabAdapter = TabAdapter(supportFragmentManager, mainTab.tabCount)
+        var tabAdapter = TabAdapter(supportFragmentManager, main_tab.tabCount)
 
-        mainViewPager.adapter = tabAdapter
+        main_viewPager.adapter = tabAdapter
 
-        mainViewPager.currentItem = 0
-        mainViewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(mainTab))
+        main_viewPager.currentItem = 0
+        main_viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(main_tab))
 
-        mainTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+        main_tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabReselected(tab: TabLayout.Tab?) {
 
             }
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                mainViewPager.currentItem = tab!!.position
+                main_viewPager.currentItem = tab!!.position
                 when(tab!!.position){
                     0 ->{
 

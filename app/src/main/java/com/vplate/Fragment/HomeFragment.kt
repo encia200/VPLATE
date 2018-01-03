@@ -28,7 +28,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater!!.inflate(R.layout.fragment_home, container, false)
 
-        templateList = v.findViewById(R.id.mainRecycler) as RecyclerView
+        templateList = v.findViewById(R.id.home_recyclerView) as RecyclerView
         templateList!!.layoutManager = GridLayoutManager(context, 2)
 
         templateDatas = ArrayList<VideoData>()
@@ -54,7 +54,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
 
         // set the custom dialog components - text, image and button
 
-        val vid = dialog.findViewById(R.id.videoView) as VideoView
+        val vid = dialog.findViewById(R.id.dialog_videoView) as VideoView
         val vidUri = Uri.parse("https://youtu.be/u3TAnY6ktyU")
 
         vid.setVideoURI(vidUri)
@@ -66,7 +66,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
         vid.start()
 
         // dialogButton
-        val dialogButton = dialog.findViewById(R.id.dialogButtonOK) as Button
+        val dialogButton = dialog.findViewById(R.id.dialog_makeBtn) as Button
 
         dialogButton.setOnClickListener() {
             dialog.dismiss()

@@ -11,10 +11,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        loginNextBtn!!.setOnClickListener{
+        splash_loginBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, MainActivity::class.java)
-            intent.putExtra("email", loginEmailEdit!!.text.toString())
-            intent.putExtra("pw", loginPwEdit!!.text.toString())
+            intent.putExtra("email", login_emailEdit!!.text.toString())
+            intent.putExtra("pw", login_pwEdit!!.text.toString())
             startActivity(intent)
         }
     }

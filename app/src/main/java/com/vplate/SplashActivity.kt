@@ -12,13 +12,14 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         // 회원가입 버튼
-        joinBtn!!.setOnClickListener{
+        splash_joinBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, JoinActivity::class.java)
+
             startActivity(intent)
         }
 
         // 로그인버튼
-        loginBtn!!.setOnClickListener{
+        splash_loginBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
         }

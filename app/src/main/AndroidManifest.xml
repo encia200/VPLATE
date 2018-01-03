@@ -22,7 +22,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".QuestionActivity"></activity>
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".FindActivity"></activity>
     </application>
 
 </manifest>

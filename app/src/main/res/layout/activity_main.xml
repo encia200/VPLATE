@@ -7,15 +7,15 @@
     tools:context="com.vplate.MainActivity">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/mainViewPager"
+        android:id="@+id/main_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/mainTab">
+        android:layout_above="@+id/main_tab">
 
     </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/mainTab"
+        android:id="@+id/main_tab"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#ff0"

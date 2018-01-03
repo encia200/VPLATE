@@ -30,7 +30,7 @@
         android:layout_marginTop="60dp"/>
 
     <EditText
-        android:id="@+id/joinNameEdit"
+        android:id="@+id/join_nameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -47,7 +47,7 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/joinNicknameEdit"
+        android:id="@+id/join_nicknameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -57,7 +57,7 @@
         android:layout_marginTop="5dp"/>
 
     <RelativeLayout
-        android:id="@+id/sameNicknameAlert"
+        android:id="@+id/join_sameNickAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
@@ -87,7 +87,7 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/joinEmailEdit"
+        android:id="@+id/join_emailEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -97,7 +97,7 @@
         android:layout_marginTop="5dp"/>
 
     <RelativeLayout
-        android:id="@+id/sameEmailAlert"
+        android:id="@+id/join_sameEmailAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
@@ -127,7 +127,7 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/joinPwEdit"
+        android:id="@+id/join_pwEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -136,8 +136,48 @@
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 입력 확인"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/join_pwCheckEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="영문 숫자 ~~~"
+        android:textSize="11dp"
+        android:layout_marginTop="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/join_pwDifferentAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중복된 이메일이 있습니다."
+            android:textSize="11sp"
+            android:textColor="#ff0000"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
     <Button
-        android:id="@+id/joinNextBtn"
+        android:id="@+id/join_nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

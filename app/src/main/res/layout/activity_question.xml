@@ -25,6 +25,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="질문1_"/>
+        android:text="질문1_다시 태어난다면 되고 싶은 것은?"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/question_q1Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="11dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="질문2_광어, 연어, 도미, 오징어, 우럭, 참치 중에서 고른다면?"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/question_q2Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="11dp"/>
+
+    <Button
+        android:id="@+id/question_startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="시작하기"/>
 
 </LinearLayout>
