@@ -23,7 +23,10 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".QuestionActivity" />
-        <activity android:name=".FindActivity"></activity>
+        <activity android:name=".FindActivity" />
+        <activity android:name=".PwSetActivity" />
+        <activity android:name=".PwsetCompleteActivity" />
+        <activity android:name=".PwSetCompleteActivity"></activity>
     </application>
 
 </manifest>

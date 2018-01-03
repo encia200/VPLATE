@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.vplate.FindActivity">
+    tools:context="com.vplate.PwSetActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호 찾기"
+        android:text="비밀번호 재설정"
         android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"/>
@@ -18,19 +18,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호를 찾기 위해 입력해주세요."
+        android:text="비밀번호 입력"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="이름 입력"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="90dp"/>
 
     <EditText
-        android:id="@+id/find_nameEdit"
+        android:id="@+id/pw_set_pw1Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -42,12 +35,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이메일 입력"
+        android:text="비밀번호 입력 확인"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/find_nicknameEdit"
+        android:id="@+id/pw_set_pw2Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -56,43 +49,35 @@
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="질문1_다시 태어난다면 되고 싶은 것은?"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/find_q1Edit"
+    <RelativeLayout
+        android:id="@+id/join_sameEmailAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textSize="11dp"/>
+        android:layout_marginLeft="30dp"
+        android:visibility="gone">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="질문2_광어, 연어, 도미, 오징어, 우럭, 참치 중에서 고른다면?"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호가 일치하지 않습니다."
+            android:textSize="11sp"
+            android:textColor="#ff0000"/>
 
-    <EditText
-        android:id="@+id/find_q2Edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="11dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
 
     <Button
-        android:id="@+id/find_completeBtn"
+        android:id="@+id/pw_set_startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="입력완료"
+        android:text="시작하기"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
-
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>
