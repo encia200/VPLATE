@@ -6,7 +6,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "27.0.1"
     defaultConfig {
-        applicationId "com.sw.vplate"
+        applicationId "com.vplate"
         minSdkVersion 24
         targetSdkVersion 25
         versionCode 1
