@@ -1,10 +1,10 @@
-package com.sw.vplate
+package com.vplate
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import com.sw.vplate.Fragment.*
+import com.vplate.Fragment.*
 
 /**
  * Created by chosoomin on 2018. 1. 1..
@@ -14,10 +14,10 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
     var tabCount : Int = 0
 
     var firstTab : FirstFragment?= null
-    var secondTab : SecondFragment ?= null
+    var secondTab : SecondFragment?= null
     var homeTab : HomeFragment?= null
-    var fourthTab : FourthFragment ?= null
-    var fifthTab : FifthFragment ?= null
+    var fourthTab : FourthFragment?= null
+    var fifthTab : FifthFragment?= null
 
     constructor(fm : FragmentManager?, tabCount : Int) : this(fm){
         this.tabCount = tabCount

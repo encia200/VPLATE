@@ -1,9 +1,10 @@
-package com.sw.vplate
+package com.vplate
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.sw.vplate.R
 
 /**
  * Created by SM-PC on 2018-01-01.
