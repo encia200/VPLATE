@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // sm: 탭 추가
-        main_tab.addTab(main_tab.newTab().setText("Tab1"))
-        main_tab.addTab(main_tab.newTab().setText("Tab2"))
         main_tab.addTab(main_tab.newTab().setText("Home"))
+        main_tab.addTab(main_tab.newTab().setText("My video"))
+        main_tab.addTab(main_tab.newTab().setText("Like"))
         main_tab.addTab(main_tab.newTab().setText("Community"))
-        main_tab.addTab(main_tab.newTab().setText("Tab5"))
+        main_tab.addTab(main_tab.newTab().setText("My page"))
 
         var tabAdapter = TabAdapter(supportFragmentManager, main_tab.tabCount)
 

@@ -10,45 +10,45 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
 
     var tabCount : Int = 0
 
-    var firstTab : FirstFragment?= null
-    var secondTab : SecondFragment?= null
     var homeTab : HomeFragment?= null
+    var videoTab : FirstFragment?= null
+    var likeTab : SecondFragment?= null
     var communityTab: CommunityFragment?= null
-    var fifthTab : FifthFragment?= null
+    var mypageTab : FifthFragment?= null
 
     constructor(fm : FragmentManager?, tabCount : Int) : this(fm){
         this.tabCount = tabCount
-        this.firstTab = FirstFragment()
-        this.secondTab = SecondFragment()
+        this.videoTab = FirstFragment()
+        this.likeTab = SecondFragment()
         this.homeTab = HomeFragment()
         this.communityTab = CommunityFragment()
-        this.fifthTab = FifthFragment()
+        this.mypageTab = FifthFragment()
     }
 
     override fun getItem(position: Int): Fragment? {
         when(position) {
             0 -> {
                 val bundle = Bundle()
-                firstTab!!.arguments = bundle
+                homeTab!!.arguments = bundle
 
-                return firstTab
+                return homeTab
             }
             1 -> {
                 val bundle = Bundle()
 
-                return secondTab
+                return videoTab
             }
             2 -> {
                 val bundle = Bundle()
-                homeTab!!.arguments = bundle
+                likeTab!!.arguments = bundle
 
-                return homeTab
+                return likeTab
             }
             3 -> {
                 return communityTab
             }
             4 -> {
-                return fifthTab
+                return mypageTab
             }
         }
 

@@ -17,6 +17,7 @@ class JoinActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, QuestionActivity::class.java)
 
             startActivity(intent)
+            finish()
         }
     }
 }

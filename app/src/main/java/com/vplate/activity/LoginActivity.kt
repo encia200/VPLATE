@@ -24,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
             intent.putExtra("email", login_emailEdit!!.text.toString())
             intent.putExtra("pw", login_pwEdit!!.text.toString())
             startActivity(intent)
+            finish()
         }
     }
 }

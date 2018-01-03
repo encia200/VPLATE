@@ -4,7 +4,7 @@ import android.app.Dialog
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +29,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
         val v = inflater!!.inflate(R.layout.fragment_home, container, false)
 
         templateList = v.findViewById(R.id.home_recyclerView) as RecyclerView
-        templateList!!.layoutManager = GridLayoutManager(context, 2)
+        templateList!!.layoutManager = LinearLayoutManager(context)
 
         templateDatas = ArrayList<VideoData>()
         templateDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
