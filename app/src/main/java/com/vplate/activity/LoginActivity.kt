@@ -17,13 +17,17 @@ class LoginActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 
             startActivity(intent)
+            finish()
         }
 
         login_loginBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, MainActivity::class.java)
+
             intent.putExtra("email", login_emailEdit!!.text.toString())
             intent.putExtra("pw", login_pwEdit!!.text.toString())
+
             startActivity(intent)
+            finish()
         }
     }
 }

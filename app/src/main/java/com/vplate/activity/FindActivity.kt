@@ -16,6 +16,7 @@ class FindActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, PwSetActivity::class.java)
 
             startActivity(intent)
+            finish()
         }
     }
 }

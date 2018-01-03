@@ -15,7 +15,9 @@ class PwSetActivity : AppCompatActivity() {
 
         pw_set_startBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, PwSetCompleteActivity::class.java)
+
             startActivity(intent)
+            finish()
         }
     }
 }
