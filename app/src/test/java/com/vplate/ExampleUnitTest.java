@@ -1,4 +1,4 @@
-package com.sw.vplate;
+package com.vplate;
 
 import org.junit.Test;
 

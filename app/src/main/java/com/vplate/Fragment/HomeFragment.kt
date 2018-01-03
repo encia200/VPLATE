@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.MediaController
 import android.widget.VideoView
-import com.sw.vplate.R
+import com.vplate.R
 import com.vplate.VideoAdapter
 import com.vplate.VideoData
 

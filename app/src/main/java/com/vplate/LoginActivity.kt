@@ -2,7 +2,7 @@ package com.vplate
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.sw.vplate.R
+import com.vplate.R
 
 class LoginActivity : AppCompatActivity() {
 
