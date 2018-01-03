@@ -1,4 +1,4 @@
-package com.sw.vplate
+package com.vplate
 
 /**
  * Created by SM-PC on 2018-01-01.

@@ -1,4 +1,4 @@
-package com.sw.vplate.Fragment
+package com.vplate.Fragment
 
 import android.app.Dialog
 import android.net.Uri
@@ -13,8 +13,8 @@ import android.widget.Button
 import android.widget.MediaController
 import android.widget.VideoView
 import com.sw.vplate.R
-import com.sw.vplate.VideoAdapter
-import com.sw.vplate.VideoData
+import com.vplate.VideoAdapter
+import com.vplate.VideoData
 
 /**
  * Created by SM-PC on 2018-01-01.

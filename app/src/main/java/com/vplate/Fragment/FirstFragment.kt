@@ -1,4 +1,4 @@
-package com.sw.vplate.Fragment
+package com.vplate.Fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

@@ -1,4 +1,4 @@
-package com.sw.vplate.Fragment
+package com.vplate.Fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,10 +10,10 @@ import com.sw.vplate.R
 /**
  * Created by chosoomin on 2018. 1. 1..
  */
-class FifthFragment: Fragment() {
+class FourthFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater!!.inflate(R.layout.fragment_fifth, container, false)
+        val v = inflater!!.inflate(R.layout.fragment_fourth, container, false)
 
         if(arguments != null){
 
