@@ -9,12 +9,14 @@ import com.vplate.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     private val COMMUNITYACTIVITY = 10
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // sm: 탭 추가
+        // 탭 추가
         main_tab.addTab(main_tab.newTab().setText("Home"))
         main_tab.addTab(main_tab.newTab().setText("My video"))
         main_tab.addTab(main_tab.newTab().setText("Like"))
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 main_viewPager.currentItem = tab!!.position
+
                 when (tab.position) {
                     0 -> {
 
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     3 -> {
                         val intent = Intent(applicationContext, CommunityActivity::class.java)
+
                         startActivityForResult(intent, COMMUNITYACTIVITY)
                     }
                     4 -> {
@@ -57,10 +61,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (requestCode.equals(COMMUNITYACTIVITY)) {
             main_viewPager.setCurrentItem(2, false)
         }

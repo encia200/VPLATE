@@ -1,17 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/home_tabBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홈 화면"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="18dp"/>
+
+        <Button
+            android:id="@+id/home_categoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/home_btnBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/home_tabBar">
+
+        <Button
+            android:id="@+id/home_hotBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기순"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/home_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:layout_toRightOf="@id/home_hotBtn"
+            android:textSize="40dp"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:layout_marginLeft="5dp"
+            android:id="@+id/home_latestBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="최신순"
+            android:layout_toRightOf="@id/home_txt"/>
+
+
+
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/home_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/home_btnBar">
 
     </android.support.v7.widget.RecyclerView>
 
 
 
 
-</LinearLayout>
+</RelativeLayout>
