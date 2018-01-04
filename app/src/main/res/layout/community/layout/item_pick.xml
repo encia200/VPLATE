@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/pick_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_email"
+        android:background="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginTop="13dp" />
+
+    <RelativeLayout
+        android:id="@+id/pick_titleNtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pick_image">
+
+        <TextView
+            android:id="@+id/pick_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="Twinkle Twinkle Neon"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/pick_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:30"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pick_story"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:text="본문 내용 어쩌고 저쩌고"
+        android:layout_below="@id/pick_titleNtime"/>
+
+</RelativeLayout>
