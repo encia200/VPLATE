@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/video_play"
+        android:layout_weight="1"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <Button
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_username"
+            android:background="#00ff0000"
+            android:gravity="center"
+            android:text="user_name"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_below="@+id/btn_username"
+            android:id="@+id/video_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="it's title"
+            />
+        <TextView
+            android:layout_below="@+id/video_name"
+            android:id="@+id/video_story"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="it's story"/>
+        <TextView
+            android:layout_below="@+id/video_story"
+            android:id="@+id/video_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="it's time"/>
+
+
+
+        <ImageButton
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_jjeam"
+            android:layout_alignParentRight="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/jjang1"/>
+
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_making"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Making Video"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
