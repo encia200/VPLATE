@@ -10,7 +10,7 @@ import com.vplate.R
 class CommunityFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater!!.inflate(R.layout.fragment_fourth, container, false)
+        val v = inflater!!.inflate(R.layout.fragment_community, container, false)
 
         if (arguments != null) {
         }
