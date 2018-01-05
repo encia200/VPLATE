@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1032049959307",
+    "firebase_url": "https://vplate-f7e64.firebaseio.com",
+    "project_id": "vplate-f7e64",
+    "storage_bucket": "vplate-f7e64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032049959307:android:e66ecb605e232bcd",
+        "android_client_info": {
+          "package_name": "com.vplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032049959307-66sreiivua8k7dl9o9brtgdrb7h94nc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vplate",
+            "certificate_hash": "ddde3fcb5f6edfed80860c3e4a64628ee3f85090"
+          }
+        },
+        {
+          "client_id": "1032049959307-7rger95kd477gj7dphajmv8rd969f7q2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbjgFaGOdEVSAvG_cpBH2ZUNy_AUuxpJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032049959307-7rger95kd477gj7dphajmv8rd969f7q2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

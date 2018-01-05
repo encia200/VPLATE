@@ -1,32 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/ranking"
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_dialog_email" />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/myvideo"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/ranking"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_dialog_email" />
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/fragment_container"
-        android:background="@drawable/android_gradient_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:background="@drawable/android_gradient_list"
+        android:orientation="horizontal"></LinearLayout>
 
 </RelativeLayout>

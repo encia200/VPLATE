@@ -1,61 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="2.5dp"
-    android:layout_marginTop="2.5dp">
+    android:layout_height="480dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="16dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@drawable/background_video_item_contentlayout">
 
-        <RelativeLayout
-            android:id="@+id/video_item_videolayout"
+        <com.volokh.danylo.video_player_manager.ui.VideoPlayerView
+            android:id="@+id/player"
             android:layout_width="match_parent"
-            android:layout_height="480dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="30dp">
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp" />
 
-            <com.volokh.danylo.video_player_manager.ui.VideoPlayerView
-                android:id="@+id/player"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp" />
 
-            <ImageView
-                android:id="@+id/cover"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/video_item_contentlayout"
+        <LinearLayout
+            android:id="@+id/community_bottomlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/video_item_videolayout"
-            android:layout_marginBottom="8dp"
-            android:paddingLeft="8dp"
-            android:background="@drawable/background_video_item_contentlayout">
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title"
+            <RelativeLayout
+                android:id="@+id/community_content"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_alignParentTop="true"
-                android:text="title"
-                android:textColor="@android:color/white"
-                android:textSize="28sp" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/content"
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_person_white_24dp"
+                    app:civ_border_color="#ffffff"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:id="@+id/community_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:text="닉네임"
+                    android:textColor="@android:color/white"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/community_nick"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@id/profile_image"
+                    android:text="3분전"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/profile_image"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="content"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/content"
+                    android:text="title"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/horizontal_line"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_below="@+id/title"
-                android:text="content"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
-        </RelativeLayout>
+                android:layout_height="2dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff" />
+
+            <RelativeLayout
+                android:id="@+id/community_likeNcomment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <ImageView
+                    android:id="@+id/community_like_img"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_favorite_border_white_24dp" />
+
+                <TextView
+                    android:id="@+id/community_like_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@+id/community_like_img"
+                    android:text="좋아요 0개"
+                    android:textColor="@android:color/white"
+                    android:textSize="24dp" />
+            </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
-</RelativeLayout>
+</android.support.v7.widget.CardView>

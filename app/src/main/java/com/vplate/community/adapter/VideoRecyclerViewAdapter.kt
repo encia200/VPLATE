@@ -12,12 +12,11 @@ class VideoRecyclerViewAdapter(private val mVideoPlayerManager: VideoPlayerManag
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): VideoViewHolder {
         val videoItem = mList[position]
-        val resultView = videoItem.createView(viewGroup, mContext.resources.displayMetrics.widthPixels)
+        val resultView = videoItem.createView(viewGroup, mContext.resources.displayMetrics.widthPixels, mContext.resources.displayMetrics.heightPixels)
         return VideoViewHolder(resultView)
     }
 
     override fun onBindViewHolder(viewHolder: VideoViewHolder, position: Int) {
-        /*setAnimation(viewHolder.mCardView, position);*/
 
         val videoItem = mList[position]
         videoItem.update(position, viewHolder, mVideoPlayerManager)
@@ -26,16 +25,4 @@ class VideoRecyclerViewAdapter(private val mVideoPlayerManager: VideoPlayerManag
     override fun getItemCount(): Int {
         return mList.size
     }
-
-    /*private void setAnimation(View viewToAnimate, int position) {
-        // 새로 보여지는 뷰라면 애니메이션
-        if (position > lastPosition) {
-            YoYo.with(Techniques.FadeInLeft).playOn(viewToAnimate);
-            lastPosition = position;
-        }
-        else {
-            YoYo.with(Techniques.FadeOutRight).playOn(viewToAnimate);
-            lastPosition = position;
-        }
-    }*/
 }

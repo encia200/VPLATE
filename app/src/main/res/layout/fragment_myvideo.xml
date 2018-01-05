@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/myvideo_fragment_tab"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/myvideo_progressing_videos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진행중"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/myvideo_complete_videos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/myvideo_progressing_videos"
+            android:text="완료"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/myvideo_fragment"
+        android:name="com.vplate.Myvideo.fragments.ProgressingFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myvideo_fragment_tab"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:layout="@layout/fragment_myvideo_progressing" />
+</RelativeLayout>
