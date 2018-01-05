@@ -56,29 +56,6 @@
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
 
-    <RelativeLayout
-        android:id="@+id/join_sameNickAlert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="30dp"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="중복된 닉네임이 있습니다."
-            android:textSize="11sp"
-            android:textColor="#ff0000"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
-            android:layout_alignParentRight="true"/>
-
-    </RelativeLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

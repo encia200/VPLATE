@@ -14,7 +14,7 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
     var videoTab : FirstFragment?= null
     var likeTab : PickFragment?= null
     var communityTab: CommunityFragment?= null
-    var mypageTab : FifthFragment?= null
+    var mypageTab : MyPageFragment?= null
 
     constructor(fm : FragmentManager?, tabCount : Int) : this(fm){
         this.tabCount = tabCount
@@ -22,7 +22,7 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
         this.likeTab = PickFragment()
         this.homeTab = HomeFragment()
         this.communityTab = CommunityFragment()
-        this.mypageTab = FifthFragment()
+        this.mypageTab = MyPageFragment()
     }
 
     override fun getItem(position: Int): Fragment? {

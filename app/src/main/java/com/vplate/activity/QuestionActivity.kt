@@ -1,28 +1,20 @@
 package com.vplate.activity
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
-import com.vplate.ApplicationController
+import com.vplate.Network.ApplicationController
+import com.vplate.Network.NetworkService
 import com.vplate.Network.Post.SignResponse
-import com.vplate.NetworkService
 import com.vplate.R
 import kotlinx.android.synthetic.main.activity_question.*
 import okhttp3.MediaType
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.InputStream
 
 class QuestionActivity : AppCompatActivity() {
 
@@ -30,14 +22,13 @@ class QuestionActivity : AppCompatActivity() {
 
     private var networkService: NetworkService? = null // 넽웕 썰비스
 
+    private var flag : Int = 1
+
     // 앞 화면에서 받아온 애들 담아놓는 변수(가입시 필요한 이메일, 비밀번호, 이름, 닉네임)
     var getEmail: String? = null
     var getPwd: String? = null
     var getName: String? = null
     var getNickname: String? = null
-
-    private var data: Uri? = null // 기본 이미지 설정에 쓰임
-    private var profile: MultipartBody.Part? = null // 기본 이미지
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,40 +47,23 @@ class QuestionActivity : AppCompatActivity() {
 
         // 시작하기 버튼 (로그인 화면으로)
         question_startBtn!!.setOnClickListener {
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            // 질문에 대답을 안적으면 화면 못넘김
+            if (question_q1Edit.text.length == 0 || question_q1Edit.text.length == 0) {
+                Toast.makeText(applicationContext, "모든 질문에 답해주세요.", Toast.LENGTH_LONG).show()
+            }
 
-            sign()
+            else {
+                if (flag == 1) {
+                    val intent = Intent(applicationContext, LoginActivity::class.java)
 
-            startActivity(intent)
-            finish()
+                    sign()
+
+                    startActivity(intent)
+                    finish()
+                }
+
+            }
         }
-
-        // 사용자 프로필 이미지를 기본 이미지로 설정
-        defaultImage()
-    }
-
-    // 기본 이미지 설정
-    fun defaultImage() {
-        data = Uri.parse("android.resource://" + applicationContext.packageName + "/drawable/lala")
-
-        val options = BitmapFactory.Options()
-
-        var input: InputStream? = null
-        try {
-            input = contentResolver.openInputStream(this.data)
-            Log.v("!!!!!!!!!!!!!!!", "사진 찾아땅")
-        } catch(e: FileNotFoundException) {
-            e.printStackTrace()
-            Log.v("!!!!!!!!!!!!!!!", "사진 못찾아버려따")
-        }
-
-        val bitmap = BitmapFactory.decodeStream(input, null, options)
-        val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos)
-        val photoBody = RequestBody.create(MediaType.parse("image/jpg"), baos.toByteArray())
-        val photo = File(this.data.toString())
-
-        profile = MultipartBody.Part.createFormData("profileImg", photo.name, photoBody)
     }
 
     // 통신(회원가입)
@@ -102,7 +76,7 @@ class QuestionActivity : AppCompatActivity() {
         val answer2 = RequestBody.create(MediaType.parse("text/plain"), question_q2Edit.text.toString())
         val fcm_key = RequestBody.create(MediaType.parse("text/plain"), "123")
 
-        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, nickname, name, profile!!, fcm_key)
+        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, nickname, name, fcm_key) // 회원가입할 때는 이미지 안보냄(null로 처리)
 
         // Response 받은거
         detailResponse.enqueue(object : Callback<SignResponse> {
@@ -111,10 +85,15 @@ class QuestionActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<SignResponse>, response: Response<SignResponse>) {
-                if (response.isSuccessful) {
+                if (response.isSuccessful) { //  가입 성공
                     ApplicationController.instance!!.makeToast("가입 완료해버렸다")
                     Log.v(TAG,"가입 성공~~~~~~")
-                } else {
+                    flag = 1
+                }
+                else { // 가입 실패
+                    if (response.code().toString() == "401") { //  이메일 또는 닉네임 중복\
+                        flag = 0
+                    }
                     Log.v(TAG, response.message())
                     Toast.makeText(applicationContext, response.message(), Toast.LENGTH_LONG).show()
                 }

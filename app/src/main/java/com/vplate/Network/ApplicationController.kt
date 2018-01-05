@@ -1,4 +1,4 @@
-package com.vplate
+package com.vplate.Network
 
 import android.app.Application
 import android.content.Context

@@ -10,10 +10,10 @@ import com.vplate.R
 /**
  * Created by chosoomin on 2018. 1. 1..
  */
-class FifthFragment: Fragment() {
+class MyPageFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater!!.inflate(R.layout.fragment_fifth, container, false)
+        val v = inflater!!.inflate(R.layout.fragment_my_page, container, false)
 
         if(arguments != null){
 
