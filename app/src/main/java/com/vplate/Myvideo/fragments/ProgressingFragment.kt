@@ -13,7 +13,7 @@ import com.vplate.R
 class ProgressingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater!!.inflate(R.layout.fragment_fifth, container, false)
+        val v = inflater!!.inflate(R.layout.fragment_myvideo_progressing, container, false)
 
         if(arguments != null){
 
