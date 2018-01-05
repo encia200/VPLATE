@@ -7,17 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.vplate.R
 
-/**
- * Created by chosoomin on 2018. 1. 1..
- */
-class FirstFragment: Fragment() {
+class MyideoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater!!.inflate(R.layout.fragment_first, container, false)
+        val v = inflater!!.inflate(R.layout.fragment_myvideo, container, false)
 
         if(arguments != null){
 
         }
+
         return v
     }
 }

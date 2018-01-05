@@ -9,6 +9,9 @@ import com.vplate.R
 import com.vplate.community.adapter.fragments.VideoRecyclerViewFragment
 
 class CommunityActivity : AppCompatActivity() {
+    companion object {
+        lateinit var dialogData: DialogData
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,12 +19,20 @@ class CommunityActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_community)
 
+        dialogData = DialogData()
+        dialogData.setDialogData(false)
+        dialogData.setListener(object : DialogData.ChangeListener {
+            override fun onChange() {
+                finish()
+            }
+        })
+
         if (savedInstanceState == null) {
             addRecyclerView()
         }
 
-        val constraintLayout = findViewById(R.id.fragment_container) as LinearLayout
-        val animationDrawable = constraintLayout.background as AnimationDrawable
+        val linearLayout_container = findViewById(R.id.fragment_container) as LinearLayout
+        val animationDrawable = linearLayout_container.background as AnimationDrawable
         animationDrawable.setEnterFadeDuration(2000)
         animationDrawable.setExitFadeDuration(4000)
         animationDrawable.start()
@@ -37,5 +48,23 @@ class CommunityActivity : AppCompatActivity() {
         super.finish()
         this.overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         setResult(Activity.RESULT_OK)
+    }
+
+    class DialogData {
+        var data: Boolean? = null
+        private var listener: ChangeListener? = null
+
+        fun setListener(listener: ChangeListener) {
+            this.listener = listener
+        }
+
+        fun setDialogData(data: Boolean) {
+            this.data = data
+            if (listener != null) listener!!.onChange()
+        }
+
+        interface ChangeListener {
+            fun onChange()
+        }
     }
 }

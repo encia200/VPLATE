@@ -69,7 +69,6 @@ public class SingleVideoPlayerManager implements VideoPlayerManager<MetaData>, V
     @Override
     public void playNewVideo(MetaData currentItemMetaData, VideoPlayerView videoPlayerView, String videoUrl) {
         if(SHOW_LOGS) Logger.v(TAG, ">> playNewVideo, videoPlayer " + videoPlayerView + ", mCurrentPlayer " + mCurrentPlayer + ", videoPlayerView " + videoPlayerView);
-
         /** 1. */
         mPlayerHandler.pauseQueueProcessing(TAG);
 

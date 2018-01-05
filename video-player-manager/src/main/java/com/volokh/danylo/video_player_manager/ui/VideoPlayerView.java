@@ -239,7 +239,7 @@ public class VideoPlayerView extends ScalableTextureView
 
             if (SHOW_LOGS) Logger.v(TAG, "initView");
 
-            setScaleType(ScalableTextureView.ScaleType.CENTER_CROP);
+            setScaleType(ScaleType.FILL);
             super.setSurfaceTextureListener(this);
         }
     }
@@ -463,6 +463,7 @@ public class VideoPlayerView extends ScalableTextureView
                     Logger.v(TAG, "onVideoSizeAvailable, mReadyForPlaybackIndicator " + mReadyForPlaybackIndicator);
 
                 mReadyForPlaybackIndicator.setVideoSize(getContentHeight(), getContentWidth());
+                Logger.d("setVideoSize", "getContentHeight : "+getContentHeight()+", getContentWidth : " + getContentWidth());
 
                 if (mReadyForPlaybackIndicator.isReadyForPlayback()) {
                     if (SHOW_LOGS) Logger.v(TAG, "run, onVideoSizeAvailable, notifyAll");
@@ -473,6 +474,7 @@ public class VideoPlayerView extends ScalableTextureView
             }
             if (mMediaPlayerListenerBackgroundThread != null) {
                 mMediaPlayerListenerBackgroundThread.onVideoSizeChangedBackgroundThread(getContentHeight(), getContentWidth());
+                Logger.d("setVideoSize", "getContentHeight : "+getContentHeight()+", getContentWidth : " + getContentWidth());
             }
         }
     };

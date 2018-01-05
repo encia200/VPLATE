@@ -1,6 +1,7 @@
 package com.vplate.community.adapter.fragments
 
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,18 +12,19 @@ import android.widget.AbsListView
 import com.volokh.danylo.video_player_manager.Config
 import com.volokh.danylo.video_player_manager.manager.PlayerItemChangeListener
 import com.volokh.danylo.video_player_manager.manager.SingleVideoPlayerManager
-import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager
 import com.volokh.danylo.visibility_utils.calculator.DefaultSingleItemCalculatorCallback
-import com.volokh.danylo.visibility_utils.calculator.ListItemsVisibilityCalculator
 import com.volokh.danylo.visibility_utils.calculator.SingleListViewItemActiveCalculator
 import com.volokh.danylo.visibility_utils.scroll_utils.ItemsPositionGetter
 import com.volokh.danylo.visibility_utils.scroll_utils.RecyclerViewItemPositionGetter
 import com.vplate.R
+import com.vplate.activity.CommunityActivity
 import com.vplate.community.adapter.VideoRecyclerViewAdapter
 import com.vplate.community.adapter.items.BaseVideoItem
+import com.vplate.community.adapter.items.DirectLinkVideoItem
 import com.vplate.community.adapter.items.ItemFactory
+import kotlinx.android.synthetic.main.fragment_video_recycler_view.*
 import java.io.IOException
-import java.util.*
+
 
 /**
  * This fragment shows of how to use [VideoPlayerManager] with a RecyclerView.
@@ -39,7 +41,9 @@ class VideoRecyclerViewFragment : Fragment() {
 
     private var mRecyclerView: RecyclerView? = null
     private var mLayoutManager: LinearLayoutManager? = null
-
+    private var mFloatingbackBtn: FloatingActionButton? = null
+    private var mFloatingrankingBtn: FloatingActionButton? = null
+    private var mFloatingmyvideoBtn: FloatingActionButton? = null
     /**
      * ItemsPositionGetter is used by [ListItemsVisibilityCalculator] for getting information about
      * items position in the RecyclerView and LayoutManager
@@ -57,20 +61,15 @@ class VideoRecyclerViewFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         try {
+
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",mVideoPlayerManager,context))
             mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_2.mp4", R.drawable.video_sample_2_pic, activity, mVideoPlayerManager))
             mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_4.mp4", R.drawable.video_sample_4_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
 
             mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_2.mp4", R.drawable.video_sample_2_pic, activity, mVideoPlayerManager))
             mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_4.mp4", R.drawable.video_sample_4_pic, activity, mVideoPlayerManager))
-
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_2.mp4", R.drawable.video_sample_2_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_4.mp4", R.drawable.video_sample_4_pic, activity, mVideoPlayerManager))
         } catch (e: IOException) {
             throw RuntimeException(e)
         }
@@ -78,14 +77,20 @@ class VideoRecyclerViewFragment : Fragment() {
         val rootView = inflater!!.inflate(R.layout.fragment_video_recycler_view, container, false)
 
         mRecyclerView = rootView.findViewById(R.id.recycler_view) as RecyclerView
+        mFloatingbackBtn = rootView.findViewById(R.id.community_backbtn) as FloatingActionButton
+        mFloatingbackBtn!!.setOnClickListener {
+            CommunityActivity.dialogData.setDialogData(true)
+        }
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
 
-        //mRecyclerView.setHasFixedSize(true);
+        //mRecyclerView!!.setHasFixedSize(true);
+        mRecyclerView!!.setBackgroundColor(0x00ffffff)
 
         // use a linear layout manager
         mLayoutManager = LinearLayoutManager(activity)
         mRecyclerView!!.layoutManager = mLayoutManager
+
 
         val videoRecyclerViewAdapter = VideoRecyclerViewAdapter(mVideoPlayerManager, activity, mList)
 
@@ -101,9 +106,19 @@ class VideoRecyclerViewFragment : Fragment() {
                             mLayoutManager!!.findFirstVisibleItemPosition(),
                             mLayoutManager!!.findLastVisibleItemPosition())
                 }
+                if (scrollState == RecyclerView.SCROLL_STATE_IDLE) {
+                    community_myvideo.show()
+                    community_ranking.show()
+                    community_backbtn.show()
+                }
             }
 
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                if (dy > 0 || dy < 0 && community_ranking!!.isShown()) {
+                    community_ranking.hide()
+                    community_myvideo.hide()
+                    community_backbtn.hide()
+                }
                 if (!mList.isEmpty()) {
                     mVideoVisibilityCalculator.onScroll(
                             mItemsPositionGetter,
@@ -114,6 +129,7 @@ class VideoRecyclerViewFragment : Fragment() {
             }
         })
         mItemsPositionGetter = RecyclerViewItemPositionGetter(mLayoutManager, mRecyclerView)
+
 
         return rootView
     }
