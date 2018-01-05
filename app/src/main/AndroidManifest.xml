@@ -28,13 +28,7 @@
         <activity android:name=".activity.PwSetActivity" />
         <activity android:name=".activity.PwSetCompleteActivity"/>
         <activity android:name=".activity.CommunityActivity" />
-        <activity android:name=".activity.MakingActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.MakingActivity" />
         <activity android:name=".activity.VideoEditActivity" />
         <service android:name=".service.FcmListenerService">
             <intent-filter>
