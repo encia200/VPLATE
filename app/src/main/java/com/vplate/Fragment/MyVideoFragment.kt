@@ -11,7 +11,7 @@ import com.vplate.Myvideo.fragments.ProgressingFragment
 import com.vplate.R
 
 
-class MyideoFragment : Fragment(), View.OnClickListener {
+class MyVideoFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (view == null) return
         var fragment: Fragment? = null

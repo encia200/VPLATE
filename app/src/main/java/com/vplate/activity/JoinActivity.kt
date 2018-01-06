@@ -66,7 +66,6 @@ class JoinActivity : AppCompatActivity() {
 
         // 다음 버튼 클릭(질문화면으로)
         join_nextBtn!!.setOnClickListener {
-
             // 모두 안적으면 다음 화면으로 못넘어감
             if (join_emailEdit.text.length == 0 || join_pwEdit.text.length == 0 || join_nameEdit.text.length == 0 || join_nicknameEdit.text.length == 0) {
                 Toast.makeText(applicationContext, "모든 질문에 답해주세요.", Toast.LENGTH_LONG).show()

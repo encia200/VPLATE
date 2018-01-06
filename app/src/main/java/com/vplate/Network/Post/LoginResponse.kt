@@ -5,7 +5,7 @@ package com.vplate.Network.Post
  */
 data class LoginResponse (
         var status : String,
-        var type : Int,
+        var data : LoginData,
         var token : String,
         var msg : String
 )

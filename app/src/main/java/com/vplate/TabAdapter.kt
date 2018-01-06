@@ -11,14 +11,14 @@ class TabAdapter(fm : FragmentManager?) : FragmentStatePagerAdapter(fm) {
     var tabCount : Int = 0
 
     var homeTab : HomeFragment?= null
-    var videoTab : MyideoFragment?= null
+    var videoTab : MyVideoFragment?= null
     var likeTab : PickFragment?= null
     var communityTab: CommunityFragment?= null
     var mypageTab : MyPageFragment?= null
 
     constructor(fm : FragmentManager?, tabCount : Int) : this(fm){
         this.tabCount = tabCount
-        this.videoTab = MyideoFragment()
+        this.videoTab = MyVideoFragment()
         this.likeTab = PickFragment()
         this.homeTab = HomeFragment()
         this.communityTab = CommunityFragment()

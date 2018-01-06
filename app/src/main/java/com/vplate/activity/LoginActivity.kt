@@ -39,10 +39,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // 로그인
     fun signin(){
         val loginResponse = networkService!!.signin(LoginPost(login_emailEdit.text.toString(), login_pwEdit.text.toString()))
 
         loginResponse.enqueue(object : Callback<LoginResponse> {
+
             override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
                 if(response!!.isSuccessful){
                     if (response!!.body().status.equals("success")){

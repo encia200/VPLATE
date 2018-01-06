@@ -27,9 +27,12 @@ interface NetworkService {
     @POST("account/signin")
     fun signin(
             @Body loginPost : LoginPost): Call<LoginResponse>
+
     //회원 가입(이메일 중복 체크)
     @POST("account/overlap")
     fun overlap(
             @Body emailPost : EmailCheckPost) : Call<EmailCheckResponse>
 
+//    @POST("account/setting/search")
+//    fun pwSearch() : Call<>
 }
