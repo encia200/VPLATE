@@ -3,6 +3,7 @@ package com.vplate.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.google.firebase.iid.FirebaseInstanceId
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
 import com.vplate.Network.NetworkService
@@ -15,7 +16,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
-
     private var networkService: NetworkService? = null // 넽웕 썰비스
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,15 +41,12 @@ class LoginActivity : AppCompatActivity() {
 
     // 로그인
     fun signin(){
-        val loginResponse = networkService!!.signin(LoginPost(login_emailEdit.text.toString(), login_pwEdit.text.toString()))
-
+        val loginResponse = networkService!!.signin(LoginPost(login_emailEdit.text.toString(), login_pwEdit.text.toString(), FirebaseInstanceId.getInstance().getToken()!!))
         loginResponse.enqueue(object : Callback<LoginResponse> {
-
             override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
                 if(response!!.isSuccessful){
                     if (response!!.body().status.equals("success")){
                         CommonData.loginResponse = response!!.body()
-
                         startActivity(Intent(applicationContext, MainActivity::class.java)) // 화면 넘어감
                         ApplicationController.instance!!.makeToast("로그인 성공")
                     }
@@ -58,7 +55,6 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
                 ApplicationController.instance!!.makeToast("통신 상태를 확인해주세요")
             }

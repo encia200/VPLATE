@@ -59,17 +59,16 @@ class VideoRecyclerViewFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
         try {
-
-            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",mVideoPlayerManager,context))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
 
             mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
             mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+
         } catch (e: IOException) {
             throw RuntimeException(e)
         }
