@@ -19,9 +19,8 @@ interface NetworkService {
                @Part("pwd") pwd: RequestBody,
                @Part("answer1") answer1: RequestBody,
                @Part("answer2") answer2: RequestBody,
-               @Part("nickname") nickname: RequestBody,
                @Part("name") name: RequestBody,
-               @Part("fcm_key") fcm_key: RequestBody): Call<SignResponse>
+               @Part("nickname") nickname: RequestBody): Call<SignResponse>
 
     // 로그인
     @POST("account/signin")
