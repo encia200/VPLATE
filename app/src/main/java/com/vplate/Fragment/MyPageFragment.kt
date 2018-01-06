@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.vplate.R
 
-/**
- * Created by chosoomin on 2018. 1. 1..
- */
 class MyPageFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {

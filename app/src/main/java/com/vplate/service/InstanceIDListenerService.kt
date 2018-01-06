@@ -7,6 +7,5 @@ class InstanceIDListenerService : FirebaseInstanceIdService() {
 
     override fun onTokenRefresh() {
         val refreshedToken = FirebaseInstanceId.getInstance().token
-        // 이 token을 서버에 전달 한다.
     }
 }
