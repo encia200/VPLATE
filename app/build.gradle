@@ -98,11 +98,8 @@ dependencies {
     })
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-
-
     compile project(':video-player-manager')
     compile project(':list-visibility-utils')
-
 
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:25.3.1'
@@ -120,14 +117,17 @@ dependencies {
 
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
 
-    'com.github.bumptech.glide:glide:4.4.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+
+    compile 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
 
     testCompile 'junit:junit:4.12'
 }
 repositories {
     mavenCentral()
+    maven { url 'https://maven.google.com' }
 }
 apply plugin: 'com.google.gms.google-services'
