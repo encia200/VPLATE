@@ -10,14 +10,11 @@ import com.volokh.danylo.video_player_manager.meta.MetaData
 import com.volokh.danylo.video_player_manager.ui.VideoPlayerView
 import com.vplate.community.adapter.holders.VideoViewHolder
 
-/**
- * Use this class if you have direct path to the video source
- */
 class DirectLinkVideoItem(private val mDirectUrl: String, videoPlayerManager: VideoPlayerManager<*>, private val context: Context) : BaseVideoItem(videoPlayerManager as VideoPlayerManager<MetaData>) {
     override fun update(position: Int, viewHolder: VideoViewHolder, videoPlayerManager: VideoPlayerManager<*>) {
         viewHolder.mLinearLayout.visibility = View.VISIBLE
         viewHolder.mCover.visibility = View.VISIBLE
-        viewHolder.mCover.setImageBitmap(retriveVideoFrameFromVideo(mDirectUrl))
+        //viewHolder.mCover.setImageBitmap(retriveVideoFrameFromVideo(mDirectUrl))
     }
 
     override fun playNewVideo(currentItemMetaData: MetaData, player: VideoPlayerView, videoPlayerManager: VideoPlayerManager<MetaData>) {

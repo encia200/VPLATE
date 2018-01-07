@@ -61,6 +61,12 @@ class VideoRecyclerViewFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         try {
             mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258231423.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258316509.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258520682.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258871020.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258630793.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258621607.mp4", mVideoPlayerManager, context))
 
             mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
             mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))

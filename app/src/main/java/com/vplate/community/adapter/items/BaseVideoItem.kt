@@ -57,7 +57,7 @@ abstract class BaseVideoItem protected constructor(private val mVideoPlayerManag
     }
 
     fun createView(parent: ViewGroup, screenWidth: Int, screenHeight: Int): View {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.video_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.community_video_item, parent, false)
 
         /*val layoutParams: RelativeLayout.LayoutParams = view.getLayoutParams() as RelativeLayout.LayoutParams*/
         /*layoutParams.height = screenWidth

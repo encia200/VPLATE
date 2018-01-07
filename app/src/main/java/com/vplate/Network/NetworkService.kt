@@ -3,14 +3,8 @@ package com.vplate.Network
 import com.vplate.Network.Post.*
 import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.Part
+import retrofit2.http.*
 
-/**
- * Created by chosoomin on 2018. 1. 4..
- */
 interface NetworkService {
     // 회원 가입
     @Multipart
@@ -26,13 +20,18 @@ interface NetworkService {
     // 로그인
     @POST("account/signin")
     fun signin(
-            @Body loginPost : LoginPost): Call<LoginResponse>
+            @Body loginPost: LoginPost): Call<LoginResponse>
 
-    //회원 가입(이메일 중복 체크)
+    // 회원 가입(이메일 중복 체크)
     @POST("account/overlap")
     fun overlap(
-            @Body emailPost : EmailCheckPost) : Call<EmailCheckResponse>
+            @Body emailPost: EmailCheckPost): Call<EmailCheckResponse>
 
-//    @POST("account/setting/search")
-//    fun pwSearch() : Call<>
+    //13.124.195.255:3003/account/template/list/latest?type=all&cursor=0
+    @GET("account/template/list/latest")
+    fun getTemplates(
+            @Header("tt") tt:String,
+            @Query("type") type: String,
+            @Query("cursor") cursor : Int
+    ): Call<TemplatelistResponse>
 }

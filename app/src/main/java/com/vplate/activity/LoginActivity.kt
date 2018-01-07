@@ -28,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
         login_findPwBtn!!.setOnClickListener{
             val intent = Intent(applicationContext, FindActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-
             startActivity(intent)
             finish()
         }

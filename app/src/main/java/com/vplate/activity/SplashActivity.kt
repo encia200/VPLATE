@@ -2,10 +2,9 @@ package com.vplate.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
-import com.vplate.activity.JoinActivity
 import com.vplate.R
-import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
@@ -13,17 +12,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // 회원가입 버튼
-        splash_joinBtn!!.setOnClickListener{
-            val intent = Intent(applicationContext, JoinActivity::class.java)
-
-            startActivity(intent)
-        }
-
-        // 로그인버튼
-        splash_loginBtn!!.setOnClickListener{
-            val intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-        }
+        Handler().postDelayed(Runnable {
+            startActivity(Intent(applicationContext, LoginMainActivity::class.java))
+        }, 1500)
     }
 }

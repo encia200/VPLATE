@@ -14,7 +14,7 @@ import android.widget.MediaController
 import android.widget.VideoView
 import com.vplate.PickVideoAdapter
 import com.vplate.R
-import com.vplate.VideoData
+import com.vplate.Network.Post.TemplateData
 
 /**
  * Created by chosoomin on 2018. 1. 1..
@@ -22,7 +22,7 @@ import com.vplate.VideoData
 class PickFragment : Fragment(), View.OnClickListener {
 
     private var pickList: RecyclerView? = null
-    private var pickDatas: ArrayList<VideoData>? = null
+    private var pickDatas: ArrayList<TemplateData>? = null
     private var adapter: PickVideoAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,12 +31,7 @@ class PickFragment : Fragment(), View.OnClickListener {
         pickList = view.findViewById(R.id.pickTab_recyclerView) as RecyclerView
         pickList!!.layoutManager = LinearLayoutManager(context)
 
-        pickDatas = ArrayList<VideoData>()
-        pickDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
-        pickDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
-        pickDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
-        pickDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
-        pickDatas!!.add(VideoData(R.drawable.jungwoo, "반짝반짝 네온사인", "#해시태그 #해시태그 #해시태그", "0:30"))
+        pickDatas = ArrayList<TemplateData>()
 
         adapter = PickVideoAdapter(pickDatas)
         adapter!!.setOnItemClickListener(this)
