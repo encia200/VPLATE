@@ -20,7 +20,7 @@ interface NetworkService {
     // 로그인
     @POST("account/signin")
     fun signin(
-            @Body loginPost: LoginPost): Call<LoginResponse>
+            @Body loginPost : LoginPost): Call<LoginResponse>
 
     // 회원 가입(이메일 중복 체크)
     @POST("account/overlap")
@@ -34,4 +34,12 @@ interface NetworkService {
             @Query("type") type: String,
             @Query("cursor") cursor : Int
     ): Call<TemplatelistResponse>
+    // 비밀번호 찾기
+    @POST("account/setting/search")
+    fun pwFind(
+            @Body pwPost : PwAnswerCheckPost) : Call<SignResponse>
+
+    @POST("account/setting/change")
+    fun pwSet(
+            @Body loginPost : PwSetPost) : Call<SignResponse>
 }

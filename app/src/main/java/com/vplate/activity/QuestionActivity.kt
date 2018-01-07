@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.NetworkService
-import com.vplate.Network.Post.SignResponse
+import com.vplate.Network.Post.Response.SignResponse
 import com.vplate.R
 import kotlinx.android.synthetic.main.activity_question.*
 import okhttp3.MediaType
@@ -74,9 +74,8 @@ class QuestionActivity : AppCompatActivity() {
         val nickname = RequestBody.create(MediaType.parse("text/plain"), getNickname)
         val answer1 = RequestBody.create(MediaType.parse("text/plain"), question_q1Edit.text.toString())
         val answer2 = RequestBody.create(MediaType.parse("text/plain"), question_q2Edit.text.toString())
-        val fcm_key = RequestBody.create(MediaType.parse("text/plain"), "123")
 
-        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, nickname, name, fcm_key) // 회원가입할 때는 이미지 안보냄(null로 처리)
+        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, name, nickname) // 회원가입할 때는 이미지 안보냄(null로 처리)
 
         // Response 받은거
         detailResponse.enqueue(object : Callback<SignResponse> {
