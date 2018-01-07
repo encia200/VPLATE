@@ -18,11 +18,11 @@ import retrofit2.Response
 
 class QuestionActivity : AppCompatActivity() {
 
-    private val TAG : String = "LOG::Sign" // 이거슨 가입할 때 쓴당
+    private val TAG: String = "LOG::Sign" // 이거슨 가입할 때 쓴당
 
     private var networkService: NetworkService? = null // 넽웕 썰비스
 
-    private var flag : Int = 1
+    private var flag: Int = 1
 
     // 앞 화면에서 받아온 애들 담아놓는 변수(가입시 필요한 이메일, 비밀번호, 이름, 닉네임)
     var getEmail: String? = null
@@ -50,9 +50,7 @@ class QuestionActivity : AppCompatActivity() {
             // 질문에 대답을 안적으면 화면 못넘김
             if (question_q1Edit.text.length == 0 || question_q1Edit.text.length == 0) {
                 Toast.makeText(applicationContext, "모든 질문에 답해주세요.", Toast.LENGTH_LONG).show()
-            }
-
-            else {
+            } else {
                 if (flag == 1) {
                     val intent = Intent(applicationContext, LoginActivity::class.java)
 
@@ -80,16 +78,15 @@ class QuestionActivity : AppCompatActivity() {
         // Response 받은거
         detailResponse.enqueue(object : Callback<SignResponse> {
             override fun onFailure(call: Call<SignResponse>?, t: Throwable?) {
-                Log.v(TAG,"가입 쀄일")
+                Log.v(TAG, "가입 쀄일")
             }
 
             override fun onResponse(call: Call<SignResponse>, response: Response<SignResponse>) {
                 if (response.isSuccessful) { //  가입 성공
                     ApplicationController.instance!!.makeToast("가입 완료해버렸다")
-                    Log.v(TAG,"가입 성공~~~~~~")
+                    Log.v(TAG, "가입 성공~~~~~~")
                     flag = 1
-                }
-                else { // 가입 실패
+                } else { // 가입 실패
                     if (response.code().toString() == "401") { //  이메일 또는 닉네임 중복\
                         flag = 0
                     }
