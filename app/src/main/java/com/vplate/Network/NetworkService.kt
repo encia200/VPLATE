@@ -1,6 +1,9 @@
 package com.vplate.Network
 
 import com.vplate.Network.Post.*
+import com.vplate.Network.Post.Response.EmailCheckResponse
+import com.vplate.Network.Post.Response.LoginResponse
+import com.vplate.Network.Post.Response.SignResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
