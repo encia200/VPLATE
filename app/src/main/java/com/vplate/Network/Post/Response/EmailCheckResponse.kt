@@ -1,4 +1,4 @@
-package com.vplate.Network.Post
+package com.vplate.Network.Post.Response
 
 /**
  * Created by chosoomin on 2018. 1. 6..

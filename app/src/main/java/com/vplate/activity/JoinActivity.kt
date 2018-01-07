@@ -11,7 +11,7 @@ import android.widget.Toast
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.NetworkService
 import com.vplate.Network.Post.EmailCheckPost
-import com.vplate.Network.Post.EmailCheckResponse
+import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.R
 import kotlinx.android.synthetic.main.activity_join.*
 import retrofit2.Call

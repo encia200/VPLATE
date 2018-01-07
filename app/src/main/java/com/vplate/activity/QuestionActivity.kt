@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.NetworkService
-import com.vplate.Network.Post.SignResponse
+import com.vplate.Network.Post.Response.SignResponse
 import com.vplate.R
 import kotlinx.android.synthetic.main.activity_question.*
 import okhttp3.MediaType

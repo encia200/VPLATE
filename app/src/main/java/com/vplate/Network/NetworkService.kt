@@ -1,6 +1,12 @@
 package com.vplate.Network
 
-import com.vplate.Network.Post.*
+import com.vplate.Network.Post.EmailCheckPost
+import com.vplate.Network.Post.LoginPost
+import com.vplate.Network.Post.PwAnswerCheckPost
+import com.vplate.Network.Post.PwSetPost
+import com.vplate.Network.Post.Response.EmailCheckResponse
+import com.vplate.Network.Post.Response.LoginResponse
+import com.vplate.Network.Post.Response.SignResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.Body
@@ -32,6 +38,12 @@ interface NetworkService {
     fun overlap(
             @Body emailPost : EmailCheckPost) : Call<EmailCheckResponse>
 
-//    @POST("account/setting/search")
-//    fun pwSearch() : Call<>
+    // 비밀번호 찾기
+    @POST("account/setting/search")
+    fun pwFind(
+            @Body pwPost : PwAnswerCheckPost) : Call<SignResponse>
+
+    @POST("account/setting/change")
+    fun pwSet(
+            @Body loginPost : PwSetPost) : Call<SignResponse>
 }
