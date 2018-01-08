@@ -1,8 +1,6 @@
 package com.vplate.Fragment
 
-import android.app.Dialog
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -10,9 +8,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.MediaController
-import android.widget.VideoView
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
 import com.vplate.Network.NetworkService
@@ -20,7 +15,7 @@ import com.vplate.Network.Post.Response.TemplatelistResponse
 import com.vplate.Network.Post.TemplateData
 import com.vplate.R
 import com.vplate.TemplateAdapter
-import com.vplate.activity.MakingActivity
+import com.vplate.activity.TemplateInfoActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call
@@ -70,33 +65,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         val idx: Int = home_recyclerView.getChildAdapterPosition(v)
-        val intent = Intent(context, MakingActivity::class.java)
+
+
+        val intent = Intent(context, TemplateInfoActivity::class.java)
+        intent.putExtra("template_id",templateDatas!![idx].template_id ) // 템플릿 id
         startActivity(intent)
-        // 비디오 자동재생하는 다이얼로그
-        val dialog = Dialog(activity)
-        dialog.setContentView(R.layout.dialog_video)
-        dialog.setTitle("Title...")
-
-        // set the custom dialog components - text, image and button
-
-        val vid = dialog.findViewById(R.id.dialog_videoView) as VideoView
-        val vidUri = Uri.parse("https://youtu.be/u3TAnY6ktyU")
-
-        vid.setVideoURI(vidUri)
-
-        // MediaController 설정
-        var mediaController = MediaController(context)
-        vid.setMediaController(mediaController)
-
-        vid.start()
-
-        // dialogButton
-        val dialogButton = dialog.findViewById(R.id.dialog_makeBtn) as Button
-
-        dialogButton.setOnClickListener() {
-            dialog.dismiss()
-        }
-        dialog.show()
     }
 
 }

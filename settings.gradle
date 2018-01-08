@@ -1,1 +1,1 @@
-include ':app', ':list-visibility-utils', ':video-player-manager'
+include ':app', ':list-visibility-utils', ':video-player-manager', ':imagecropview', ':k4l-video-trimmer'

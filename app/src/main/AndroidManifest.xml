@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".Network.ApplicationController"
@@ -29,9 +31,10 @@
         <activity android:name=".activity.PwSetActivity" />
         <activity android:name=".activity.PwSetCompleteActivity" />
         <activity android:name=".activity.CommunityActivity" />
-        <activity android:name=".activity.MakingActivity" />
-        <activity android:name=".activity.VideoEditActivity" />
-
+        <activity android:name=".activity.TemplateInfoActivity" />
+        <activity android:name=".activity.TemplateEditActivity" />
+        <activity android:name=".activity.CropActivity"/>
+        <activity android:name=".activity.TrimmerActivity"/>
         <service android:name=".service.FcmListenerService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
