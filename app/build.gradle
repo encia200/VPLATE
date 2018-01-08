@@ -126,6 +126,9 @@ dependencies {
 
     compile 'com.mikhaellopez:circularimageview:3.0.2'
 
+    compile project(path: ':imagecropview')
+    compile project(path: ':k4l-video-trimmer')
+
     testCompile 'junit:junit:4.12'
 }
 repositories {
