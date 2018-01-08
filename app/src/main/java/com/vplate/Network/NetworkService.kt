@@ -1,9 +1,13 @@
 package com.vplate.Network
 
-import com.vplate.Network.Post.*
+import com.vplate.Network.Post.EmailCheckPost
+import com.vplate.Network.Post.LoginPost
+import com.vplate.Network.Post.PwAnswerCheckPost
+import com.vplate.Network.Post.PwSetPost
 import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.Network.Post.Response.LoginResponse
 import com.vplate.Network.Post.Response.SignResponse
+import com.vplate.Network.Post.Response.TemplatelistResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -36,11 +40,13 @@ interface NetworkService {
             @Query("type") type: String,
             @Query("cursor") cursor : Int
     ): Call<TemplatelistResponse>
+
     // 비밀번호 찾기
     @POST("account/setting/search")
     fun pwFind(
             @Body pwPost : PwAnswerCheckPost) : Call<SignResponse>
 
+    // 비밀번호 재설정
     @POST("account/setting/change")
     fun pwSet(
             @Body loginPost : PwSetPost) : Call<SignResponse>

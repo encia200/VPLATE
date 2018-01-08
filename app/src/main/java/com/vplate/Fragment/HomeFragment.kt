@@ -16,8 +16,8 @@ import android.widget.VideoView
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
 import com.vplate.Network.NetworkService
+import com.vplate.Network.Post.Response.TemplatelistResponse
 import com.vplate.Network.Post.TemplateData
-import com.vplate.Network.Post.TemplatelistResponse
 import com.vplate.R
 import com.vplate.TemplateAdapter
 import com.vplate.activity.MakingActivity
@@ -33,6 +33,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private var templateList: RecyclerView? = null
     private var templateDatas: ArrayList<TemplateData>? = null
     private var adapter: TemplateAdapter? = null
+
+    //
+    val PREFS_NAME = "LoginPrefs"
+    //
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater!!.inflate(R.layout.fragment_home, container, false)
