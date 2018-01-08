@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="마이페이지"
-        android:textSize="17dp"
+        android:textSize="17.2sp"
+        android:textColor="#1d1d1d"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"/>
 
@@ -50,13 +51,61 @@
     </RelativeLayout>
 
     <!-- 리스트뷰 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="계정"
+        android:background="#fafafa"
+        />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.55"
+        android:layout_height="wrap_content"
         android:id="@+id/mypage_list"
-        android:divider="#000000">
+        android:divider="#eeeeee"
+        >
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="설정"
+        android:background="#fafafa"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/push_button_layout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="푸시 알람"
+            android:id="@+id/push_text"
+            />
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_button"
+        app:track="@drawable/switch_track_on"
+        android:layout_alignParentRight="true"
+        />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="지원"
+        android:background="#fafafa"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/support_list"
+        android:divider="#f000"
+        android:dividerHeight="1dip"
+        >
     </ListView>
 
 </LinearLayout>

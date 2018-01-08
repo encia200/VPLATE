@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.vplate.R
-import com.vplate.activity.TemplateEditActivity
 import life.knowledge4.videotrimmer.K4LVideoTrimmer
 import life.knowledge4.videotrimmer.interfaces.OnK4LVideoListener
 import life.knowledge4.videotrimmer.interfaces.OnTrimVideoListener
