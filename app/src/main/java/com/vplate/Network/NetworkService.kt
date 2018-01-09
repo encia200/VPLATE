@@ -41,6 +41,7 @@ interface NetworkService {
     fun pwFind(
             @Body pwPost : PwAnswerCheckPost) : Call<SignResponse>
 
+    //비밀번호 변경
     @POST("account/setting/change")
     fun pwSet(
             @Body loginPost : PwSetPost) : Call<SignResponse>

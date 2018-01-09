@@ -56,11 +56,8 @@ class MyPageListViewAdapter : BaseAdapter {
             var a : String = data!!.get(pos).getTitle() as String
             Log.v("seolwon",a)
         }
-        Log.v("seolwon3",convertView!!.toString())
         var text : TextView = convertView!!.findViewById(R.id.mypage_list_name) as TextView
-        Log.v("seolwon1",text.toString())
-        Log.v("seolwon2",data[position].getTitle())
-        Log.v("seolwon3",convertView!!.toString())
+
 
 
         text.setText(data.get(position).getTitle())
