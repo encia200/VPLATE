@@ -13,16 +13,20 @@ class LoginMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_loginmain)
 
         // 회원가입 버튼
-
         splash_joinBtn!!.setOnClickListener {
             val intent = Intent(applicationContext, JoinActivity::class.java)
             startActivity(intent)
+
+//            finish()
         }
 
         // 로그인버튼
         splash_loginBtn!!.setOnClickListener {
             val intent = Intent(applicationContext, LoginActivity::class.java)
+
             startActivity(intent)
+
+//            finish()
         }
     }
 }
