@@ -20,12 +20,12 @@
         "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable/abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable/abc_ic_search_api_material.xml",
         "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",

@@ -14,7 +14,7 @@ import android.widget.MediaController
 import android.widget.VideoView
 import com.vplate.PickVideoAdapter
 import com.vplate.R
-import com.vplate.Network.Post.TemplateData
+import com.vplate.Network.Get.TemplateData
 
 /**
  * Created by chosoomin on 2018. 1. 1..

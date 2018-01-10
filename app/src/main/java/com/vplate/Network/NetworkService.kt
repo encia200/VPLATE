@@ -1,5 +1,7 @@
 package com.vplate.Network
 
+import com.vplate.Network.Get.Response.CommunityResponse
+import com.vplate.Network.Get.Response.TemplatelistResponse
 import com.vplate.Network.Post.EmailCheckPost
 import com.vplate.Network.Post.LoginPost
 import com.vplate.Network.Post.PwAnswerCheckPost
@@ -7,12 +9,12 @@ import com.vplate.Network.Post.PwSetPost
 import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.Network.Post.Response.LoginResponse
 import com.vplate.Network.Post.Response.SignResponse
-import com.vplate.Network.Post.Response.TemplatelistResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
 interface NetworkService {
+
     // 회원 가입
     @Multipart
     @POST("account/signup")
@@ -61,4 +63,17 @@ interface NetworkService {
     @POST("account/setting/change")
     fun pwSet(
             @Body loginPost : PwSetPost) : Call<SignResponse>
+
+    // 커뮤니티 리스트 (최신순)
+    @GET("community/list/latest")
+    fun communityLatest(
+            @Header("tt") tt:String
+    ) : Call<CommunityResponse>
+
+    // 커뮤니티 리스트 (Top 10)
+    @GET("community/list/ranking")
+    fun communityTop10(
+            @Header("tt") tt:String
+    ) : Call<CommunityResponse>
+
 }

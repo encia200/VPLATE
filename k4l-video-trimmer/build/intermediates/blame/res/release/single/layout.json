@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/layout/notification_template_part_time.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/layout/notification_template_part_time.xml"
-    },
-    {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml",
         "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",

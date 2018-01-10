@@ -1,6 +1,6 @@
-package com.vplate.Network.Post.Response
+package com.vplate.Network.Get.Response
 
-import com.vplate.Network.Post.TemplateListData
+import com.vplate.Network.Get.TemplateListData
 
 data class TemplatelistResponse(
         var status : String,
