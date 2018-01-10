@@ -44,7 +44,7 @@ class MyPageListViewAdapter : BaseAdapter {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
 
         Log.v("getView","성공!")
-//        viewHolder=viewholder()
+//        var viewHolder=viewholder()
         var pos : Int  = position
         var context : Context = parent.context
         var convertView : View? = null
@@ -52,15 +52,13 @@ class MyPageListViewAdapter : BaseAdapter {
         if(convertView == null){
             inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.item_mypage,parent,false)
-
             var a : String = data!!.get(pos).getTitle() as String
-            Log.v("seolwon",a)
+            Log.v("seo",a)
+
         }
         var text : TextView = convertView!!.findViewById(R.id.mypage_list_name) as TextView
-
-
-
         text.setText(data.get(position).getTitle())
+
 
 
         return convertView

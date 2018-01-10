@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.vplate.Network.ApplicationController
-import com.vplate.Network.CommonData
 import com.vplate.Network.NetworkService
 import com.vplate.Network.Post.PwSetPost
 import com.vplate.Network.Post.Response.SignResponse
@@ -21,26 +20,26 @@ import retrofit2.Response
  */
 class PwChangeActivity:AppCompatActivity() {
 
+    var pwd : String? = null
     var email : String? = null
     var pwFlag : Int = 0
+
+    var settings : SharedPreferences? = null
 
     private var networkService: NetworkService? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_pwchange)
         networkService = ApplicationController.instance!!.networkService//네트워크 통신
-        email = CommonData.loginResponse!!.data.user_email
 
         // 비밀번호 가져오기
-        var settings : SharedPreferences? = null
         settings = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
 
-        var pwd = settings!!.getString("pwd", "")
+        pwd = settings!!.getString("pwd", "")
+        email = settings!!.getString("user_email", "")
 
 
         checking_btn!!.setOnClickListener(){
-            Toast.makeText(applicationContext, pwd, Toast.LENGTH_LONG).show()
-
             if (pwd.equals(pw_current.text.toString()))
             {
                 pwSet()
@@ -55,7 +54,7 @@ class PwChangeActivity:AppCompatActivity() {
 
     }
     fun pwSet() {
-        val pwSetResponse = networkService!!.pwSet(PwSetPost(email!!, changed_pw.text.toString()))
+        val pwSetResponse = networkService!!.pwSet(PwSetPost(email!!, changed_pw.text.toString()!!))
 
         pwSetResponse.enqueue(object : Callback<SignResponse> {
 
@@ -63,6 +62,10 @@ class PwChangeActivity:AppCompatActivity() {
                 if (response!!.isSuccessful) {
                     ApplicationController.instance!!.makeToast("비밀번호 변경이 완료되었습니다.")
 
+
+                    val editor = settings!!.edit()
+                    editor.putString("pwd", changed_pw.text.toString())
+                    editor.commit()
                     finish()
                 }
             }

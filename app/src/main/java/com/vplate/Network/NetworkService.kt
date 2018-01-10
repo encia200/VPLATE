@@ -21,7 +21,8 @@ interface NetworkService {
                @Part("answer1") answer1: RequestBody,
                @Part("answer2") answer2: RequestBody,
                @Part("nickname") nickname: RequestBody,
-               @Part("name") name: RequestBody): Call<SignResponse>
+               @Part("name") name: RequestBody,
+                @Part("type") type: RequestBody): Call<SignResponse>
 
     // 로그인
     @POST("account/signin")

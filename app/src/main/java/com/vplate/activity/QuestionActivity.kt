@@ -72,8 +72,9 @@ class QuestionActivity : AppCompatActivity() {
         val nickname = RequestBody.create(MediaType.parse("text/plain"), getNickname)
         val answer1 = RequestBody.create(MediaType.parse("text/plain"), question_q1Edit.text.toString())
         val answer2 = RequestBody.create(MediaType.parse("text/plain"), question_q2Edit.text.toString())
+        val type = RequestBody.create(MediaType.parse("text/plain"), "일반")
 
-        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, name, nickname) // 회원가입할 때는 이미지 안보냄(null로 처리)
+        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, name, nickname, type) // 회원가입할 때는 이미지 안보냄(null로 처리)
 
         // Response 받은거
         detailResponse.enqueue(object : Callback<SignResponse> {
