@@ -28,91 +28,79 @@
             android:textSize="13.4sp" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/home_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@id/home_tabBar">
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/cate_img_1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:background="@drawable/cate_img_1"/>
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_cate_img_1"
-            android:src="@drawable/cate_img_2" />
+            android:background="@drawable/cate_img_2" />
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_cate_img_2"
-            android:src="@drawable/cate_img_3" />
+            android:background="@drawable/cate_img_3" />
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/home_cate_img_3"
-            android:src="@drawable/cate_img_4" />
+            android:background="@drawable/cate_img_4" />
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/home_cate_img_4"
-            android:src="@drawable/cate_img_5" />
+            android:background="@drawable/cate_img_5" />
 
-        <ImageView
+        <ImageButton
+            android:layout_weight="1"
             android:id="@+id/home_cate_img_6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_cate_img_5"
-            android:src="@drawable/cate_img_6" />
-        <ImageView
-            android:id="@+id/home_triangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/triangle" />
-    </RelativeLayout>
+            android:background="@drawable/cate_img_6" />
+    </LinearLayout>
+
+
 
     <RelativeLayout
         android:id="@+id/home_btnBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44.5dp"
         android:layout_below="@id/home_category">
 
-        <TextView
+        <ImageButton
+            android:id="@+id/home_newBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_new"/>
+
+        <ImageButton
             android:id="@+id/home_hotBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:gravity="center_horizontal"
-            android:text="인기순"
-            android:textColor="#686868"
-            android:textSize="11.5sp" />
+            android:background="@drawable/lanking"
+            android:layout_toRightOf="@id/home_newBtn"/>
 
-        <TextView
-            android:id="@+id/home_latestBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/home_hotBtn"
-            android:gravity="center_horizontal"
-            android:text="최신순"
-            android:textColor="#1d1d1d"
-            android:textSize="11.5sp" />
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -123,6 +111,5 @@
         android:padding="10dp">
 
     </android.support.v7.widget.RecyclerView>
-
 
 </RelativeLayout>

@@ -34,6 +34,7 @@ interface NetworkService {
     fun overlap(
             @Body emailPost: EmailCheckPost): Call<EmailCheckResponse>
 
+    // 템플릿 리스트 얻어오기 (최신순)
     //13.124.195.255:3003/account/template/list/latest?type=all&cursor=0
     @GET("account/template/list/latest")
     fun getTemplates(
@@ -41,6 +42,15 @@ interface NetworkService {
             @Query("type") type: String,
             @Query("cursor") cursor : Int
     ): Call<TemplatelistResponse>
+
+    // 템플릿 리스트 얻어오기 (인기순)
+    // 13.124.195.255:3003/account/template/list/popularity?type=all&cursor=0
+    @GET("account/template/list/popularity")
+    fun getTemplatesPopularity(
+            @Header("tt") tt:String,
+            @Query("type") type: String,
+            @Query("cursor") cursor : Int
+    ) : Call<TemplatelistResponse>
 
     // 비밀번호 찾기
     @POST("account/setting/search")

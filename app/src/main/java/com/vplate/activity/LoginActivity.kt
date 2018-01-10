@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.google.firebase.iid.FirebaseInstanceId
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
@@ -28,6 +29,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         networkService = ApplicationController.instance!!.networkService // 통신
+
+        if (login_emailEdit.hasFocus()) {
+//            login_emailEdit.baseli
+            Toast.makeText(applicationContext, "focus", Toast.LENGTH_LONG).show()
+        }
 
         // 비밀번호 찾기 버튼 (비밀번호 찾기 화면으로 넘어감)
         login_findPwBtn!!.setOnClickListener{

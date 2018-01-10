@@ -6,25 +6,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Welcome!"
-        android:textSize="30sp" />
+        android:src="@drawable/welcome"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="59dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:textSize="11.5sp"
+        android:textColor="#8c8c8c"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="12dp"
         android:text="이메일/비밀번호 분실시를 위해 입력해주세요." />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="60dp"
         android:text="질문1_다시 태어난다면 되고 싶은 것은?" />
 
@@ -32,31 +37,34 @@
         android:id="@+id/question_q1Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:textSize="11dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="23.5dp"
         android:text="질문2_광어, 연어, 도미, 오징어, 우럭, 참치 중에서 고른다면?" />
 
     <EditText
         android:id="@+id/question_q2Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:textSize="11dp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/question_startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="시작하기" />
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/inputcomple"/>
 
 </LinearLayout>

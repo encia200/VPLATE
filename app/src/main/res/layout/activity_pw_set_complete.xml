@@ -10,33 +10,30 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호가"
-        android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="25sp"
+        android:textColor="#1d1d1d"
+        android:text="비밀번호가
+재설정되었습니다!"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="32dp"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="재설정되었습니다!"
-        android:textSize="30sp"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
         android:text="단 몇 분만에 고품질의 영상을 만들어보세요"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="18sp"/>
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="32dp"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/pw_set_complete_loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인하기"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
+        android:background="@drawable/letslogin"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="78.5dp"/>
 
 
 </LinearLayout>
