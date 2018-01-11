@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    >
+    <ImageView
+        android:layout_marginLeft="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/article_type"
+        android:src="@drawable/icon_photo"
+        />
+    <TextView
+        android:id="@+id/text_story"
+        android:layout_marginLeft="15dp"
+        android:textColor="#8c8c8c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사진을 첨부해주세요"/>
+
+    <TextView
+        android:layout_marginLeft="112dp"
+        android:textColor="#1d1d1d"
+        android:id="@+id/txt_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/3"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/ic_keyboard_arrow_down_black_48_px"/>
+
+
+
+</LinearLayout>

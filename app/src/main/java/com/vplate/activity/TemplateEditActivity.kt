@@ -22,14 +22,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.naver.android.helloyako.imagecrop.util.BitmapLoadUtils
+import com.vplate.HorizontalAdapter
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
 import com.vplate.Network.Get.Response.TemplateIdResponse
@@ -73,6 +70,8 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             template_edit_photo_upload!!.setOnClickListener(this)
         }
 
+        scenePhoto(100)//템플릿 아이디 받아와서 이미지 URL받아오기
+
         // RecyclerView binding
         mHorizontalView = findViewById(R.id.template_timeline_recycler_view) as RecyclerView
 
@@ -100,8 +99,8 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         mAdapter!!.setOnItemClick(this)
         // set Adapter
         mHorizontalView!!.adapter = mAdapter
-        scenePhoto()
 
+        buttonEvent()//비디오, 사진, 텍스트 편집 선택기
 
     }
 
@@ -329,57 +328,6 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    internal class HorizontalAdapter : RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>() {
-        private var onItemClick: View.OnClickListener? = null
-
-        private var HorizontalDatas: ArrayList<HorizontalData>? = null
-
-        fun setData(list: ArrayList<HorizontalData>) {
-            HorizontalDatas = list
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalViewHolder {
-
-            // 사용할 아이템의 뷰를 생성해준다.
-            val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.horizon_recycler_items, parent, false)
-
-            val holder = HorizontalViewHolder(view)
-            view.setOnClickListener(onItemClick)
-
-            return holder
-        }
-
-        override fun onBindViewHolder(holder: HorizontalViewHolder, position: Int) {
-            val data = HorizontalDatas!![position]
-            holder.sceneNum.text = data.scene
-            holder.image.setImageResource(data.img)
-
-        }
-
-        override fun getItemCount(): Int {
-            return HorizontalDatas!!.size
-        }
-
-        fun setOnItemClick(i: View.OnClickListener) {
-            onItemClick = i
-        }
-
-
-        internal class HorizontalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-            var image: ImageView
-            var sceneNum: TextView
-
-            init {
-                image = itemView.findViewById(R.id.template_timeline_itemimage) as ImageView
-                sceneNum = itemView.findViewById(R.id.scene_num) as TextView
-
-            }
-        }
-
-        internal class HorizontalData(val scene: String, val img: Int)
-    }
 
     //비디오
     private fun startTrimActivity(uri: Uri) {
@@ -407,8 +355,8 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun scenePhoto() {
-        val sceneResponse = networkService!!.ScenePhoto(CommonData.loginResponse!!.token, 100)
+    fun scenePhoto(temp_num:Int) {
+        val sceneResponse = networkService!!.ScenePhoto(CommonData.loginResponse!!.token, temp_num)
         sceneResponse.enqueue(object : Callback<TemplateIdResponse> {
             override fun onResponse(call: Call<TemplateIdResponse>?, response: Response<TemplateIdResponse>?) {
                 if (response!!.isSuccessful) {
@@ -439,4 +387,22 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
+    fun buttonEvent(){
+        down_btn01.setOnClickListener {
+            template_edit_video_select.visibility = View.VISIBLE
+            template_edit_photo_select.visibility = View.GONE
+            template_edit_text_select.visibility = View.GONE
+        }
+        down_btn02.setOnClickListener {
+            template_edit_video_select.visibility = View.GONE
+            template_edit_photo_select.visibility = View.VISIBLE
+            template_edit_text_select.visibility = View.GONE
+        }
+        down_btn03.setOnClickListener {
+            template_edit_video_select.visibility = View.GONE
+            template_edit_photo_select.visibility = View.GONE
+            template_edit_text_select.visibility = View.VISIBLE
+        }
+    }
+
 }
