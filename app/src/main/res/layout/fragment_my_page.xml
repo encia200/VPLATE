@@ -26,7 +26,8 @@
             android:layout_height="80dp"
             android:src="@drawable/jungwoo"
             android:id="@+id/mypage_profile"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/mypage_nameTxt" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -58,13 +59,11 @@
         />
 
     <ListView
+        android:id="@+id/mypage_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mypage_list"
         android:divider="#f000"
-        android:dividerHeight="1dip"
-        >
-    </ListView>
+        android:dividerHeight="1dip"></ListView>
 
     <TextView
         android:layout_width="match_parent"
