@@ -29,11 +29,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.naver.android.helloyako.imagecrop.util.BitmapLoadUtils
-import com.vplate.activity.CropActivity
+import com.vplate.Network.ApplicationController
+import com.vplate.Network.CommonData
+import com.vplate.Network.Get.Response.TemplateIdResponse
+import com.vplate.Network.NetworkService
 import com.vplate.R
-import com.vplate.activity.TrimmerActivity
+import com.vplate.activity.CropActivity
 import kotlinx.android.synthetic.main.activity_template_edit.*
 import life.knowledge4.videotrimmer.utils.FileUtils
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
@@ -45,11 +51,13 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     internal var imageWidth: Int = 0
     internal var imageHeight: Int = 0
     var filePathUri: Uri? = null
+    private var networkService: NetworkService? = null // 넽웕 썰비스
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_template_edit)
-
+        networkService = ApplicationController.instance!!.networkService // 통신
         imageWidth = 1000
         imageHeight = 1000
 
@@ -93,15 +101,23 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-//        val idx = mHorizontalView!!.getChildAdapterPosition(v) // 씬 번호
+        val idx = mHorizontalView!!.getChildAdapterPosition(v) // 씬 번호
 
-        when (v.id) { // 동적으로 뷰 생성하게되면 없어질 예정
-            R.id.template_edit_video_upload -> {
-                pickVideoFromGallery()
+//        when (v.id) { // 동적으로 뷰 생성하게되면 없어질 예정
+//            R.id.template_edit_video_upload -> {
+//                pickVideoFromGallery()
+//            }
+//            R.id.template_edit_photo_upload -> {
+//                pickImageFromGallery()
+//            }
+//        }
+
+        when(idx){
+            0->{
+                scenePhoto()
+
             }
-            R.id.template_edit_photo_upload -> {
-                pickImageFromGallery()
-            }
+
         }
     }
 
@@ -382,5 +398,24 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             ActivityCompat.requestPermissions(this, arrayOf(permission), requestCode)
         }
+    }
+
+    fun scenePhoto() {
+        val sceneResponse = networkService!!.ScenePhoto(CommonData.loginResponse!!.token, 100)
+        sceneResponse.enqueue(object : Callback<TemplateIdResponse> {
+            override fun onResponse(call: Call<TemplateIdResponse>?, response: Response<TemplateIdResponse>?) {
+                if (response!!.isSuccessful) {
+                    Log.v("photoUrl",response!!.body().data.get(0))
+
+
+                } else {
+                    ApplicationController.instance!!.makeToast("못 받음ㅠ")
+                }
+            }
+
+            override fun onFailure(call: Call<TemplateIdResponse>?, t: Throwable?) {
+                ApplicationController.instance!!.makeToast("통신 오류")
+            }
+        })
     }
 }

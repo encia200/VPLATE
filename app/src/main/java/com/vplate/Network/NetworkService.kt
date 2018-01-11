@@ -1,6 +1,7 @@
 package com.vplate.Network
 
 import com.vplate.Network.Get.Response.CommunityResponse
+import com.vplate.Network.Get.Response.TemplateIdResponse
 import com.vplate.Network.Get.Response.TemplatelistResponse
 import com.vplate.Network.Post.EmailCheckPost
 import com.vplate.Network.Post.LoginPost
@@ -75,5 +76,13 @@ interface NetworkService {
     fun communityTop10(
             @Header("tt") tt:String
     ) : Call<CommunityResponse>
+
+     // 씬정보가져오기
+    //13.124.195.255:3003/account/template/inform/scene?templateid={ templateid }
+    @GET("account/template/inform/scene")
+    fun ScenePhoto(
+             @Header("tt") tt:String,
+             @Query("templateid") templateid:Int
+     ) : Call<TemplateIdResponse>
 
 }
