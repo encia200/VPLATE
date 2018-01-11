@@ -10,6 +10,7 @@ import com.vplate.Network.Post.PwSetPost
 import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.Network.Post.Response.LoginResponse
 import com.vplate.Network.Post.Response.SignResponse
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -25,7 +26,8 @@ interface NetworkService {
                @Part("answer2") answer2: RequestBody,
                @Part("nickname") nickname: RequestBody,
                @Part("name") name: RequestBody,
-                @Part("type") type: RequestBody): Call<SignResponse>
+               @Part("type") type: RequestBody,
+               @Part profile: MultipartBody.Part?): Call<SignResponse>
 
     // 로그인
     @POST("account/signin")

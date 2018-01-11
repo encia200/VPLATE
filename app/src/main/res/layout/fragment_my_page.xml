@@ -7,7 +7,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="42.5dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_gravity="center_vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,39 +24,56 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:layout_marginTop="35dp">
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/jungwoo"
+            android:src="@drawable/jjang1"
             android:id="@+id/mypage_profile"
+            android:layout_centerHorizontal="true"
             />
 
         <TextView
+            android:layout_marginTop="8.5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mypage_profile"
-            android:text="조수민"
+            android:text="밍밍이"
             android:textSize="11dp"
-            android:id="@+id/mypage_nameTxt"
+            android:id="@+id/mypage_nickname"
             android:includeFontPadding="false"
-            android:textColor="#323232"/>
+            android:textColor="#323232"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/mypage_nameTxt"
+            android:layout_below="@+id/mypage_nickname"
             android:textSize="10dp"
+            android:textColor="#8c8c8c"
             android:includeFontPadding="false"
             android:id="@+id/mypage_email"
             android:text="vplate@vplate.com"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mypage_email"
+            android:textSize="10dp"
+            android:textColor="#8c8c8c"
+            android:includeFontPadding="false"
+            android:id="@+id/mypage_name"
+            android:text="조수민"
+            android:layout_marginTop="6dp"
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
     <!-- 리스트뷰 -->
     <TextView
 
+        android:layout_marginTop="21.5dp"
         android:lineSpacingExtra="110.9sp"
         android:layout_width="match_parent"
         android:layout_height="25.5dp"
@@ -69,7 +87,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="wrap_content"
         android:id="@+id/mypage_list"
         android:divider="#eeeeee"
         android:dividerHeight="1.5dp"
@@ -96,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="푸시 알람"
+            android:textColor="#1d1d1d"
             android:id="@+id/push_text"
             android:layout_centerVertical="true"
             />

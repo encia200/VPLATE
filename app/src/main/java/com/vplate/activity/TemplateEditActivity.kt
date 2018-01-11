@@ -28,6 +28,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.naver.android.helloyako.imagecrop.util.BitmapLoadUtils
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
@@ -40,7 +41,6 @@ import life.knowledge4.videotrimmer.utils.FileUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
 class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     private var mHorizontalView: RecyclerView? = null
@@ -52,6 +52,7 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     internal var imageHeight: Int = 0
     var filePathUri: Uri? = null
     private var networkService: NetworkService? = null // 넽웕 썰비스
+    var ScenePhoto : ArrayList<String>? = ArrayList()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,11 +92,15 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         data!!.add(HorizontalAdapter.HorizontalData("aaa",R.mipmap.ic_launcher))
         data!!.add(HorizontalAdapter.HorizontalData("bbb",R.mipmap.ic_launcher))
         data!!.add(HorizontalAdapter.HorizontalData("ccc",R.mipmap.ic_launcher))
+        /*for(i in 1..ScenePhoto!!.size){
+            data!!.add(HorizontalAdapter.HorizontalData("aaa"+i,R.mipmap.ic_launcher))
+        }*/
         // set Data
         mAdapter!!.setData(data!!)
         mAdapter!!.setOnItemClick(this)
         // set Adapter
         mHorizontalView!!.adapter = mAdapter
+        scenePhoto()
 
 
     }
@@ -114,7 +119,10 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
 
         when(idx){
             0->{
-                scenePhoto()
+                Glide.with(this)
+                        .load(ScenePhoto!!.get(0))
+                        .into(template_edit_scene)
+
 
             }
 
@@ -347,7 +355,6 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             holder.sceneNum.text = data.scene
             holder.image.setImageResource(data.img)
 
-
         }
 
         override fun getItemCount(): Int {
@@ -406,6 +413,20 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             override fun onResponse(call: Call<TemplateIdResponse>?, response: Response<TemplateIdResponse>?) {
                 if (response!!.isSuccessful) {
                     Log.v("photoUrl",response!!.body().data.get(0))
+                    var i = 0
+                    while (true)
+                    {
+                        if(response!!.body().data.get(i)!==null)
+                        {
+                            ScenePhoto!!.add(response!!.body().data.get(i))
+                            Log.v("sibal",ScenePhoto!!.get(i).toString())
+                            i++
+                        }else break
+
+
+                    }
+
+
 
 
                 } else {
