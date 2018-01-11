@@ -4,26 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:id="@+id/myvideo_fragment_tab"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="42.5dp"
+        android:layout_alignParentTop="true">
 
         <TextView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17.2sp"
+            android:textColor="#1d1d1d"
+            android:gravity="center"
+            tools:text="나의 영상" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/bar"
+        android:layout_width="match_parent"
+        android:id="@+id/myvideo_fragment_tab"
+        android:layout_height="44.5dp"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+
+        <ImageButton
             android:id="@+id/myvideo_progressing_videos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="진행중"
+            android:src="@drawable/line_notcom"
+            android:background="#00ff0000"
             android:textSize="24sp" />
 
-        <TextView
+        <ImageButton
             android:id="@+id/myvideo_complete_videos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/myvideo_progressing_videos"
-            android:text="완료"
+            android:src="@drawable/complete"
+            android:background="#00ff0000"
             android:textSize="24sp" />
     </LinearLayout>
 

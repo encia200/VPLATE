@@ -9,10 +9,10 @@ import android.widget.TextView
  * Created by chosoomin on 2018. 1. 4..
  */
 class PickVideoViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-
-    var PickVideoImage : ImageView = itemView!!.findViewById(R.id.pick_image) as ImageView
-    var PickVideoName : TextView = itemView!!.findViewById(R.id.pick_title) as TextView
-    var PickVideoStory : TextView = itemView!!.findViewById(R.id.pick_story) as TextView
-    var PickVideoTime : TextView = itemView!!.findViewById(R.id.pick_time) as TextView
-
+    var pickVideoImage : ImageView = itemView!!.findViewById(R.id.pick_image) as ImageView
+    var pickVideoType : ImageView = itemView!!.findViewById(R.id.pick_categoryIcon) as ImageView
+    var pickVideoTitle : TextView = itemView!!.findViewById(R.id.pick_title) as TextView
+    var pickVideoStory : TextView = itemView!!.findViewById(R.id.pick_story) as TextView
+    var pickVideoTime : TextView = itemView!!.findViewById(R.id.pick_time) as TextView
+    var pickPostTime : TextView = itemView!!.findViewById(R.id.pick_postTime) as TextView
 }

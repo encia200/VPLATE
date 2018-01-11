@@ -197,8 +197,7 @@
         android:id="@+id/home_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/home_btnBar"
-        android:padding="10dp">
+        android:layout_below="@id/home_btnBar">
 
     </android.support.v7.widget.RecyclerView>
 

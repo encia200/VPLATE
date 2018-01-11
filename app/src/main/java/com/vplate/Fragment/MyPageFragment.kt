@@ -17,7 +17,7 @@ import com.vplate.R
 import com.vplate.activity.LoginActivity
 import com.vplate.activity.NickChangeAcitivity
 import com.vplate.activity.PwChangeActivity
-import kotlinx.android.synthetic.main.fragment_my_page.*
+import kotlinx.android.synthetic.main.fragment_my_page.view.*
 
 class MyPageFragment : Fragment(),AdapterView.OnItemClickListener {
     var settings : SharedPreferences? = null
@@ -28,8 +28,8 @@ class MyPageFragment : Fragment(),AdapterView.OnItemClickListener {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater!!.inflate(R.layout.fragment_my_page, container, false)
         settings = this.activity.getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
-        mypage_nameTxt.setText(CommonData.loginResponse!!.data.name)
-        mypage_email.setText(CommonData.loginResponse!!.data.email)
+        v!!.mypage_nameTxt.setText(CommonData.loginResponse!!.data.name)
+        v!!.mypage_email.setText(CommonData.loginResponse!!.data.email)
 
         var listView = v.findViewById(R.id.mypage_list) as ListView
         var data : ArrayList<MyPageListViewItem> =  ArrayList()
