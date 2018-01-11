@@ -4,11 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
-import com.vplate.Network.CommonData
 import com.vplate.R
 import com.vplate.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.tab_home.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-//        Log.v("::token", CommonData.loginResponse!!.token)
 
         // 탭 추가
         main_tab.addTab(main_tab.newTab()
@@ -48,9 +45,8 @@ class MainActivity : AppCompatActivity() {
 
                 when (tab.position) {
                     0 -> {
-//                        tab.setCustomView(R.layout.tab_home)
-
-                        tab.setIcon(R.drawable.two_home_o)
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_g)
                     }
                     1 -> {
                         tab.setIcon(R.drawable.my_video_g)
@@ -73,7 +69,8 @@ class MainActivity : AppCompatActivity() {
 
                 when (tab.position) {
                     0 -> {
-                        tab.setIcon(R.drawable.two_home_o)
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_o)
                     }
                     1 -> {
                         tab.setIcon(R.drawable.two_my_video_o)

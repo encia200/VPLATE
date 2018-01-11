@@ -51,6 +51,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         networkService = ApplicationController.instance!!.networkService // 통신
 
+
         newList("all")
 
         // 최신순 버튼

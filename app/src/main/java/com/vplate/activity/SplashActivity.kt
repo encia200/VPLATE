@@ -59,9 +59,6 @@ class SplashActivity : AppCompatActivity() {
                 if(response!!.isSuccessful){
                     // 로그인 성공했을 때
                     if (response!!.body().status.equals("success")){
-
-                        CommonData.loginResponse = response!!.body()
-
                         val settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
                         val editor = settings.edit()
                         editor.putString("logged", "logged")
@@ -69,11 +66,15 @@ class SplashActivity : AppCompatActivity() {
                         editor.putString("user_email", loaded_email)
 
                         editor.commit()
+
+                        CommonData.loginResponse = response!!.body()
+
                         startActivity(Intent(applicationContext, MainActivity::class.java)) // 화면 넘어감
                         finish()
                         ApplicationController.instance!!.makeToast("로그인 성공")
                     }
                 }
+
                 else {
                     ApplicationController.instance!!.makeToast("이메일이 존재하지 않거나 비밀번호가 일치하지 않습니다.")
                 }
