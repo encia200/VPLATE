@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
                 when (tab.position) {
                     0 -> {
                         tab.setCustomView(R.layout.tab_home)
-                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_g)
                     }
                     1 -> {
                         tab.setIcon(R.drawable.my_video_g)
@@ -91,7 +90,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

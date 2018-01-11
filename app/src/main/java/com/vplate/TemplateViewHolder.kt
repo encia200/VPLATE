@@ -11,5 +11,5 @@ class TemplateViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
     var templateContent: TextView = itemView!!.findViewById(R.id.template_content) as TextView
     var templateCategory: ImageView = itemView!!.findViewById(R.id.template_cate_icon) as ImageView
     var templateTime: TextView = itemView!!.findViewById(R.id.template_time) as TextView
-
+    var templateUploadTime : TextView = itemView!!.findViewById(R.id.template_uploadTime) as TextView
 }

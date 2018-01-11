@@ -1,7 +1,5 @@
 package com.vplate.Fragment
 
-import android.app.Dialog
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -9,12 +7,17 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.MediaController
-import android.widget.VideoView
+import com.vplate.Network.ApplicationController
+import com.vplate.Network.CommonData
+import com.vplate.Network.Get.Response.TemplatelistResponse
+import com.vplate.Network.Get.TemplateData
+import com.vplate.Network.NetworkService
 import com.vplate.PickVideoAdapter
 import com.vplate.R
-import com.vplate.Network.Get.TemplateData
+import kotlinx.android.synthetic.main.fragment_pick.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * Created by chosoomin on 2018. 1. 1..
@@ -25,49 +28,54 @@ class PickFragment : Fragment(), View.OnClickListener {
     private var pickDatas: ArrayList<TemplateData>? = null
     private var adapter: PickVideoAdapter? = null
 
+    private var networkService: NetworkService? = null // 넽웕 썰비스
+
+    var v : View? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment_pick, container, false)
+        v = inflater!!.inflate(R.layout.fragment_pick, container, false)
 
-        pickList = view.findViewById(R.id.pickTab_recyclerView) as RecyclerView
-        pickList!!.layoutManager = LinearLayoutManager(context)
+        networkService = ApplicationController.instance!!.networkService // 통신
 
-        pickDatas = ArrayList<TemplateData>()
+        v!!.pickTab_recyclerView.layoutManager = LinearLayoutManager(context)
+
+        ddipList()
 
         adapter = PickVideoAdapter(pickDatas)
-        adapter!!.setOnItemClickListener(this)
+        if (adapter!!.isCancel == 1) {
+            adapter!!.notifyDataSetChanged()
+            ddipList()
+        }
 
-        pickList!!.adapter = adapter
-
-        return view
+        return v
     }
 
     override fun onClick(v: View?) {
-        // 비디오 자동재생하는 다이얼로그
-        val dialog = Dialog(activity)
-        dialog.setContentView(R.layout.dialog_video)
-        dialog.setTitle("Title...")
 
-        // set the custom dialog components - text, image and button
-
-        val vid = dialog.findViewById(R.id.dialog_videoView) as VideoView
-        val vidUri = Uri.parse("https://youtu.be/u3TAnY6ktyU")
-
-        vid.setVideoURI(vidUri)
-
-        // MediaController 설정
-        var mediaController = MediaController(context)
-        vid.setMediaController(mediaController)
-
-        vid.start()
-
-        // dialogButton
-        val dialogButton = dialog.findViewById(R.id.dialog_makeBtn) as Button
-
-        dialogButton.setOnClickListener() {
-            dialog.dismiss()
-        }
-
-        dialog.show()
     }
 
+    // 찜 리스트 가져오기
+    fun ddipList() {
+        val ddipResponse = networkService!!.getDdipTemplate(CommonData.loginResponse!!.token, 0)
+
+        ddipResponse.enqueue(object : Callback<TemplatelistResponse> {
+            override fun onFailure(call: Call<TemplatelistResponse>?, t: Throwable?) {
+                ApplicationController.instance!!.makeToast("통신 오류")
+            }
+
+            override fun onResponse(call: Call<TemplatelistResponse>?, response: Response<TemplatelistResponse>?) {
+                if (response!!.isSuccessful) {
+                    CommonData.pickAllList = response!!.body().data.template
+                    pickDatas = CommonData.pickAllList
+                    adapter = PickVideoAdapter(pickDatas)
+                    adapter!!.setOnItemClickListener(this@PickFragment)
+                    pickList = v!!.findViewById(R.id.pickTab_recyclerView) as RecyclerView
+                    pickList!!.adapter = adapter
+                }
+                else {
+                    ApplicationController.instance!!.makeToast("못 받음ㅠ")
+                }
+            }
+        })
+    }
 }

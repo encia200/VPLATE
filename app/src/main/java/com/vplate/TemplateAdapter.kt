@@ -15,21 +15,24 @@ class TemplateAdapter(var dataList: ArrayList<TemplateData>?) : RecyclerView.Ada
     private var onItemClick: View.OnClickListener? = null
 
     override fun onBindViewHolder(holder: TemplateViewHolder?, position: Int) {
+
         Glide.with(holder!!.itemView)
                 .load(dataList!!.get(position).template_thumbnail)
                 .into(holder!!.templateImage)
+
         holder.templateTitle.text = dataList!!.get(position).template_title
         holder.templateContent.text = dataList!!.get(position).template_hashtag
-        holder.templateTime.text = dataList!!.get(position).template_length.toString()
-        if (dataList!!.get(position).template_type.equals("2"))
+        holder.templateTime.text = "00:" + dataList!!.get(position).template_length.toString()
+        holder.templateUploadTime.text = dataList!!.get(position).template_uploadtime
+        if (dataList!!.get(position).template_type.equals("제품"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_2)
-        else if (dataList!!.get(position).template_type.equals("3"))
+        else if (dataList!!.get(position).template_type.equals("여행"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_3)
-        else if (dataList!!.get(position).template_type.equals("4"))
+        else if (dataList!!.get(position).template_type.equals("카페"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_4)
-        else if (dataList!!.get(position).template_type.equals("5"))
+        else if (dataList!!.get(position).template_type.equals("푸드트럭"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_5)
-        else if (dataList!!.get(position).template_type.equals("6"))
+        else if (dataList!!.get(position).template_type.equals("행사"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_6)
         else
             holder.templateCategory.setImageResource(R.drawable.cate_icon_6)

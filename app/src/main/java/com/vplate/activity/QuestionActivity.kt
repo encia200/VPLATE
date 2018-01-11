@@ -75,6 +75,7 @@ class QuestionActivity : AppCompatActivity() {
             } else {
                 if (flag == 1) {
                     val intent = Intent(applicationContext, LoginActivity::class.java)
+
                     sign()
                     Log.v("::sooseol::",prof_img.toString())
                     startActivity(intent)
@@ -95,6 +96,7 @@ class QuestionActivity : AppCompatActivity() {
         val answer2 = RequestBody.create(MediaType.parse("text/plain"), question_q2Edit.text.toString())
         val type = RequestBody.create(MediaType.parse("text/plain"), "일반")
 
+        val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, nickname, name, type) // 회원가입할 때는 이미지 안보냄(null로 처리)
 
         val detailResponse = networkService!!.signup(email, pwd, answer1, answer2, nickname, name, type,prof_img)
         // Response 받은거

@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,13 +17,20 @@ import com.volokh.danylo.visibility_utils.calculator.DefaultSingleItemCalculator
 import com.volokh.danylo.visibility_utils.calculator.SingleListViewItemActiveCalculator
 import com.volokh.danylo.visibility_utils.scroll_utils.ItemsPositionGetter
 import com.volokh.danylo.visibility_utils.scroll_utils.RecyclerViewItemPositionGetter
+import com.vplate.Network.ApplicationController
+import com.vplate.Network.CommonData
+import com.vplate.Network.Get.CommunityAdapter
+import com.vplate.Network.Get.CommunityData
+import com.vplate.Network.Get.Response.CommunityResponse
+import com.vplate.Network.NetworkService
 import com.vplate.R
 import com.vplate.activity.CommunityActivity
 import com.vplate.community.adapter.VideoRecyclerViewAdapter
 import com.vplate.community.adapter.items.BaseVideoItem
-import com.vplate.community.adapter.items.DirectLinkVideoItem
-import com.vplate.community.adapter.items.ItemFactory
 import kotlinx.android.synthetic.main.fragment_video_recycler_view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
 
 
@@ -57,32 +65,66 @@ class VideoRecyclerViewFragment : Fragment() {
 
     private var mScrollState = AbsListView.OnScrollListener.SCROLL_STATE_IDLE
 
+
+    //
+    private var networkService: NetworkService? = null // 넽웕 썰비스
+    private var mediaDatas: ArrayList<CommunityData>? = null
+    private var adapter: CommunityAdapter? = null
+    private var communityList: RecyclerView? = null
+
+    private var videoList : ArrayList<String>? = ArrayList()
+
+    var isEnd = 0
+    //
+
+    private var rootView : View? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        try {
-            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258231423.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258316509.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258520682.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258871020.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258630793.mp4", mVideoPlayerManager, context))
-            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258621607.mp4", mVideoPlayerManager, context))
 
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
-            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+        networkService = ApplicationController.instance!!.networkService // 통신
+
+        communityListLatest()
+        var i = 0
+
+        Log.v("DDDDD", isEnd.toString())
+
+        if (isEnd == 1) {
+            Log.v("DDDD", videoList!!.size.toString())
+        }
+
+
+        try {
+//            while (i < mediaDatas!!.lastIndex) {
+//                mList.add(DirectLinkVideoItem(mediaDatas!!.get(0).uploadvideo, mVideoPlayerManager, context))
+//                i++
+//            }
+
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515598041869.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258231423.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258316509.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258520682.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258871020.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258630793.mp4", mVideoPlayerManager, context))
+//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258621607.mp4", mVideoPlayerManager, context))
+
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
+//            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
 
         } catch (e: IOException) {
             throw RuntimeException(e)
         }
 
-        val rootView = inflater!!.inflate(R.layout.fragment_video_recycler_view, container, false)
+        rootView = inflater!!.inflate(R.layout.fragment_video_recycler_view, container, false)
 
-        mRecyclerView = rootView.findViewById(R.id.recycler_view) as RecyclerView
-        mFloatingbackBtn = rootView.findViewById(R.id.community_backbtn) as FloatingActionButton
+//        communityListLatest()
+
+        mRecyclerView = rootView!!.findViewById(R.id.recycler_view) as RecyclerView
+        mFloatingbackBtn = rootView!!.findViewById(R.id.community_backbtn) as FloatingActionButton
         mFloatingbackBtn!!.setOnClickListener {
             CommunityActivity.dialogData.setDialogData(true)
         }
@@ -163,5 +205,47 @@ class VideoRecyclerViewFragment : Fragment() {
 
         private val SHOW_LOGS = Config.SHOW_LOGS
         private val TAG = VideoRecyclerViewFragment::class.java.simpleName
+    }
+
+    // 커뮤니티 리스트 가져오기 (최신순)
+    fun communityListLatest() {
+        val communityResponse = networkService!!.communityLatest(CommonData.loginResponse!!.token)
+
+        communityResponse.enqueue(object : Callback<CommunityResponse> {
+            override fun onFailure(call: Call<CommunityResponse>?, t: Throwable?) {
+                ApplicationController.instance!!.makeToast("통신 오류")
+            }
+
+            override fun onResponse(call: Call<CommunityResponse>?, response: Response<CommunityResponse>?) {
+                if (response!!.isSuccessful) {
+
+                   var i = 0
+
+                    while (i < response!!.body().data.community.size) {
+                        videoList!!.add(response!!.body().data.community.get(i).uploadvideo)
+                        Log.v("DDDD3", videoList!!.size.toString())
+                        i++
+                    }
+
+
+                    isEnd = 1
+
+//                    while (true) {
+//                        if (response!!.body().data.community.get(i) != null) {
+//                            videoList!!.add(response!!.body().data.community.get(i).uploadvideo)
+//                            i++
+//                        }
+//                        else {
+//                            break
+//                        }
+//                    }
+
+                }
+                else {
+                    ApplicationController.instance!!.makeToast("못 받음ㅠ")
+                }
+            }
+        })
+
     }
 }

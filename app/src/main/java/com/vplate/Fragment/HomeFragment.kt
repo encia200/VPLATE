@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,6 +52,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         networkService = ApplicationController.instance!!.networkService // 통신
 
+        Log.v("::token", CommonData.loginResponse!!.token)
 
         newList("all")
 
@@ -112,6 +114,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                     hotList("행사")
                 }
             }
+
         }
 
         // 카테고리 버튼
@@ -131,122 +134,129 @@ class HomeFragment : Fragment(), View.OnClickListener {
         // ========= 카테고리 버튼 중에서 =========
         // 전체 버튼
         v!!.home_cate_img_1.setOnClickListener{
-            cate1 = 1
-            cate2 = 0
-            cate3 = 0
-            cate4 = 0
-            cate5 = 0
-            cate6 = 0
+                cate1 = 1
+                cate2 = 0
+                cate3 = 0
+                cate4 = 0
+                cate5 = 0
+                cate6 = 0
 
-            v!!.cate1Triangle.visibility = View.VISIBLE
-            v!!.cate2Triangle.visibility = View.GONE
-            v!!.cate3Triangle.visibility = View.GONE
-            v!!.cate4Triangle.visibility = View.GONE
-            v!!.cate5Triangle.visibility = View.GONE
-            v!!.cate6Triangle.visibility = View.GONE
+                v!!.cate1Triangle.visibility = View.VISIBLE
+                v!!.cate2Triangle.visibility = View.GONE
+                v!!.cate3Triangle.visibility = View.GONE
+                v!!.cate4Triangle.visibility = View.GONE
+                v!!.cate5Triangle.visibility = View.GONE
+                v!!.cate6Triangle.visibility = View.GONE
 
-            if (isNew == 1) {
-                newList("all")
-            }
-            else if (isHot == 1) {
-                hotList("all")
-            }
+                if (isNew == 1) {
+                    newList("all")
+                }
+                else if (isHot == 1) {
+                    hotList("all")
+                }
         }
 
         // 제품 버튼
         v!!.home_cate_img_2.setOnClickListener{
-            cate1 = 0
-            cate2 = 1
-            cate3 = 0
-            cate4 = 0
-            cate5 = 0
-            cate6 = 0
+                cate1 = 0
+                cate2 = 1
+                cate3 = 0
+                cate4 = 0
+                cate5 = 0
+                cate6 = 0
 
-            v!!.cate1Triangle.visibility = View.GONE
-            v!!.cate2Triangle.visibility = View.VISIBLE
-            v!!.cate3Triangle.visibility = View.GONE
-            v!!.cate4Triangle.visibility = View.GONE
-            v!!.cate5Triangle.visibility = View.GONE
-            v!!.cate6Triangle.visibility = View.GONE
+                v!!.cate1Triangle.visibility = View.GONE
+                v!!.cate2Triangle.visibility = View.VISIBLE
+                v!!.cate3Triangle.visibility = View.GONE
+                v!!.cate4Triangle.visibility = View.GONE
+                v!!.cate5Triangle.visibility = View.GONE
+                v!!.cate6Triangle.visibility = View.GONE
 
-            if (isNew == 1) {
-                newList("제품")
-            }
-            else if (isHot == 1) {
-                hotList("제품")
-            }
+                if (isNew == 1) {
+                    newList("제품")
+                }
+                else if (isHot == 1) {
+                    hotList("제품")
+                }
+
         }
 
         // 여행 버튼
         v!!.home_cate_img_3.setOnClickListener{
-            cate1 = 0
-            cate2 = 0
-            cate3 = 1
-            cate4 = 0
-            cate5 = 0
-            cate6 = 0
+                cate1 = 0
+                cate2 = 0
+                cate3 = 1
+                cate4 = 0
+                cate5 = 0
+                cate6 = 0
 
-            v!!.cate1Triangle.visibility = View.GONE
-            v!!.cate2Triangle.visibility = View.GONE
-            v!!.cate3Triangle.visibility = View.VISIBLE
-            v!!.cate4Triangle.visibility = View.GONE
-            v!!.cate5Triangle.visibility = View.GONE
-            v!!.cate6Triangle.visibility = View.GONE
+                v!!.cate1Triangle.visibility = View.GONE
+                v!!.cate2Triangle.visibility = View.GONE
+                v!!.cate3Triangle.visibility = View.VISIBLE
+                v!!.cate4Triangle.visibility = View.GONE
+                v!!.cate5Triangle.visibility = View.GONE
+                v!!.cate6Triangle.visibility = View.GONE
 
-            if (isNew == 1) {
-                newList("여행")
-            }
-            else if (isHot == 1) {
-                hotList("여행")
-            }
+                if (isNew == 1) {
+                    newList("여행")
+                }
+                else if (isHot == 1) {
+                    hotList("여행")
+                }
+
+
         }
 
         // 카페 버튼
         v!!.home_cate_img_4.setOnClickListener{
-            cate1 = 0
-            cate2 = 0
-            cate3 = 0
-            cate4 = 1
-            cate5 = 0
-            cate6 = 0
+                cate1 = 0
+                cate2 = 0
+                cate3 = 0
+                cate4 = 1
+                cate5 = 0
+                cate6 = 0
 
-            v!!.cate1Triangle.visibility = View.GONE
-            v!!.cate2Triangle.visibility = View.GONE
-            v!!.cate3Triangle.visibility = View.GONE
-            v!!.cate4Triangle.visibility = View.VISIBLE
-            v!!.cate5Triangle.visibility = View.GONE
-            v!!.cate6Triangle.visibility = View.GONE
+                v!!.cate1Triangle.visibility = View.GONE
+                v!!.cate2Triangle.visibility = View.GONE
+                v!!.cate3Triangle.visibility = View.GONE
+                v!!.cate4Triangle.visibility = View.VISIBLE
+                v!!.cate5Triangle.visibility = View.GONE
+                v!!.cate6Triangle.visibility = View.GONE
 
-            if (isNew == 1) {
-                newList("카페")
-            }
-            else if (isHot == 1) {
-                hotList("카페")
-            }
+                if (isNew == 1) {
+                    newList("카페")
+                }
+                else if (isHot == 1) {
+                    hotList("카페")
+                }
+
+
         }
 
         // 푸드트럭 버튼
         v!!.home_cate_img_5.setOnClickListener{
-            cate1 = 0
-            cate2 = 0
-            cate3 = 0
-            cate4 = 0
-            cate5 = 1
-            cate6 = 0
+                cate1 = 0
+                cate2 = 0
+                cate3 = 0
+                cate4 = 0
+                cate5 = 1
+                cate6 = 0
 
-            v!!.cate1Triangle.visibility = View.GONE
-            v!!.cate2Triangle.visibility = View.GONE
-            v!!.cate3Triangle.visibility = View.GONE
-            v!!.cate4Triangle.visibility = View.GONE
-            v!!.cate5Triangle.visibility = View.VISIBLE
-            v!!.cate6Triangle.visibility = View.GONE
+                v!!.cate1Triangle.visibility = View.GONE
+                v!!.cate2Triangle.visibility = View.GONE
+                v!!.cate3Triangle.visibility = View.GONE
+                v!!.cate4Triangle.visibility = View.GONE
+                v!!.cate5Triangle.visibility = View.VISIBLE
+                v!!.cate6Triangle.visibility = View.GONE
 
-            if (isNew == 1) {
-                newList("푸드트럭")
-            }
-            else if (isHot == 1) {
-                hotList("푸드트럭")
-            }
+                if (isNew == 1) {
+                    newList("푸드트럭")
+                }
+                else if (isHot == 1) {
+                    hotList("푸드트럭")
+                }
+
+
         }
 
         // 행사 버튼

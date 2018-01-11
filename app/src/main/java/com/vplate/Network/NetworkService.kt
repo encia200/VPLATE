@@ -1,6 +1,7 @@
 package com.vplate.Network
 
 import com.vplate.Network.Get.Response.CommunityResponse
+import com.vplate.Network.Get.Response.MyVideoListResponse
 import com.vplate.Network.Get.Response.TemplateIdResponse
 import com.vplate.Network.Get.Response.TemplatelistResponse
 import com.vplate.Network.Post.EmailCheckPost
@@ -11,6 +12,8 @@ import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.Network.Post.Response.LoginResponse
 import com.vplate.Network.Post.Response.SignResponse
 import okhttp3.MultipartBody
+import com.vplate.Network.Put.BookmarkPost
+import com.vplate.Network.Put.Response.BookmarkResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -67,6 +70,18 @@ interface NetworkService {
     fun pwSet(
             @Body loginPost : PwSetPost) : Call<SignResponse>
 
+    // 나의 영상 리스트 (미완성)
+    @GET("account/video/list/incompletion")
+    fun myvideoListIncomplete(
+            @Header("tt") tt:String
+    ) : Call<MyVideoListResponse>
+
+    // 나의 영상 리스트 (완성)
+    @GET("account/video/list/completion")
+    fun myvideoListComplete(
+            @Header("tt") tt:String
+    ) : Call<MyVideoListResponse>
+
     // 커뮤니티 리스트 (최신순)
     @GET("community/list/latest")
     fun communityLatest(
@@ -87,4 +102,17 @@ interface NetworkService {
              @Query("templateid") templateid:Int
      ) : Call<TemplateIdResponse>
 
+    // 찜 템플릿 영상 모아보기 (최신순)
+    @GET("account/template/list/choice")
+    fun getDdipTemplate(
+            @Header("tt") tt:String,
+            @Query("cursor") cursor : Int
+    ) : Call<TemplatelistResponse>
+
+    // 북마크 등록/취소
+    @PUT("account/template/bookmark")
+    fun bookmark(
+            @Header("tt") tt:String,
+            @Body templateid : BookmarkPost
+    ) : Call<BookmarkResponse>
 }
