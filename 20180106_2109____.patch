@@ -1,0 +1,155 @@
+Index: app/src/main/java/com/vplate/Network/Post/LoginData.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/Network/Post/LoginData.kt	(revision )
++++ app/src/main/java/com/vplate/Network/Post/LoginData.kt	(revision )
+@@ -0,0 +1,13 @@
++package com.vplate.Network.Post
++
++/**
++ * Created by chosoomin on 2018. 1. 6..
++ */
++data class LoginData (
++    var user_type : Int,
++    var user_email : String,
++    var user_name : String,
++    var user_nickname : String,
++    var user_push : Int,
++    var user_profile : String
++)
+\ No newline at end of file
+Index: app/src/main/java/com/vplate/Network/NetworkService.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/Network/NetworkService.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/Network/NetworkService.kt	(revision )
+@@ -27,9 +27,12 @@
+     @POST("account/signin")
+     fun signin(
+             @Body loginPost : LoginPost): Call<LoginResponse>
++
+     //회원 가입(이메일 중복 체크)
+     @POST("account/overlap")
+     fun overlap(
+             @Body emailPost : EmailCheckPost) : Call<EmailCheckResponse>
+ 
++//    @POST("account/setting/search")
++//    fun pwSearch() : Call<>
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/vplate/Fragment/MyideoFragment.kt
+===================================================================
+--- app/src/main/java/com/vplate/Fragment/MyideoFragment.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/Fragment/MyVideoFragment.kt	(revision )
+@@ -11,7 +11,7 @@
+ import com.vplate.R
+ 
+ 
+-class MyideoFragment : Fragment(), View.OnClickListener {
++class MyVideoFragment : Fragment(), View.OnClickListener {
+     override fun onClick(v: View?) {
+         if (view == null) return
+         var fragment: Fragment? = null
+\ No newline at end of file
+Index: app/src/main/java/com/vplate/activity/LoginActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/activity/LoginActivity.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/activity/LoginActivity.kt	(revision )
+@@ -39,10 +39,12 @@
+         }
+     }
+ 
++    // 로그인
+     fun signin(){
+         val loginResponse = networkService!!.signin(LoginPost(login_emailEdit.text.toString(), login_pwEdit.text.toString()))
+ 
+         loginResponse.enqueue(object : Callback<LoginResponse> {
++
+             override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
+                 if(response!!.isSuccessful){
+                     if (response!!.body().status.equals("success")){
+Index: app/src/main/java/com/vplate/activity/JoinActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/activity/JoinActivity.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/activity/JoinActivity.kt	(revision )
+@@ -66,7 +66,6 @@
+ 
+         // 다음 버튼 클릭(질문화면으로)
+         join_nextBtn!!.setOnClickListener {
+-
+             // 모두 안적으면 다음 화면으로 못넘어감
+             if (join_emailEdit.text.length == 0 || join_pwEdit.text.length == 0 || join_nameEdit.text.length == 0 || join_nicknameEdit.text.length == 0) {
+                 Toast.makeText(applicationContext, "모든 질문에 답해주세요.", Toast.LENGTH_LONG).show()
+Index: app/src/main/java/com/vplate/Network/Post/LoginResponse.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/Network/Post/LoginResponse.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/Network/Post/LoginResponse.kt	(revision )
+@@ -5,7 +5,7 @@
+  */
+ data class LoginResponse (
+         var status : String,
+-        var type : Int,
++        var data : LoginData,
+         var token : String,
+         var msg : String
+ )
+\ No newline at end of file
+Index: app/src/main/java/com/vplate/Network/UserModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/Network/UserModel.kt	(revision )
++++ app/src/main/java/com/vplate/Network/UserModel.kt	(revision )
+@@ -0,0 +1,13 @@
++package com.vplate.Network
++
++/**
++ * Created by chosoomin on 2018. 1. 6..
++ */
++
++class UserModel {
++
++    var tt: String? = null
++    var clientToken: String? = null
++    var email: String? = null
++
++}
+Index: app/src/main/java/com/vplate/TabAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/vplate/TabAdapter.kt	(revision 8c0da80b63f190b6eda949d400b97f9bac0f8798)
++++ app/src/main/java/com/vplate/TabAdapter.kt	(revision )
+@@ -11,14 +11,14 @@
+     var tabCount : Int = 0
+ 
+     var homeTab : HomeFragment?= null
+-    var videoTab : MyideoFragment?= null
++    var videoTab : MyVideoFragment?= null
+     var likeTab : PickFragment?= null
+     var communityTab: CommunityFragment?= null
+     var mypageTab : MyPageFragment?= null
+ 
+     constructor(fm : FragmentManager?, tabCount : Int) : this(fm){
+         this.tabCount = tabCount
+-        this.videoTab = MyideoFragment()
++        this.videoTab = MyVideoFragment()
+         this.likeTab = PickFragment()
+         this.homeTab = HomeFragment()
+         this.communityTab = CommunityFragment()
+\ No newline at end of file

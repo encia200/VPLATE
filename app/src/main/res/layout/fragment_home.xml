@@ -16,15 +16,17 @@
             android:layout_centerVertical="true"
             android:src="@drawable/logo" />
 
-        <TextView
+        <Button
+            android:id="@+id/categoryBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="카테고리"
             android:textColor="#662382"
+            android:background="#00ff0000"
             android:textSize="13.4sp" />
     </RelativeLayout>
 
@@ -35,64 +37,152 @@
         android:orientation="horizontal"
         android:layout_below="@id/home_tabBar">
 
-        <ImageButton
+        <RelativeLayout
             android:layout_weight="1"
-            android:id="@+id/home_cate_img_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/cate_img_1"/>
+            android:layout_height="wrap_content">
 
-        <ImageButton
-            android:layout_weight="1"
-            android:id="@+id/home_cate_img_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/cate_img_2" />
+            <ImageButton
+                android:id="@+id/home_cate_img_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_1" />
 
-        <ImageButton
-            android:layout_weight="1"
-            android:id="@+id/home_cate_img_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/cate_img_3" />
+            <ImageView
+                android:id="@+id/cate1Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_1"/>
 
-        <ImageButton
-            android:layout_weight="1"
-            android:id="@+id/home_cate_img_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_cate_img_3"
-            android:background="@drawable/cate_img_4" />
+        </RelativeLayout>
 
-        <ImageButton
+        <RelativeLayout
             android:layout_weight="1"
-            android:id="@+id/home_cate_img_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_cate_img_4"
-            android:background="@drawable/cate_img_5" />
+            android:layout_height="wrap_content">
 
-        <ImageButton
+            <ImageButton
+                android:id="@+id/home_cate_img_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_2" />
+
+            <ImageView
+                android:id="@+id/cate2Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_2"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_weight="1"
-            android:id="@+id/home_cate_img_6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/cate_img_6" />
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/home_cate_img_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_3" />
+
+            <ImageView
+                android:id="@+id/cate3Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_3"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/home_cate_img_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_4" />
+
+            <ImageView
+                android:id="@+id/cate4Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_4"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/home_cate_img_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_5" />
+
+            <ImageView
+                android:id="@+id/cate5Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_5"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/home_cate_img_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cate_img_6" />
+
+            <ImageView
+                android:id="@+id/cate6Triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/triangle"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@id/home_cate_img_6"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
     </LinearLayout>
-
-
 
     <RelativeLayout
         android:id="@+id/home_btnBar"
         android:layout_width="match_parent"
         android:layout_height="44.5dp"
-        android:layout_below="@id/home_category">
+        android:layout_below="@id/home_category"
+        android:background="#ffffff">
 
         <ImageButton
             android:id="@+id/home_newBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/icon_new"/>
+            android:background="@drawable/line_new"/>
 
         <ImageButton
             android:id="@+id/home_hotBtn"

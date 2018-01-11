@@ -12,12 +12,12 @@
         "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png"
-    },
-    {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
         "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",

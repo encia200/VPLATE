@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.vplate.R
 import com.vplate.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.tab_home.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity() {
 
                 when (tab.position) {
                     0 -> {
-                        tab.setIcon(R.drawable.home_g)
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_g)
                     }
                     1 -> {
                         tab.setIcon(R.drawable.my_video_g)
@@ -67,23 +69,24 @@ class MainActivity : AppCompatActivity() {
 
                 when (tab.position) {
                     0 -> {
-                        tab.setIcon(R.drawable.home_o)
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_o)
                     }
                     1 -> {
-                        tab.setIcon(R.drawable.my_video_o)
+                        tab.setIcon(R.drawable.two_my_video_o)
                     }
                     2 -> {
-                        tab.setIcon(R.drawable.ddip_o)
+                        tab.setIcon(R.drawable.two_ddip_o)
                     }
                     3 -> {
-                        tab.setIcon(R.drawable.community_o)
+                        tab.setIcon(R.drawable.two_community_o)
 
                         val intent = Intent(applicationContext, CommunityActivity::class.java)
 
                         startActivityForResult(intent, COMMUNITYACTIVITY)
                     }
                     4 -> {
-                        tab.setIcon(R.drawable.my_page_o)
+                        tab.setIcon(R.drawable.two_my_page_o)
                     }
                 }
             }

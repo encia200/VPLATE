@@ -1,7 +1,7 @@
 package com.vplate.Network
 
 import com.vplate.Network.Post.Response.LoginResponse
-import com.vplate.Network.Post.TemplateData
+import com.vplate.Network.Get.TemplateData
 
 /**
  * Created by chosoomin on 2018. 1. 5..

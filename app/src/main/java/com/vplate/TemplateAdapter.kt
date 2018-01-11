@@ -7,17 +7,19 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.vplate.Network.Post.TemplateData
+import com.bumptech.glide.Glide
+import com.vplate.Network.Get.TemplateData
 
 class TemplateAdapter(var dataList: ArrayList<TemplateData>?) : RecyclerView.Adapter<TemplateViewHolder>() {
 
     private var onItemClick: View.OnClickListener? = null
 
     override fun onBindViewHolder(holder: TemplateViewHolder?, position: Int) {
-        //holder!!.templateImage.setImageBitmap(retriveVideoFrameFromVideo(dataList!!.get(position).template_video))
-        holder!!.templateImage.setImageResource(R.mipmap.ic_launcher)
+        Glide.with(holder!!.itemView)
+                .load(dataList!!.get(position).template_thumbnail)
+                .into(holder!!.templateImage)
         holder.templateTitle.text = dataList!!.get(position).template_title
-        holder.templateContent.text = dataList!!.get(position).template_content
+        holder.templateContent.text = dataList!!.get(position).template_hashtag
         holder.templateTime.text = dataList!!.get(position).template_length.toString()
         if (dataList!!.get(position).template_type.equals("2"))
             holder.templateCategory.setImageResource(R.drawable.cate_icon_2)

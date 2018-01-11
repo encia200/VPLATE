@@ -23,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
 
     val PREFS_NAME = "LoginPrefs"
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -83,13 +82,6 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else {
                     ApplicationController.instance!!.makeToast("이메일이 존재하지 않거나 비밀번호가 일치하지 않습니다.")
-
-//                    if (response!!.body().msg.equals("failed login_email")) {
-//                        ApplicationController.instance!!.makeToast(response.message() + "해당 이메일이 없습니다.")
-//                    }
-//                    else if (response!!.body().msg.equals("failed login_pwd")) {
-//                        ApplicationController.instance!!.makeToast(response.message() + "비밀번호가 일치하지 않습니다.")
-//                    }
                 }
             }
             override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
