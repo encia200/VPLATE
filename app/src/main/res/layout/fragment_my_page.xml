@@ -4,22 +4,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42.5dp"
+        android:gravity="center">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="마이페이지"
-        android:textSize="17dp"
+        android:textSize="17.2sp"
+        android:textColor="#1d1d1d"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"/>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.35"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:weightSum="1">
+        android:gravity="center">
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:layout_width="80dp"
@@ -50,13 +54,82 @@
     </RelativeLayout>
 
     <!-- 리스트뷰 -->
+    <TextView
+
+        android:lineSpacingExtra="110.9sp"
+        android:layout_width="match_parent"
+        android:layout_height="25.5dp"
+        android:text="계정"
+        android:gravity="center_vertical"
+        android:textSize="11.5sp"
+        android:textColor="#8c8c8c"
+        android:paddingLeft="16.5dp"
+        android:background="#eeeeee"
+        />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.55"
+        android:layout_height="85dp"
         android:id="@+id/mypage_list"
-        android:divider="#000000">
+        android:divider="#eeeeee"
+        android:dividerHeight="1.5dp"
+        >
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25.5dp"
+        android:textSize="11.5sp"
+        android:textColor="#8c8c8c"
+        android:paddingLeft="16.5dp"
+        android:text="설정"
+        android:lineSpacingExtra="110.9sp"
+        android:gravity="center_vertical"
+        android:background="#eeeeee"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42.5dp"
+        android:id="@+id/push_button_layout">
+        <TextView
+            android:layout_marginLeft="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="푸시 알람"
+            android:id="@+id/push_text"
+            android:layout_centerVertical="true"
+            />
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_button"
+        android:thumb="@drawable/circle"
+         android:layout_centerInParent="true"
+        app:track="@drawable/switch_track_selector"
+        android:layout_alignParentRight="true"
+        />
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25.5dp"
+        android:text="지원"
+        android:lineSpacingExtra="110.9sp"
+        android:textSize="11.5sp"
+        android:textColor="#8c8c8c"
+        android:paddingLeft="16.5dp"
+        android:gravity="center_vertical"
+        android:background="#eeeeee"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/support_list"
+        android:divider="#eeeeee"
+        android:dividerHeight="1dip"
+        >
     </ListView>
 
 </LinearLayout>

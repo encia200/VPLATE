@@ -7,34 +7,36 @@
     android:orientation="vertical"
     tools:context="com.vplate.activity.JoinActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello!"
-        android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"/>
+        android:src="@drawable/hello"
+        android:layout_marginTop="59dp"
+        android:layout_marginLeft="32dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입을 위해 입력해주세요."
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="11dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"
         android:text="이름 입력"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="58.5dp"/>
 
     <EditText
         android:id="@+id/join_nameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:hint="영문 숫자 ~~~"
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
@@ -42,16 +44,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"
         android:text="닉네임 입력"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="23dp"/>
 
     <EditText
         android:id="@+id/join_nicknameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:hint="영문 숫자 ~~~"
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
@@ -59,16 +64,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"
         android:text="이메일 입력"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"/>
 
     <EditText
         android:id="@+id/join_emailEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:hint="영문 숫자 ~~~"
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
@@ -77,21 +85,23 @@
         android:id="@+id/join_sameEmailAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8.5dp"
         android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="중복된 이메일이 있습니다."
-            android:textSize="11sp"
-            android:textColor="#ff0000"/>
+            android:textSize="11.5sp"
+            android:textColor="#fc553b"
+            android:gravity="center_horizontal"
+            android:text="중복된 이메일이 있습니다."/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/tri"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
@@ -100,15 +110,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="비밀번호 입력"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24.5dp"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"/>
 
     <EditText
         android:id="@+id/join_pwEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:hint="영문 숫자 ~~~"
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
@@ -117,15 +130,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="비밀번호 입력 확인"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="23.5dp"
+        android:textSize="11.5sp"
+        android:textColor="#4c4d4e"
+        android:gravity="center_horizontal"/>
 
     <EditText
         android:id="@+id/join_pwCheckEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:hint="영문 숫자 ~~~"
         android:textSize="11dp"
         android:layout_marginTop="5dp"/>
@@ -134,31 +150,34 @@
         android:id="@+id/join_pwDifferentAlert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8.5dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
         android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀번호가 맞지 않습니다."
-            android:textSize="11sp"
-            android:textColor="#ff0000"/>
+            android:textSize="11.5sp"
+            android:textColor="#fc553b"
+            android:gravity="center_horizontal"
+            android:text="비밀번호가 일치하지 않습니다."/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/tri"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/join_nextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="다음" />
+        android:background="@drawable/inputcomple"
+        android:text="다음"
+        android:layout_marginTop="19.5dp"
+        android:layout_marginLeft="32dp"/>
 
 </LinearLayout>

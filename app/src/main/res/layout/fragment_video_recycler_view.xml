@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
         android:clickable="true"
-        android:src="@android:drawable/ic_dialog_email"
+        android:src="@drawable/trophy"
         app:fabSize="normal"
         app:layout_behavior="com.codepath.floatingactionbuttontest.ScrollAwareFABBehavior" />
 
@@ -25,7 +25,7 @@
         android:layout_below="@+id/community_ranking"
         android:layout_margin="8dp"
         android:clickable="true"
-        android:src="@android:drawable/ic_dialog_email"
+        android:src="@drawable/myvideo"
         app:fabSize="normal"
         app:layout_behavior="com.codepath.floatingactionbuttontest.ScrollAwareFABBehavior" />
 

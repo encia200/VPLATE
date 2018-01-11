@@ -6,7 +6,7 @@
     <RelativeLayout
         android:id="@+id/pickTab_tabBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="42.5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -14,10 +14,9 @@
             android:text="찜한 영상"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"/>
-
-
+            android:textSize="17.2sp"
+            android:textColor="#1d1d1d"
+            />
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

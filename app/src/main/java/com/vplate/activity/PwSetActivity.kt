@@ -27,6 +27,9 @@ class PwSetActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pw_set)
 
+//        CommonData.loginResponse!!.data.user_email
+
+
         networkService = ApplicationController.instance!!.networkService // 통신
         email = intent.getStringExtra("email") // 앞에서 이메일 받아오기
 

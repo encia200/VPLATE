@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@android:color/black"
     tools:context="com.vplate.activity.LoginMainActivity">
 
     <!-- 로고 이미지 -->
@@ -12,70 +12,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_marginTop="82.5dp"
+        android:src="@drawable/asset_1" />
 
     <!-- 3초 뒤 아래 애들 나오기 -->
-    <Button
+    <ImageButton
         android:id="@+id/splash_fbLoginBtn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/facebook"
         android:layout_below="@id/splash_logoImg"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="100dp"
-        android:text="페이스북으로 로그인" />
+        android:layout_marginTop="77.5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/splash_kakoLoginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splash_fbLoginBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/kakao"/>
 
     <Button
         android:id="@+id/splash_joinBtn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/splash_fbLoginBtn"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="회원가입" />
+        android:layout_below="@id/splash_kakoLoginBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon_signin"
+        android:layout_marginTop="10dp"/>
 
-    <LinearLayout
-        android:id="@+id/splash_loginLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/splash_loginBtn"
+        android:layout_width="121dp"
+        android:layout_height="15.5dp"
         android:layout_below="@id/splash_joinBtn"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/doyouhaveaccount"/>
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="계정이 있나요?" />
-
-        <Button
-            android:id="@+id/splash_loginBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="로그인"
-            android:textSize="10dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="계속 진행하면 VPLATE의 서비스 약관," />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="개인정보 보호정책에 동의한 것으로 간주됩니다." />
-
-    </LinearLayout>
+            android:textSize="11.5sp"
+            android:textColor="#8c8c8c"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            tools:text="계속 진행하면 VPLATE의 서비스 약관,
+개인정보 보호정책에 동의한 것으로 간주됩니다."
+            />
 
 </RelativeLayout>

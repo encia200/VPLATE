@@ -46,7 +46,7 @@
             android:textColor="#686868"
             android:textSize="11.5sp" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/template_content"
@@ -68,7 +68,8 @@
                 android:layout_marginTop="16dp"
                 android:text="0:30"
                 android:textColor="#8c8c8c"
-                android:textSize="11.5sp" />
-        </LinearLayout>
+                android:textSize="11.5sp"
+                android:layout_toRightOf="@id/template_time_icon" />
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

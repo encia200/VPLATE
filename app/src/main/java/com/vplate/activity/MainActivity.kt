@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.vplate.R
 import com.vplate.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.tab_home.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,11 +18,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // 탭 추가
-        main_tab.addTab(main_tab.newTab().setText("Home"))
-        main_tab.addTab(main_tab.newTab().setText("My video"))
-        main_tab.addTab(main_tab.newTab().setText("Like"))
-        main_tab.addTab(main_tab.newTab().setText("Community"))
-        main_tab.addTab(main_tab.newTab().setText("My page"))
+        main_tab.addTab(main_tab.newTab()
+                .setIcon(R.drawable.home_g))
+        main_tab.addTab(main_tab.newTab()
+                .setIcon(R.drawable.my_video_g))
+        main_tab.addTab(main_tab.newTab()
+                .setIcon(R.drawable.ddip_g))
+        main_tab.addTab(main_tab.newTab()
+                .setIcon(R.drawable.community_g))
+        main_tab.addTab(main_tab.newTab()
+                .setIcon(R.drawable.my_page_g))
 
         var tabAdapter = TabAdapter(supportFragmentManager, main_tab.tabCount)
 
@@ -35,6 +41,27 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
+                main_viewPager.currentItem = tab!!.position
+
+                when (tab.position) {
+                    0 -> {
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_g)
+                    }
+                    1 -> {
+                        tab.setIcon(R.drawable.my_video_g)
+                    }
+                    2 -> {
+                        tab.setIcon(R.drawable.ddip_g)
+                    }
+                    3 -> {
+                        tab.setIcon(R.drawable.community_g)
+                    }
+                    4 -> {
+                        tab.setIcon(R.drawable.my_page_g)
+                    }
+                }
+
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -42,21 +69,24 @@ class MainActivity : AppCompatActivity() {
 
                 when (tab.position) {
                     0 -> {
-
+                        tab.setCustomView(R.layout.tab_home)
+                        tab.customView!!.homeIcon.setImageResource(R.drawable.home_o)
                     }
                     1 -> {
-
+                        tab.setIcon(R.drawable.two_my_video_o)
                     }
                     2 -> {
-
+                        tab.setIcon(R.drawable.two_ddip_o)
                     }
                     3 -> {
+                        tab.setIcon(R.drawable.two_community_o)
+
                         val intent = Intent(applicationContext, CommunityActivity::class.java)
 
                         startActivityForResult(intent, COMMUNITYACTIVITY)
                     }
                     4 -> {
-
+                        tab.setIcon(R.drawable.two_my_page_o)
                     }
                 }
             }

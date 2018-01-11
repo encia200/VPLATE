@@ -5,6 +5,31 @@
     android:layout_margin="8dp"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#1d1d1d"
+            android:gravity="center_horizontal"
+            android:text="영상 편집실"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <Button
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:textSize="13.4sp"
+            android:textColor="#686868"
+            android:text="제작하기"/>
+
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/template_edit_scene"
         android:layout_width="wrap_content"
@@ -25,13 +50,21 @@
         android:layout_height="0dp"
         android:layout_weight="3"
         android:background="#f000">
+        <ExpandableListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/template_edit_bottomlist"></ExpandableListView>
+
+
+
 
         <Button
             android:id="@+id/template_edit_photo_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="photo" />
-
+            android:text="photo"
+            />
+B
         <Button
             android:id="@+id/template_edit_video_upload"
             android:layout_width="wrap_content"

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import com.google.firebase.iid.FirebaseInstanceId
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
@@ -22,12 +23,16 @@ class LoginActivity : AppCompatActivity() {
 
     val PREFS_NAME = "LoginPrefs"
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         networkService = ApplicationController.instance!!.networkService // 통신
+
+        if (login_emailEdit.hasFocus()) {
+//            login_emailEdit.baseli
+            Toast.makeText(applicationContext, "focus", Toast.LENGTH_LONG).show()
+        }
 
         // 비밀번호 찾기 버튼 (비밀번호 찾기 화면으로 넘어감)
         login_findPwBtn!!.setOnClickListener{
@@ -77,13 +82,6 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else {
                     ApplicationController.instance!!.makeToast("이메일이 존재하지 않거나 비밀번호가 일치하지 않습니다.")
-
-//                    if (response!!.body().msg.equals("failed login_email")) {
-//                        ApplicationController.instance!!.makeToast(response.message() + "해당 이메일이 없습니다.")
-//                    }
-//                    else if (response!!.body().msg.equals("failed login_pwd")) {
-//                        ApplicationController.instance!!.makeToast(response.message() + "비밀번호가 일치하지 않습니다.")
-//                    }
                 }
             }
             override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
