@@ -1,5 +1,6 @@
 package com.vplate.Network
 
+import com.vplate.Network.Get.CommunityData
 import com.vplate.Network.Get.MyMediaData
 import com.vplate.Network.Get.TemplateData
 import com.vplate.Network.Post.Response.LoginResponse
@@ -12,4 +13,5 @@ object CommonData {
     var templateAllList: ArrayList<TemplateData>? = null
     var videoAllList : ArrayList<MyMediaData>? = null
     var pickAllList : ArrayList<TemplateData>? = null
+    var videoList : ArrayList<CommunityData>? = null
 }

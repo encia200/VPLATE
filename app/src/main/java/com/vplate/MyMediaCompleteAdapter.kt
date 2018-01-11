@@ -1,7 +1,6 @@
 package com.vplate
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,17 +16,13 @@ class MyMediaCompleteAdapter(var dataList: ArrayList<MyMediaData>?, var complete
 
     override fun onBindViewHolder(holder: MyMediaViewCompleteHolder?, position: Int) {
 
-        if (complete == 0) {
-            Log.v("::progressing", dataList!!.get(position).title)
-
+        if (complete == 1) {
             holder!!.template_incompleteIng.visibility = View.VISIBLE
-            holder!!.template_incompleteTxt.visibility = View.VISIBLE
-        }
-        else if (complete == 1) {
-            Log.v("::complete", dataList!!.get(position).title)
-
-            holder!!.template_incompleteIng.visibility = View.GONE
             holder!!.template_incompleteTxt.visibility = View.GONE
+        }
+        else if (complete == 0) {
+            holder!!.template_incompleteIng.visibility = View.GONE
+            holder!!.template_incompleteTxt.visibility = View.VISIBLE
         }
 
         Glide.with(holder!!.itemView)
