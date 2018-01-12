@@ -49,7 +49,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         v = inflater!!.inflate(R.layout.fragment_home, container, false)
 
         v!!.home_recyclerView!!.layoutManager = LinearLayoutManager(context)
-        resizeImage(v!!)
+//        resizeImage(v!!)
 
         networkService = ApplicationController.instance!!.networkService // 통신
 

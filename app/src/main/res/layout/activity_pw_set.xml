@@ -26,14 +26,14 @@
         android:layout_marginTop="92.5dp"/>
 
     <EditText
-        android:id="@+id/pw_set_pw1Edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:hint="영문 숫자 ~~~"
-        android:textSize="11dp"
-        android:layout_marginTop="5dp"/>
+    android:id="@+id/pw_set_pw1Edit"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:hint="영문 숫자 ~~~"
+    android:textSize="11dp"
+    android:layout_marginTop="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"

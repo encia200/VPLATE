@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.NetworkService
@@ -23,6 +26,7 @@ class PwChangeActivity:AppCompatActivity() {
     var pwd : String? = null
     var email : String? = null
     var pwFlag : Int = 0
+
 
     var settings : SharedPreferences? = null
 
@@ -50,6 +54,28 @@ class PwChangeActivity:AppCompatActivity() {
         }
 
 
+        changed_pw.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                var pw = pw_current.text.toString()
+                var pwCheck = changed_pw.text.toString()
+
+                if (pw_current.text.length > 0 && changed_pw.text.length > 0) {
+                    if (!pw.equals(pw_current)) { // 다를 때
+                        mypage_pwDifferentAlert.visibility = View.VISIBLE
+                        pwFlag = 0
+                    } else {
+                        mypage_pwDifferentAlert.visibility = View.GONE // 같을 때
+                        pwFlag = 1
+                    }
+                }
+            }
+        })
 
 
     }

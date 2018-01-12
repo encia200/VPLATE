@@ -1,42 +1,82 @@
 [
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_fade_out.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_fade_out.xml"
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_slide_out_bottom.xml"
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_slide_in_top.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_fade_in.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_fade_in.xml"
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_popup_exit.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_slide_out_top.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_popup_enter.xml"
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/androidTest/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/anim/abc_slide_in_bottom.xml"
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     }
 ]

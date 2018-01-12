@@ -45,17 +45,19 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/cate_img_1" />
+                android:background="@drawable/cate_img_1"
+                />
 
             <ImageView
                 android:id="@+id/cate1Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
-                android:layout_alignBottom="@id/home_cate_img_1"/>
+                android:layout_alignBottom="@id/home_cate_img_1"
+                android:scaleType="centerCrop"/>
 
         </RelativeLayout>
 
@@ -67,18 +69,19 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cate_img_2" />
 
             <ImageView
                 android:id="@+id/cate2Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
                 android:layout_alignBottom="@id/home_cate_img_2"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                />
 
         </RelativeLayout>
 
@@ -90,13 +93,13 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cate_img_3" />
 
             <ImageView
                 android:id="@+id/cate3Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
@@ -113,13 +116,13 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cate_img_4" />
 
             <ImageView
                 android:id="@+id/cate4Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
@@ -136,13 +139,13 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cate_img_5" />
 
             <ImageView
                 android:id="@+id/cate5Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
@@ -159,13 +162,13 @@
 
             <ImageButton
                 android:id="@+id/home_cate_img_6"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cate_img_6" />
 
             <ImageView
                 android:id="@+id/cate6Triangle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/triangle"
                 android:layout_centerHorizontal="true"
