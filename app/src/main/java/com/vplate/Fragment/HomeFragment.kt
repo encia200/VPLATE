@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
+import com.vplate.Network.Get.Response.CommunityResponse
 import com.vplate.Network.Get.Response.TemplatelistResponse
 import com.vplate.Network.Get.TemplateData
 import com.vplate.Network.NetworkService
@@ -53,6 +54,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         networkService = ApplicationController.instance!!.networkService // 통신
 
         Log.v("::token", CommonData.loginResponse!!.token)
+//        communityListLatest()
 
         newList("all")
 
@@ -297,29 +299,29 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     // 카테고리 사진 사이즈 맞추기
     fun resizeImage(v : View){
-        var param1 = v.home_cate_img_1.layoutParams
+        var param1 = v.cate1.layoutParams
         param1.height = param1.width
-        v.home_cate_img_1.layoutParams = param1
+        v.cate1.layoutParams = param1
 
-        var param2 = v.home_cate_img_2.layoutParams
+        var param2 = v.cate2.layoutParams
         param2.height = param2.width
-        v.home_cate_img_2.layoutParams = param2
+        v.cate2.layoutParams = param2
 
-        var param3 = v.home_cate_img_3.layoutParams
+        var param3 = v.cate3.layoutParams
         param3.height = param3.width
-        v.home_cate_img_3.layoutParams = param3
+        v.cate3.layoutParams = param3
 
-        var param4 = v.home_cate_img_4.layoutParams
+        var param4 = v.cate4.layoutParams
         param4.height = param4.width
-        v.home_cate_img_4.layoutParams = param4
+        v.cate4.layoutParams = param4
 
-        var param5 = v.home_cate_img_5.layoutParams
+        var param5 = v.cate5.layoutParams
         param5.height = param5.width
-        v.home_cate_img_5.layoutParams = param5
+        v.cate5.layoutParams = param5
 
-        var param6 = v.home_cate_img_6.layoutParams
+        var param6 = v.cate6.layoutParams
         param6.height = param6.width
-        v.home_cate_img_6.layoutParams = param6
+        v.cate6.layoutParams = param6
     }
 
     // 최신순 리스트 가져오기
@@ -364,6 +366,26 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             override fun onFailure(call: Call<TemplatelistResponse>?, t: Throwable?) {
                 ApplicationController.instance!!.makeToast("통신 오류")
+            }
+        })
+    }
+
+    // 커뮤니티 리스트 가져오기 (최신순)
+    fun communityListLatest() {
+        val communityResponse = networkService!!.communityLatest(CommonData.loginResponse!!.token)
+
+        communityResponse.enqueue(object : Callback<CommunityResponse> {
+            override fun onFailure(call: Call<CommunityResponse>?, t: Throwable?) {
+                ApplicationController.instance!!.makeToast("통신 오류")
+            }
+
+            override fun onResponse(call: Call<CommunityResponse>?, response: Response<CommunityResponse>?) {
+                if (response!!.isSuccessful) {
+                    CommonData.communityList = response!!.body().data.community
+                }
+                else {
+                    ApplicationController.instance!!.makeToast("못 받음ㅠ")
+                }
             }
         })
     }

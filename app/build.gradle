@@ -43,7 +43,6 @@ android {
             versionCode new Date().format('yyMMddHHmm').toInteger()
         }
 
-
         /*free {
             dimension "mode"
             applicationIdSuffix ".free"
@@ -101,6 +100,14 @@ dependencies {
     compile project(':video-player-manager')
     compile project(':list-visibility-utils')
 
+
+
+
+
+
+    compile project(path: ':imagecropview')
+    compile project(path: ':k4l-video-trimmer')
+
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
@@ -114,22 +121,14 @@ dependencies {
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.3@aar'
     compile 'com.google.firebase:firebase-messaging:10.0.1'
-
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-
     compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
-
     compile 'com.github.bumptech.glide:glide:4.3.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
-
     compile 'com.mikhaellopez:circularimageview:3.0.2'
-
-    compile project(path: ':imagecropview')
-    compile project(path: ':k4l-video-trimmer')
-
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
 }
 repositories {
     mavenCentral()

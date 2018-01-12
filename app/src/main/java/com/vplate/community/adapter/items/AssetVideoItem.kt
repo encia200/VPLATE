@@ -1,8 +1,6 @@
 package com.vplate.community.adapter.items
 
 import android.content.res.AssetFileDescriptor
-import android.view.View
-
 import com.squareup.picasso.Picasso
 import com.volokh.danylo.video_player_manager.Config
 import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager
@@ -17,10 +15,10 @@ class AssetVideoItem(private val mTitle: String, private val mAssetFileDescripto
     override fun update(position: Int, viewHolder: VideoViewHolder, videoPlayerManager: VideoPlayerManager<*>) {
         if (SHOW_LOGS) Logger.v(TAG, "update, position " + position)
 
-        viewHolder.mTitle.text = mTitle
-        viewHolder.mCover.visibility = View.VISIBLE
-        viewHolder.mLinearLayout.visibility=View.VISIBLE
-        mImageLoader.load(mImageResource).into(viewHolder.mCover)
+//        viewHolder.mTitle.text = mTitle // 수민
+//        viewHolder.mCover.visibility = View.VISIBLE  // 수민
+//        viewHolder.mLinearLayout.visibility=View.VISIBLE // 수민
+//        mImageLoader.load(mImageResource).into(viewHolder.mCover) // 수민
     }
 
 

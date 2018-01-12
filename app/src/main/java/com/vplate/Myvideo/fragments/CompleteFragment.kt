@@ -1,9 +1,11 @@
 package com.vplate.Myvideo.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +16,8 @@ import com.vplate.Network.Get.MyMediaData
 import com.vplate.Network.Get.Response.MyVideoListResponse
 import com.vplate.Network.NetworkService
 import com.vplate.R
+import com.vplate.activity.CompleteVideoInfoActivity
+import kotlinx.android.synthetic.main.fragment_myvideo_complete.*
 import kotlinx.android.synthetic.main.fragment_myvideo_complete.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,11 +36,14 @@ class CompleteFragment : Fragment(), View.OnClickListener { // 완성된 영상 
     private var v : View? = null
 
     override fun onClick(v: View?) {
-//        val idx: Int = v!!.myvideo_complete_recyclerview.getChildAdapterPosition(v)
-//
-//        val intent = Intent(context, TemplateInfoActivity::class.java)
-//
-//        startActivity(intent)
+        val idx: Int = myvideo_complete_recyclerview.getChildAdapterPosition(v)
+
+        val intent = Intent(context, CompleteVideoInfoActivity::class.java)
+        intent.putExtra("mymediaid", mediaDatas!![idx].mymedia_id)
+
+        Log.v("dd", "ssdasd")
+
+        startActivity(intent)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -45,10 +52,6 @@ class CompleteFragment : Fragment(), View.OnClickListener { // 완성된 영상 
         v!!.myvideo_complete_recyclerview!!.layoutManager = LinearLayoutManager(context) // 레이아웃 매니저 설정
 
         networkService = ApplicationController.instance!!.networkService // 통신
-
-//        if(arguments != null){
-//
-//        }
 
         completeList()
 

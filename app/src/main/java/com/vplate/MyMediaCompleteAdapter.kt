@@ -16,13 +16,13 @@ class MyMediaCompleteAdapter(var dataList: ArrayList<MyMediaData>?, var complete
 
     override fun onBindViewHolder(holder: MyMediaViewCompleteHolder?, position: Int) {
 
-        if (complete == 1) {
+        if (complete == 0) {
             holder!!.template_incompleteIng.visibility = View.VISIBLE
-            holder!!.template_incompleteTxt.visibility = View.GONE
-        }
-        else if (complete == 0) {
-            holder!!.template_incompleteIng.visibility = View.GONE
             holder!!.template_incompleteTxt.visibility = View.VISIBLE
+        }
+        else if (complete == 1) {
+            holder!!.template_incompleteIng.visibility = View.GONE
+            holder!!.template_incompleteTxt.visibility = View.GONE
         }
 
         Glide.with(holder!!.itemView)
@@ -56,6 +56,6 @@ class MyMediaCompleteAdapter(var dataList: ArrayList<MyMediaData>?, var complete
     override fun getItemCount(): Int = dataList!!.size
 
     fun setOnItemClickListener(l: View.OnClickListener) {
-//        onItemClick = l
+        onItemClick = l
     }
 }

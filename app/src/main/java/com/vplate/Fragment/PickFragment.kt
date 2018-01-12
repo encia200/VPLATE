@@ -1,5 +1,6 @@
 package com.vplate.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -14,6 +15,8 @@ import com.vplate.Network.Get.TemplateData
 import com.vplate.Network.NetworkService
 import com.vplate.PickVideoAdapter
 import com.vplate.R
+import com.vplate.activity.TemplateInfoActivity
+import kotlinx.android.synthetic.main.fragment_pick.*
 import kotlinx.android.synthetic.main.fragment_pick.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,6 +34,9 @@ class PickFragment : Fragment(), View.OnClickListener {
     private var networkService: NetworkService? = null // 넽웕 썰비스
 
     var v : View? = null
+
+
+    private val CODE = 100
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         v = inflater!!.inflate(R.layout.fragment_pick, container, false)
@@ -51,7 +57,12 @@ class PickFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        val idx: Int = pickTab_recyclerView.getChildAdapterPosition(v)
 
+        val intent = Intent(context, TemplateInfoActivity::class.java)
+        intent.putExtra("template_id",pickDatas!![idx].template_id ) // 템플릿 id
+        intent.putExtra("template_bookmarkTemplate", pickDatas!![idx].template_hashtag)
+        startActivityForResult(intent, CODE)
     }
 
     // 찜 리스트 가져오기
@@ -77,5 +88,11 @@ class PickFragment : Fragment(), View.OnClickListener {
                 }
             }
         })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == 100) {
+            ddipList()
+        }
     }
 }

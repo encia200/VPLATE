@@ -7,6 +7,4 @@ data class TemplateIdResponse(
         var status : String,
         var data : ArrayList<String>,
         var msg : String
-
-
 )

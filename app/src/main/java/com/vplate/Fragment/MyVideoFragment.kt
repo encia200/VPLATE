@@ -53,4 +53,5 @@ class MyVideoFragment : Fragment(), View.OnClickListener {
         fragmentTransaction.replace(R.id.myvideo_fragment, fragment)
         fragmentTransaction.commit()
     }
+
 }

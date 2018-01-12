@@ -71,8 +71,6 @@ class MyPageFragment : Fragment(),AdapterView.OnItemClickListener {
                     startActivity(intent1)
 
                 }
-
-
             }
         }
 
@@ -108,16 +106,7 @@ class MyPageFragment : Fragment(),AdapterView.OnItemClickListener {
                 }
             }
 
-
         }
-
-
-
-
-
-
-
-
 
 
 

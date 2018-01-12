@@ -38,6 +38,7 @@
         android:layout_below="@id/home_tabBar">
 
         <RelativeLayout
+            android:id="@+id/cate1"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -59,6 +60,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/cate2"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -81,6 +83,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/cate3"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -103,6 +106,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/cate4"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -125,6 +129,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/cate5"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -147,6 +152,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/cate6"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

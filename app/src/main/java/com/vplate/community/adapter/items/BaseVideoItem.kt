@@ -1,14 +1,10 @@
 package com.vplate.community.adapter.items
 
 import android.graphics.Rect
-import android.os.Handler
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.VISIBLE
 import android.view.ViewGroup
-import com.daimajia.androidanimations.library.Techniques
-import com.daimajia.androidanimations.library.YoYo
 import com.volokh.danylo.video_player_manager.manager.VideoItem
 import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager
 import com.volokh.danylo.video_player_manager.meta.CurrentItemMetaData
@@ -43,8 +39,8 @@ abstract class BaseVideoItem protected constructor(private val mVideoPlayerManag
 
         val viewHolder = newActiveView.tag as VideoViewHolder
 
-        YoYo.with(Techniques.FadeIn).playOn(viewHolder.mCardView)
-        viewHolder.mCover.visibility = View.INVISIBLE
+//        YoYo.with(Techniques.FadeIn).playOn(viewHolder.mCardView) // 수민
+//        viewHolder.mCover.visibility = View.INVISIBLE // 수민
         //viewHolder.mCardView.setVisibility(VISIBLE);
         playNewVideo(CurrentItemMetaData(newActiveViewPosition, newActiveView), viewHolder.mPlayer, mVideoPlayerManager)
     }
@@ -71,7 +67,7 @@ abstract class BaseVideoItem protected constructor(private val mVideoPlayerManag
 
             override fun onVideoPreparedMainThread() {
                 // When video is prepared it's about to start playback. So we hide the cover
-                videoViewHolder.mCover.visibility = View.INVISIBLE
+//                videoViewHolder.mCover.visibility = View.INVISIBLE //수민
             }
 
             override fun onVideoCompletionMainThread() {}
@@ -82,12 +78,12 @@ abstract class BaseVideoItem protected constructor(private val mVideoPlayerManag
 
             override fun onVideoStoppedMainThread() {
                 // Show the cover when video stopped
-                YoYo.with(Techniques.FadeOut).playOn(videoViewHolder.mCardView)
+//                YoYo.with(Techniques.FadeOut).playOn(videoViewHolder.mCardView) // 수민
 
-                Handler().postDelayed({
-                    //videoViewHolder.mCardView.setVisibility(View.INVISIBLE);
-                    videoViewHolder.mCover.visibility = VISIBLE
-                }, 1000)
+//                Handler().postDelayed({
+//                    //videoViewHolder.mCardView.setVisibility(View.INVISIBLE);
+//                    videoViewHolder.mCover.visibility = VISIBLE // 수민
+//                }, 1000)
 
             }
         })

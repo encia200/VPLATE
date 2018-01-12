@@ -1,8 +1,5 @@
 package com.vplate
 
-import android.graphics.Bitmap
-import android.media.MediaMetadataRetriever
-import android.os.Build
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -49,30 +46,5 @@ class TemplateAdapter(var dataList: ArrayList<TemplateData>?) : RecyclerView.Ada
 
     fun setOnItemClickListener(l: View.OnClickListener) {
         onItemClick = l
-    }
-
-    @Throws(Throwable::class)
-    fun retriveVideoFrameFromVideo(videoPath: String): Bitmap? {
-        var bitmap: Bitmap? = null
-        var mediaMetadataRetriever: MediaMetadataRetriever? = null
-        try {
-            mediaMetadataRetriever = MediaMetadataRetriever()
-            if (Build.VERSION.SDK_INT >= 14)
-                mediaMetadataRetriever.setDataSource(videoPath, HashMap())
-            else
-                mediaMetadataRetriever.setDataSource(videoPath)
-
-            bitmap = mediaMetadataRetriever.getFrameAtTime(1, MediaMetadataRetriever.OPTION_CLOSEST)
-        } catch (e: Exception) {
-            e.printStackTrace()
-            throw Throwable(
-                    "Exception in retriveVideoFrameFromVideo(String videoPath)" + e.message)
-
-        } finally {
-            if (mediaMetadataRetriever != null) {
-                mediaMetadataRetriever.release()
-            }
-        }
-        return bitmap
     }
 }

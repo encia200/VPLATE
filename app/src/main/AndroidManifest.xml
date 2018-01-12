@@ -33,10 +33,11 @@
         <activity android:name=".activity.CommunityActivity" />
         <activity android:name=".activity.TemplateInfoActivity" />
         <activity android:name=".activity.TemplateEditActivity" />
-        <activity android:name=".activity.CropActivity"/>
-        <activity android:name=".activity.TrimmerActivity"/>
-        <activity android:name=".activity.NickChangeAcitivity"/>
-        <activity android:name=".activity.PwChangeActivity"/>
+        <activity android:name=".activity.CropActivity" />
+        <activity android:name=".activity.TrimmerActivity" />
+        <activity android:name=".activity.NickChangeAcitivity" />
+        <activity android:name=".activity.PwChangeActivity" />
+
         <service android:name=".service.FcmListenerService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -47,6 +48,8 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".activity.CompleteVideoInfoActivity"></activity>
     </application>
 
 </manifest>

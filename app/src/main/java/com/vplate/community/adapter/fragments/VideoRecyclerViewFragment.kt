@@ -5,7 +5,6 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,12 +26,12 @@ import com.vplate.R
 import com.vplate.activity.CommunityActivity
 import com.vplate.community.adapter.VideoRecyclerViewAdapter
 import com.vplate.community.adapter.items.BaseVideoItem
+import com.vplate.community.adapter.items.DirectLinkVideoItem
 import kotlinx.android.synthetic.main.fragment_video_recycler_view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
-
 
 /**
  * This fragment shows of how to use [VideoPlayerManager] with a RecyclerView.
@@ -71,42 +70,33 @@ class VideoRecyclerViewFragment : Fragment() {
     private var mediaDatas: ArrayList<CommunityData>? = null
     private var adapter: CommunityAdapter? = null
     private var communityList: RecyclerView? = null
-
-    private var videoList : ArrayList<String>? = ArrayList()
-
-    var isEnd = 0
     //
 
     private var rootView : View? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        rootView = inflater!!.inflate(R.layout.fragment_video_recycler_view, container, false)
 
         networkService = ApplicationController.instance!!.networkService // 통신
 
-        communityListLatest()
+//        communityListLatest()
+
         var i = 0
-
-        Log.v("DDDDD", isEnd.toString())
-
-        if (isEnd == 1) {
-            Log.v("DDDD", videoList!!.size.toString())
-        }
 
 
         try {
-//            while (i < mediaDatas!!.lastIndex) {
-//                mList.add(DirectLinkVideoItem(mediaDatas!!.get(0).uploadvideo, mVideoPlayerManager, context))
+//            while (i < CommonData.communityList!!.lastIndex) {
+//                mList.add(DirectLinkVideoItem(CommonData.communityList!!.get(i).uploadvideo, mVideoPlayerManager, context))
 //                i++
 //            }
-
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515598041869.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258231423.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258316509.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258520682.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258871020.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258630793.mp4", mVideoPlayerManager, context))
-//            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258621607.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", mVideoPlayerManager, context))
+            mList.add(DirectLinkVideoItem("https://hyunho9304.s3.ap-northeast-2.amazonaws.com/1515258621607.mp4", mVideoPlayerManager, context))
 
 //            mList.add(ItemFactory.createItemFromAsset("video_sample_1.mp4", R.drawable.video_sample_1_pic, activity, mVideoPlayerManager))
 //            mList.add(ItemFactory.createItemFromAsset("video_sample_3.mp4", R.drawable.video_sample_3_pic, activity, mVideoPlayerManager))
@@ -118,10 +108,6 @@ class VideoRecyclerViewFragment : Fragment() {
         } catch (e: IOException) {
             throw RuntimeException(e)
         }
-
-        rootView = inflater!!.inflate(R.layout.fragment_video_recycler_view, container, false)
-
-//        communityListLatest()
 
         mRecyclerView = rootView!!.findViewById(R.id.recycler_view) as RecyclerView
         mFloatingbackBtn = rootView!!.findViewById(R.id.community_backbtn) as FloatingActionButton
@@ -219,33 +205,27 @@ class VideoRecyclerViewFragment : Fragment() {
             override fun onResponse(call: Call<CommunityResponse>?, response: Response<CommunityResponse>?) {
                 if (response!!.isSuccessful) {
 
+
+
                    var i = 0
+                    CommonData.communityList = response!!.body().data.community
+//                        CommonData.비디오 = 받은 비다오
 
-                    while (i < response!!.body().data.community.size) {
-                        videoList!!.add(response!!.body().data.community.get(i).uploadvideo)
-                        Log.v("DDDD3", videoList!!.size.toString())
-                        i++
-                    }
-
-
-                    isEnd = 1
-
-//                    while (true) {
-//                        if (response!!.body().data.community.get(i) != null) {
-//                            videoList!!.add(response!!.body().data.community.get(i).uploadvideo)
-//                            i++
-//                        }
-//                        else {
-//                            break
-//                        }
+//                    while (i < response!!.body().data.community.size) {
+//                        CommonData.videoUrlList!!.add(response!!.body().data.community.get(i).uploadvideo)
+//                        i++
 //                    }
 
+                    mediaDatas = response!!.body().data.community
+                    adapter = CommunityAdapter(mediaDatas)
+//                    adapter!!.setOnItemClickListener(this@HomeFragment)
+                    communityList = rootView!!.findViewById(R.id.recycler_view) as RecyclerView
+                    communityList!!.adapter = adapter
                 }
                 else {
                     ApplicationController.instance!!.makeToast("못 받음ㅠ")
                 }
             }
         })
-
     }
 }

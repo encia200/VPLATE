@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.media.MediaMetadataRetriever
 import android.os.Build
-import android.view.View
 import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager
 import com.volokh.danylo.video_player_manager.meta.MetaData
 import com.volokh.danylo.video_player_manager.ui.VideoPlayerView
@@ -12,8 +11,8 @@ import com.vplate.community.adapter.holders.VideoViewHolder
 
 class DirectLinkVideoItem(private val mDirectUrl: String, videoPlayerManager: VideoPlayerManager<*>, private val context: Context) : BaseVideoItem(videoPlayerManager as VideoPlayerManager<MetaData>) {
     override fun update(position: Int, viewHolder: VideoViewHolder, videoPlayerManager: VideoPlayerManager<*>) {
-        viewHolder.mLinearLayout.visibility = View.VISIBLE
-        viewHolder.mCover.visibility = View.VISIBLE
+//        viewHolder.mLinearLayout.visibility = View.VISIBLE // 수민
+//        viewHolder.mCover.visibility = View.VISIBLE // 수민
         //viewHolder.mCover.setImageBitmap(retriveVideoFrameFromVideo(mDirectUrl))
     }
 

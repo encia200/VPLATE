@@ -13,5 +13,5 @@ object CommonData {
     var templateAllList: ArrayList<TemplateData>? = null
     var videoAllList : ArrayList<MyMediaData>? = null
     var pickAllList : ArrayList<TemplateData>? = null
-    var videoList : ArrayList<CommunityData>? = null
+    var communityList : ArrayList<CommunityData>? = null
 }

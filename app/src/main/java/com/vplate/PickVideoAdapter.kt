@@ -69,6 +69,7 @@ class PickVideoAdapter(var dataList : ArrayList<TemplateData>?) : RecyclerView.A
         view!!.pick_likeBtn.setOnClickListener{
             // 하트 버튼 누르면 찜 목록에서 해당 템플릿이 사라져야 함
             bookmarkCancel()
+
         }
 
 
@@ -77,7 +78,7 @@ class PickVideoAdapter(var dataList : ArrayList<TemplateData>?) : RecyclerView.A
 
     override fun getItemCount(): Int = dataList!!.size
     fun setOnItemClickListener(l: View.OnClickListener){
-//        onItemClick = l
+        onItemClick = l
     }
 
 //    // 찜 리스트 가져오기

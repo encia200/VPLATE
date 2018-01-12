@@ -1,9 +1,6 @@
 package com.vplate.Network
 
-import com.vplate.Network.Get.Response.CommunityResponse
-import com.vplate.Network.Get.Response.MyVideoListResponse
-import com.vplate.Network.Get.Response.TemplateIdResponse
-import com.vplate.Network.Get.Response.TemplatelistResponse
+import com.vplate.Network.Get.Response.*
 import com.vplate.Network.Post.EmailCheckPost
 import com.vplate.Network.Post.LoginPost
 import com.vplate.Network.Post.PwAnswerCheckPost
@@ -11,9 +8,9 @@ import com.vplate.Network.Post.PwSetPost
 import com.vplate.Network.Post.Response.EmailCheckResponse
 import com.vplate.Network.Post.Response.LoginResponse
 import com.vplate.Network.Post.Response.SignResponse
-import okhttp3.MultipartBody
 import com.vplate.Network.Put.BookmarkPost
 import com.vplate.Network.Put.Response.BookmarkResponse
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -60,6 +57,12 @@ interface NetworkService {
             @Query("cursor") cursor : Int
     ) : Call<TemplatelistResponse>
 
+    // 템플릿 상세보기
+    @GET("account/template/inform/detail")
+    fun templateDetail(
+            @Header("tt") tt:String,
+            @Query("templateid") templateid: Int) : Call<TemplateDetailResponse>
+
     // 비밀번호 찾기
     @POST("account/setting/search")
     fun pwFind(
@@ -81,6 +84,13 @@ interface NetworkService {
     fun myvideoListComplete(
             @Header("tt") tt:String
     ) : Call<MyVideoListResponse>
+
+    // 완성된 리스트 상세보기
+    @GET("account/video/detail")
+    fun completeDetail(
+            @Header("tt") tt:String,
+            @Query("mymediaid") mymediaid: Int
+    ) : Call<CompleteDetailResponse>
 
     // 커뮤니티 리스트 (최신순)
     @GET("community/list/latest")
@@ -115,4 +125,17 @@ interface NetworkService {
             @Header("tt") tt:String,
             @Body templateid : BookmarkPost
     ) : Call<BookmarkResponse>
+
+
+
+
+
+    //
+    @GET("admin/inform")
+    fun nothing(
+            @Header("tt") tt:String,
+            @Query("templateid") templateid : Int,
+            @Query("sceneString") sceneString : String
+    ) : Call<NothingResponse>
+    //
 }

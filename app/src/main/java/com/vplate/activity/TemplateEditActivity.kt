@@ -24,13 +24,14 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.naver.android.helloyako.imagecrop.util.BitmapLoadUtils
 import com.vplate.HorizontalAdapter
 import com.vplate.Network.ApplicationController
 import com.vplate.Network.CommonData
+import com.vplate.Network.Get.HorizontalData
 import com.vplate.Network.Get.Response.TemplateIdResponse
 import com.vplate.Network.NetworkService
+import com.vplate.Network.NothingResponse
 import com.vplate.R
 import com.vplate.activity.CropActivity
 import kotlinx.android.synthetic.main.activity_template_edit.*
@@ -40,10 +41,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
+
     private var mHorizontalView: RecyclerView? = null
     private var mAdapter: HorizontalAdapter? = null
     private var mLayoutManager: LinearLayoutManager? = null
-    internal var data: ArrayList<HorizontalAdapter.HorizontalData>? = null
+    internal var data: ArrayList<HorizontalData>? = null
     internal var mImageUri: Uri? = null
     internal var imageWidth: Int = 0
     internal var imageHeight: Int = 0
@@ -51,6 +53,9 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     private var networkService: NetworkService? = null // 넽웕 썰비스
     var ScenePhoto : ArrayList<String>? = ArrayList()
 
+    //
+//    var arrayScene : ArrayList<HorizontalData>? = null
+    //
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,18 +64,26 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         imageWidth = 1000
         imageHeight = 1000
 
+        // 수민
+        var templateId = intent.getIntExtra("templateId", 0)
+        // 수민
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 설치시 동의 안했을 때 21 이상
             if (packageManager.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, packageName) == PackageManager.PERMISSION_GRANTED) {
-                template_edit_photo_upload!!.setOnClickListener(this)
-                template_edit_video_upload!!.setOnClickListener(this)
+//                template_edit_photo_upload!!.setOnClickListener(this)
+//                template_edit_video_upload!!.setOnClickListener(this)
             }
             requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), MAIN_ACTIVITY_REQUEST_STORAGE) // 권한 요청
         } else { // 설치시 동의 21이하
-            template_edit_video_upload!!.setOnClickListener(this)
-            template_edit_photo_upload!!.setOnClickListener(this)
+//            template_edit_video_upload!!.setOnClickListener(this)
+//            template_edit_photo_upload!!.setOnClickListener(this)
         }
 
-        scenePhoto(100)//템플릿 아이디 받아와서 이미지 URL받아오기
+        // 수민
+//        scenePhoto(100)//템플릿 아이디 받아와서 이미지 URL받아오기
+        scenePhoto(templateId)
+
+        // 수민
 
         // RecyclerView binding
         mHorizontalView = findViewById(R.id.template_timeline_recycler_view) as RecyclerView
@@ -85,17 +98,19 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         // 여기부터 서버에서 받아오는 코드
 
         // init Adapter
-        mAdapter = HorizontalAdapter()
+        mAdapter = HorizontalAdapter(ScenePhoto)
         // init Data
         data = ArrayList() // response!!.body().data.객체배열
-        data!!.add(HorizontalAdapter.HorizontalData("aaa",R.mipmap.ic_launcher))
-        data!!.add(HorizontalAdapter.HorizontalData("bbb",R.mipmap.ic_launcher))
-        data!!.add(HorizontalAdapter.HorizontalData("ccc",R.mipmap.ic_launcher))
+//        data!!.add(HorizontalData("aaa",R.mipmap.ic_launcher))
+//        data!!.add(HorizontalData("bbb",R.mipmap.ic_launcher))
+//        data!!.add(HorizontalData("ccc",R.mipmap.ic_launcher))
+
+
         /*for(i in 1..ScenePhoto!!.size){
             data!!.add(HorizontalAdapter.HorizontalData("aaa"+i,R.mipmap.ic_launcher))
         }*/
         // set Data
-        mAdapter!!.setData(data!!)
+//        mAdapter!!.setData(data!!)
         mAdapter!!.setOnItemClick(this)
         // set Adapter
         mHorizontalView!!.adapter = mAdapter
@@ -118,11 +133,11 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
 
         when(idx){
             0->{
-                Glide.with(this)
-                        .load(ScenePhoto!!.get(0))
-                        .into(template_edit_scene)
+//                Glide.with(this)
+//                        .load(ScenePhoto!!.get(0))
+//                        .into(template_edit_scene)
 
-
+                get()
             }
 
         }
@@ -134,13 +149,13 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         when (requestCode) {
             MAIN_ACTIVITY_REQUEST_STORAGE -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 //pickVideoFromGallery() // 이거거나 리스너 달기
-                template_edit_photo_upload!!.setOnClickListener(this)
-                template_edit_video_upload!!.setOnClickListener(this)
+//                template_edit_photo_upload!!.setOnClickListener(this)
+//                template_edit_video_upload!!.setOnClickListener(this)
             }
             REQUEST_STORAGE_READ_ACCESS_PERMISSION -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 //pickVideoFromGallery() // 이거거나 리스너 달기
-                template_edit_photo_upload!!.setOnClickListener(this)
-                template_edit_video_upload!!.setOnClickListener(this)
+//                template_edit_photo_upload!!.setOnClickListener(this)
+//                template_edit_video_upload!!.setOnClickListener(this)
             }
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
@@ -355,28 +370,18 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    // 영상 제작하기 (씬정보)
     fun scenePhoto(temp_num:Int) {
         val sceneResponse = networkService!!.ScenePhoto(CommonData.loginResponse!!.token, temp_num)
+
         sceneResponse.enqueue(object : Callback<TemplateIdResponse> {
             override fun onResponse(call: Call<TemplateIdResponse>?, response: Response<TemplateIdResponse>?) {
                 if (response!!.isSuccessful) {
-                    Log.v("photoUrl",response!!.body().data.get(0))
-                    var i = 0
-                    while (true)
-                    {
-                        if(response!!.body().data.get(i)!==null)
-                        {
-                            ScenePhoto!!.add(response!!.body().data.get(i))
-                            Log.v("sibal",ScenePhoto!!.get(i).toString())
-                            i++
-                        }else break
-
-
-                    }
-
-
-
-
+                    ScenePhoto = response!!.body().data
+                    mAdapter = HorizontalAdapter(ScenePhoto)
+                    mAdapter!!.setOnItemClick(this@TemplateEditActivity)
+                    mHorizontalView = findViewById(R.id.template_timeline_recycler_view) as RecyclerView
+                    mHorizontalView!!.adapter = mAdapter
                 } else {
                     ApplicationController.instance!!.makeToast("못 받음ㅠ")
                 }
@@ -387,6 +392,7 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
+
     fun buttonEvent(){
         down_btn01.setOnClickListener {
             template_edit_video_select.visibility = View.VISIBLE
@@ -403,6 +409,83 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             template_edit_photo_select.visibility = View.GONE
             template_edit_text_select.visibility = View.VISIBLE
         }
+    }
+
+    //
+    fun get() {
+        val response = networkService!!.nothing(CommonData.loginResponse!!.token, 94, ScenePhoto!!.get(0))
+
+        response.enqueue(object : Callback<NothingResponse> {
+            override fun onFailure(call: Call<NothingResponse>?, t: Throwable?) {
+                ApplicationController.instance!!.makeToast("통신 실패")
+            }
+
+            override fun onResponse(call: Call<NothingResponse>?, response: Response<NothingResponse>?) {
+                if (response!!.isSuccessful) {
+                    var array : ArrayList<Double>? = null
+                    array = response!!.body().data
+
+                    var i = 0
+
+                    var t : Double? = null
+
+                    // 1 text 2 photo - 1-  1:1           2 -4:3               3 -16:9
+                    // //3 video
+
+                    var videoCount = 0
+                    var photoCount = 0
+                    var textCount = 0
+
+                    for (i in array) {
+                        if (i != null) {
+                            t = i - i.toInt().toDouble()
+                            Log.v("dfdfdfdf345", t!!.toFloat().toString())
+//                            Log.v("dfdfdfdf", i.toInt().toFloat().toString())
+
+                            if (i.toInt() == 1) {
+                                textCount++
+
+                                var textLength = t * 100
+
+                                Log.v("::getText 길이", textLength.toInt().toString())
+                            }
+                            else if (i.toInt() == 2) {
+                                photoCount++
+
+                                var photoRatio = t * 100
+                                var intPhoto = photoRatio.toInt()
+
+                                Log.v("::getPhoto", photoRatio.toString())
+
+                                if (intPhoto.equals(1)) {
+                                    Log.v("::getPhoto 비율", "1:1")
+                                }
+                                else if (intPhoto.equals(2)) {
+                                    Log.v("::getPhoto 비율", "4:3")
+                                }
+                                else if (intPhoto.equals(3)) {
+                                    Log.v("::getPhoto 비율", "16:9")
+                                }
+                            }
+                            else if (i.toInt() == 3) {
+                                videoCount++
+
+                                var videoLength = t * 100
+
+                                Log.v("::getVideo 초", videoLength.toInt().toString())
+                            }
+                        }
+
+                    }
+
+                    ApplicationController.instance!!.makeToast("text개수" + textCount.toString() + " / photo개수" + photoCount.toString() + " / video 개수" + videoCount.toString())
+
+                }
+                else {
+                    ApplicationController.instance!!.makeToast("못받음")
+                }
+            }
+        })
     }
 
 }
