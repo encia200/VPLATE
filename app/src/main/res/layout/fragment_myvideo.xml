@@ -7,8 +7,7 @@
     <RelativeLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="42.5dp"
-        android:layout_alignParentTop="true">
+        android:layout_height="42.5dp">
 
         <TextView
             android:layout_centerVertical="true"

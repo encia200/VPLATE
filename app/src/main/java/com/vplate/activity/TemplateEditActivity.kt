@@ -24,6 +24,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.naver.android.helloyako.imagecrop.util.BitmapLoadUtils
 import com.vplate.HorizontalAdapter
 import com.vplate.Network.ApplicationController
@@ -54,7 +55,7 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
     var ScenePhoto : ArrayList<String>? = ArrayList()
 
     //
-//    var arrayScene : ArrayList<HorizontalData>? = null
+    var templateId : Int? = 0
     //
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +66,7 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         imageHeight = 1000
 
         // 수민
-        var templateId = intent.getIntExtra("templateId", 0)
+        templateId = intent.getIntExtra("templateId", 0)
         // 수민
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 설치시 동의 안했을 때 21 이상
@@ -80,9 +81,7 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         // 수민
-//        scenePhoto(100)//템플릿 아이디 받아와서 이미지 URL받아오기
-        scenePhoto(templateId)
-
+        scenePhoto(templateId!!)
         // 수민
 
         // RecyclerView binding
@@ -101,46 +100,36 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         mAdapter = HorizontalAdapter(ScenePhoto)
         // init Data
         data = ArrayList() // response!!.body().data.객체배열
-//        data!!.add(HorizontalData("aaa",R.mipmap.ic_launcher))
-//        data!!.add(HorizontalData("bbb",R.mipmap.ic_launcher))
-//        data!!.add(HorizontalData("ccc",R.mipmap.ic_launcher))
-
-
-        /*for(i in 1..ScenePhoto!!.size){
-            data!!.add(HorizontalAdapter.HorizontalData("aaa"+i,R.mipmap.ic_launcher))
-        }*/
-        // set Data
-//        mAdapter!!.setData(data!!)
         mAdapter!!.setOnItemClick(this)
         // set Adapter
         mHorizontalView!!.adapter = mAdapter
 
         buttonEvent()//비디오, 사진, 텍스트 편집 선택기
 
+//        get(templateId, 0)
+
+//        Glide.with(this)
+//                .load(CommonData.sceneImage!![0])
+//                .into(template_edit_scene!!)
+
+
     }
 
     override fun onClick(v: View) {
         val idx = mHorizontalView!!.getChildAdapterPosition(v) // 씬 번호
 
-//        when (v.id) { // 동적으로 뷰 생성하게되면 없어질 예정
-//            R.id.template_edit_video_upload -> {
-//                pickVideoFromGallery()
-//            }
-//            R.id.template_edit_photo_upload -> {
-//                pickImageFromGallery()
-//            }
-//        }
+        var scene = CommonData.sceneImage!![idx]
+        Glide.with(this)
+                .load(scene)
+                .into(template_edit_scene!!)
 
-        when(idx){
-            0->{
-//                Glide.with(this)
-//                        .load(ScenePhoto!!.get(0))
-//                        .into(template_edit_scene)
+                get(templateId, idx)
 
-                get()
-            }
-
+        Log.v("::templateA", "=====")
+        for (i in CommonData.templateAllDataString!!.iterator()) {
+            Log.v("::templateA", i)
         }
+        Log.v("::templateA", "=====")
     }
 
 
@@ -208,7 +197,6 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
 
 
     private fun setImageURI(uri: Uri?, bitmap: Bitmap): Boolean {
-
         Log.d(TAG, "image size: " + bitmap.width + "x" + bitmap.height)
 
         mImageUri = uri
@@ -276,7 +264,6 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
             super.onCancelled()
             Log.i(TAG, "onCancelled")
         }
-
     }
 
     companion object {
@@ -377,7 +364,9 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         sceneResponse.enqueue(object : Callback<TemplateIdResponse> {
             override fun onResponse(call: Call<TemplateIdResponse>?, response: Response<TemplateIdResponse>?) {
                 if (response!!.isSuccessful) {
-                    ScenePhoto = response!!.body().data
+                    CommonData.sceneImage = response!!.body().data
+                    ScenePhoto = CommonData.sceneImage
+//                    ScenePhoto = response!!.body().data
                     mAdapter = HorizontalAdapter(ScenePhoto)
                     mAdapter!!.setOnItemClick(this@TemplateEditActivity)
                     mHorizontalView = findViewById(R.id.template_timeline_recycler_view) as RecyclerView
@@ -411,9 +400,11 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    //
-    fun get() {
-        val response = networkService!!.nothing(CommonData.loginResponse!!.token, 94, ScenePhoto!!.get(0))
+    // 각 씬의 정보 가져오기
+    fun get(templateid : Int?, idx : Int?) {
+        Log.v("::template Id", templateid.toString())
+
+        val response = networkService!!.nothing(CommonData.loginResponse!!.token, templateid!!, ScenePhoto!!.get(idx!!))
 
         response.enqueue(object : Callback<NothingResponse> {
             override fun onFailure(call: Call<NothingResponse>?, t: Throwable?) {
@@ -422,10 +413,9 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun onResponse(call: Call<NothingResponse>?, response: Response<NothingResponse>?) {
                 if (response!!.isSuccessful) {
+
                     var array : ArrayList<Double>? = null
                     array = response!!.body().data
-
-                    var i = 0
 
                     var t : Double? = null
 
@@ -437,13 +427,14 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
                     var textCount = 0
 
                     for (i in array) {
+
                         if (i != null) {
                             t = i - i.toInt().toDouble()
-                            Log.v("dfdfdfdf345", t!!.toFloat().toString())
-//                            Log.v("dfdfdfdf", i.toInt().toFloat().toString())
 
                             if (i.toInt() == 1) {
                                 textCount++
+
+                                CommonData.templateAllDataString!!.add("text")
 
                                 var textLength = t * 100
 
@@ -451,6 +442,8 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
                             }
                             else if (i.toInt() == 2) {
                                 photoCount++
+
+                                CommonData.templateAllDataString!!.add("photo")
 
                                 var photoRatio = t * 100
                                 var intPhoto = photoRatio.toInt()
@@ -470,16 +463,19 @@ class TemplateEditActivity : AppCompatActivity(), View.OnClickListener {
                             else if (i.toInt() == 3) {
                                 videoCount++
 
+                                CommonData.templateAllDataString!!.add("video")
+
                                 var videoLength = t * 100
 
                                 Log.v("::getVideo 초", videoLength.toInt().toString())
                             }
                         }
-
                     }
 
                     ApplicationController.instance!!.makeToast("text개수" + textCount.toString() + " / photo개수" + photoCount.toString() + " / video 개수" + videoCount.toString())
-
+                    video_total_count!!.text = videoCount.toString()
+                    photo_total_count!!.text = photoCount.toString()
+                    text_total_count!!.text = textCount.toString()
                 }
                 else {
                     ApplicationController.instance!!.makeToast("못받음")

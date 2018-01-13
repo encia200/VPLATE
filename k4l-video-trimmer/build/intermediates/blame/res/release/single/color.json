@@ -1,138 +1,70 @@
 [
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_switch_track.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\switch_thumb_material_dark.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_default.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_default.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_primary_text_material_light.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_primary_text_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/switch_thumb_material_dark.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/switch_thumb_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_switch_thumb.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_spinner.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_default.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/switch_thumb_material_light.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/switch_thumb_material_light.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_edittext.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_switch_thumb.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_light.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_search_url_text.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color\\abc_search_url_text.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color\\abc_search_url_text.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color/abc_search_url_text.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color/abc_search_url_text.xml"
     }
 ]

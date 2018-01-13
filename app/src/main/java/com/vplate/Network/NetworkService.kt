@@ -104,7 +104,7 @@ interface NetworkService {
             @Header("tt") tt:String
     ) : Call<CommunityResponse>
 
-     // 씬정보가져오기
+     // 영상 제작하기( 씬URL )
     //13.124.195.255:3003/account/template/inform/scene?templateid={ templateid }
     @GET("account/template/inform/scene")
     fun ScenePhoto(
@@ -126,16 +126,13 @@ interface NetworkService {
             @Body templateid : BookmarkPost
     ) : Call<BookmarkResponse>
 
-
-
-
-
-    //
+    // 영상 제작하기( 씬 정보 )
     @GET("admin/inform")
     fun nothing(
             @Header("tt") tt:String,
             @Query("templateid") templateid : Int,
             @Query("sceneString") sceneString : String
     ) : Call<NothingResponse>
+
     //
 }

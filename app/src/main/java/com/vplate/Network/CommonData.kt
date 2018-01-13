@@ -14,4 +14,9 @@ object CommonData {
     var videoAllList : ArrayList<MyMediaData>? = null
     var pickAllList : ArrayList<TemplateData>? = null
     var communityList : ArrayList<CommunityData>? = null
+    var sceneImage : ArrayList<String>? = null
+    var templateAllData : ArrayList<String>? = null
+    var templateAllDataString : ArrayList<String> = ArrayList()
+
+    var videoList : ArrayList<String> = ArrayList()
 }

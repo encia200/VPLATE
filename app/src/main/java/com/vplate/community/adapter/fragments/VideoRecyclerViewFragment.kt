@@ -209,6 +209,7 @@ class VideoRecyclerViewFragment : Fragment() {
 
                    var i = 0
                     CommonData.communityList = response!!.body().data.community
+
 //                        CommonData.비디오 = 받은 비다오
 
 //                    while (i < response!!.body().data.community.size) {

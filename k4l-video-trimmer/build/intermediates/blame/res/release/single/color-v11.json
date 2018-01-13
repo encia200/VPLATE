@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\chosoomin\\Desktop\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\chosoomin\\.android\\build-cache\\44cc3b327998ae09dac2831fe330701541e7f64a\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
-        "merged": "C:\\Android_projects\\VPLATE\\k4l-video-trimmer\\build\\intermediates\\res\\merged\\release\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\지영\\.android\\build-cache\\a87bdbd1fd2cb03e7ed438fbe8f149fd89a600c2\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/chosoomin/Desktop/VPLATE/k4l-video-trimmer/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/chosoomin/.android/build-cache/44cc3b327998ae09dac2831fe330701541e7f64a/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]

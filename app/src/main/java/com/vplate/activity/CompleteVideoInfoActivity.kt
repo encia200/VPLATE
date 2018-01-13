@@ -52,7 +52,30 @@ class CompleteVideoInfoActivity : AppCompatActivity() {
                     complete_video_play!!.setVideoURI(uri)
                     complete_video_play!!.start()
 
-                } else {
+                    if (response!!.body().data.template_type.equals("제품")) {
+                        complete_cateImg!!.setImageResource(R.drawable.cate_icon_2)
+                    }
+                    else if (response!!.body().data.template_type.equals("여행")) {
+                        complete_cateImg!!.setImageResource(R.drawable.cate_icon_3)
+                    }
+                    else if (response!!.body().data.template_type.equals("카페")) {
+                        complete_cateImg!!.setImageResource(R.drawable.cate_icon_4)
+                    }
+                    else if (response!!.body().data.template_type.equals("푸드트럭")) {
+                        complete_cateImg!!.setImageResource(R.drawable.cate_icon_5)
+                    }
+                    else if (response!!.body().data.template_type.equals("행사")) {
+                        complete_cateImg!!.setImageResource(R.drawable.cate_icon_6)
+                    }
+
+                    complete_video_name!!.text = response!!.body().data.template_title
+                    complete_postTime!!.text = response!!.body().data.mymedia_uploadtime
+                    complete_video_story!!.text = response!!.body().data.template_hashtag
+                    complete_video_time!!.text = "00:" + response!!.body().data.template_length.toString()
+                    templatecomplete_mediaType!!.text = "사진 " + response!!.body().data.template_photoNum + "개 / 텍스트 " + response!!.body().data.template_textNum + "개 / 비디오 " + response!!.body().data.template_videoNum + "개"
+                    complete_content!!.text = response!!.body().data.template_content
+                }
+                else {
                     ApplicationController.instance!!.makeToast("못 받음ㅠ")
                 }
             }

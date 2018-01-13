@@ -44,6 +44,8 @@ class MyMediaCompleteAdapter(var dataList: ArrayList<MyMediaData>?, var complete
             holder.templateCategory.setImageResource(R.drawable.cate_icon_6)
         else
             holder.templateCategory.setImageResource(R.drawable.cate_icon_6)
+
+        holder.templateUploadTime.text = dataList!!.get(position).uploadtime
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MyMediaViewCompleteHolder {

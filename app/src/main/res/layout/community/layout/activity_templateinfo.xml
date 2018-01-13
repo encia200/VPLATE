@@ -1,88 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <VideoView
+    <RelativeLayout
+        android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/video_play"
-        android:layout_weight="1"/>
+        android:layout_height="42.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17.2sp"
+            android:textColor="#1d1d1d"
+            android:gravity="center_horizontal"
+            android:text="상세페이지"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <VideoView
+        android:layout_below="@id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:id="@+id/video_play"/>
 
     <RelativeLayout
+        android:id="@+id/data"
+        android:layout_below="@id/video_play"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         >
-        <Button
-            android:layout_marginLeft="30dp"
+
+        <ImageView
+            android:id="@+id/info_cateImg"
             android:layout_width="wrap_content"
-            android:id="@+id/btn_username"
-            android:background="#00ff0000"
-            android:gravity="center"
-            android:text="user_name"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/cate_icon_2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12.5dp"/>
+
         <TextView
-            android:layout_below="@+id/btn_username"
+            android:layout_below="@+id/info_cateImg"
             android:id="@+id/video_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="it's title"
+            android:textSize="19.3sp"
+            android:textColor="#1d1d1d"
+            android:text="영상제목입력하세요"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10.5dp"
             />
+
         <TextView
             android:layout_below="@+id/video_name"
             android:id="@+id/video_story"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="it's story"/>
-        <TextView
-            android:layout_below="@+id/video_story"
-            android:id="@+id/video_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="it's time"/>
-
-
-
-        <ImageButton
-            android:layout_marginTop="10dp"
-            android:id="@+id/btn_jjeam"
-            android:layout_alignParentRight="true"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/jjang1"/>
+            android:layout_marginTop="8.5dp"
+            android:layout_marginLeft="16dp"
+            android:text="it's story"
+            android:textSize="11.5sp"
+            android:textColor="#686868"/>
 
         <RelativeLayout
+            android:id="@+id/pick_time_layout"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:background="#000000"
-            android:layout_alignParentBottom="true">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_story">
 
-            <ImageButton
-                android:id="@+id/bookmarkBtn"
+            <ImageView
+                android:id="@+id/pick_timeImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00ff0000"
-                android:src="@drawable/shape_1"
+                android:src="@drawable/ic_query_builder_white_36_px"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="17.5dp"/>
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginTop="16dp"/>
 
-            <ImageButton
-                android:id="@+id/btn_making"
+            <TextView
+                android:id="@+id/video_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00ff0000"
-                android:src="@drawable/making"
-                android:layout_alignParentRight="true"
+                android:textSize="11.5sp"
+                android:textColor="#8c8c8c"
+                android:text="0:30"
+                android:layout_toRightOf="@id/pick_timeImg"
+                android:layout_marginLeft="4dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="16.5dp"/>
+                />
 
         </RelativeLayout>
 
-
-
+        <TextView
+            android:id="@+id/info_postTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018/1/5/ 03:20"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="11dp"/>
 
     </RelativeLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/lineOne"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee"
+        android:layout_below="@id/data">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ratioAndMediaType"
+        android:layout_below="@id/lineOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/ratio"
+            android:layout_width="match_parent"
+            android:layout_height="26dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.5sp"
+                android:textColor="#989898"
+                android:text="영상 비율"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/templateinfo_mediaRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.5sp"
+                android:textColor="#989898"
+                android:text="16 : 9"
+                android:layout_marginLeft="78.5dp"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/ratio"
+            android:layout_width="match_parent"
+            android:layout_height="26dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.5sp"
+                android:textColor="#989898"
+                android:text="미디어 종류"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/templateInfo_mediaType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10.5sp"
+                android:textColor="#989898"
+                android:text="사진6개 / 비디오4개"
+                android:layout_marginLeft="78.5dp"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lineTwo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee"
+        android:layout_below="@id/ratioAndMediaType">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/lineTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="43dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="영상내용 어쩌구 저쩌구 릴리리맘보를 룰루랄라 효진이는 샌드위치 선민이는 젤리먹고 마가렛트 먹기"
+            android:textSize="11.5sp"
+            android:textColor="#1d1d1d"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="#000000"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/bookmarkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:src="@drawable/shape_1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17.5dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_making"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:src="@drawable/making"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16.5dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

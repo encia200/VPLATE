@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
     android:id="@+id/big_layout"
     android:orientation="vertical">
 
@@ -27,7 +26,9 @@
             android:background="#00ff0000"
             android:textSize="13.4sp"
             android:textColor="#686868"
-            android:text="제작하기"/>
+            android:text="제작하기"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
@@ -67,13 +68,36 @@
             android:layout_height="wrap_content"
             android:text="영상을 첨부해주세요"/>
 
-        <TextView
+        <RelativeLayout
             android:layout_marginLeft="112dp"
-            android:textColor="#1d1d1d"
-            android:id="@+id/txt_count_video"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0/3"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/video_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#1d1d1d"/>
+
+            <TextView
+                android:id="@+id/video_slash"
+                android:layout_toRightOf="@id/video_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="#1d1d1d"
+                />
+
+            <TextView
+                android:layout_toRightOf="@id/video_slash"
+                android:textColor="#1d1d1d"
+                android:id="@+id/video_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/down_btn01"
@@ -117,13 +141,36 @@
             android:layout_height="wrap_content"
             android:text="사진을 첨부해주세요"/>
 
-        <TextView
+        <RelativeLayout
             android:layout_marginLeft="112dp"
-            android:textColor="#1d1d1d"
-            android:id="@+id/txt_count_photo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0/3"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/photo_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#1d1d1d"/>
+
+            <TextView
+                android:id="@+id/photo_slash"
+                android:layout_toRightOf="@id/photo_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="#1d1d1d"
+                />
+
+            <TextView
+                android:layout_toRightOf="@id/photo_slash"
+                android:textColor="#1d1d1d"
+                android:id="@+id/photo_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </RelativeLayout>
 
         <ImageView
 
@@ -168,13 +215,36 @@
             android:layout_height="wrap_content"
             android:text="사진을 첨부해주세요"/>
 
-        <TextView
+        <RelativeLayout
             android:layout_marginLeft="112dp"
-            android:textColor="#1d1d1d"
-            android:id="@+id/txt_count_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0/3"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#1d1d1d"/>
+
+            <TextView
+                android:id="@+id/text_slash"
+                android:layout_toRightOf="@id/text_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="#1d1d1d"
+                />
+
+            <TextView
+                android:layout_toRightOf="@id/text_slash"
+                android:textColor="#1d1d1d"
+                android:id="@+id/text_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+
+        </RelativeLayout>
 
         <ImageView
 

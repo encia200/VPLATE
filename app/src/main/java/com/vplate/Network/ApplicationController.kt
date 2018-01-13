@@ -13,7 +13,7 @@ class ApplicationController : Application() {
 
     var networkService: NetworkService? = null
         private set
-    val baseUrl = "http://13.124.195.255:3003/"
+    val baseUrl = "https://vplate.cf/"
     var appContext: Context? = null
 
     override fun onCreate() {

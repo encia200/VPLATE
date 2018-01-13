@@ -29,7 +29,7 @@ class TemplateInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_templateinfo)
 
         networkService = ApplicationController.instance!!.networkService // 통신
-
+//
         var mediaController = MediaController(video_play!!.context)
         video_play!!.setMediaController(mediaController)
 
@@ -45,8 +45,6 @@ class TemplateInfoActivity : AppCompatActivity() {
         else if (bookmark == 0) {
             bookmarkBtn!!.setImageResource(R.drawable.shape_1)
         }
-
-
 
         // 북마크 (하트) 버튼 눌렀을 때
         bookmarkBtn!!.setOnClickListener{
@@ -75,6 +73,36 @@ class TemplateInfoActivity : AppCompatActivity() {
                     video_play!!.start()
 
                     bookmark = response!!.body().data.template_bookmarkTemplate
+
+                    if (response!!.body().data.template_type.equals("제품")) {
+                        info_cateImg!!.setImageResource(R.drawable.cate_icon_2)
+                    }
+                    else if (response!!.body().data.template_type.equals("여행")) {
+                        info_cateImg!!.setImageResource(R.drawable.cate_icon_3)
+                    }
+                    else if (response!!.body().data.template_type.equals("카페")) {
+                        info_cateImg!!.setImageResource(R.drawable.cate_icon_4)
+                    }
+                    else if (response!!.body().data.template_type.equals("푸드트럭")) {
+                        info_cateImg!!.setImageResource(R.drawable.cate_icon_5)
+                    }
+                    else if (response!!.body().data.template_type.equals("행사")) {
+                        info_cateImg!!.setImageResource(R.drawable.cate_icon_6)
+                    }
+
+                    video_name!!.text = response!!.body().data.template_title
+                    info_postTime!!.text = response!!.body().data.template_uploadtime
+                    video_story!!.text = response!!.body().data.template_hashtag
+                    video_time!!.text = "00:" + response!!.body().data.template_length.toString()
+                    templateInfo_mediaType!!.text = "사진 " + response!!.body().data.template_photoNum + "개 / 텍스트 " + response!!.body().data.template_textNum + "개 / 비디오 " + response!!.body().data.template_videoNum + "개"
+                    content!!.text = response!!.body().data.template_content
+
+                    if (response!!.body().data.template_bookmarkTemplate.equals(1)) {
+                        bookmarkBtn!!.setImageResource(R.drawable.ic_favorite_white_36_px)
+                    }
+                    else if (response!!.body().data.template_bookmarkTemplate.equals(0)) {
+                        bookmarkBtn!!.setImageResource(R.drawable.shape_1)
+                    }
 
                 } else {
                     ApplicationController.instance!!.makeToast("못 받음ㅠ")

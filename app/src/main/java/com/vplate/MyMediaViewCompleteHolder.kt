@@ -15,6 +15,7 @@ class MyMediaViewCompleteHolder(itemView: View?) : RecyclerView.ViewHolder(itemV
     var templateContent: TextView = itemView!!.findViewById(R.id.template_content) as TextView
     var templateCategory: ImageView = itemView!!.findViewById(R.id.template_cate_icon) as ImageView
     var templateTime: TextView = itemView!!.findViewById(R.id.template_time) as TextView
+    var templateUploadTime : TextView = itemView!!.findViewById(R.id.template_uploadTime) as TextView
 
     var template_incompleteIng: ImageView = itemView!!.findViewById(R.id.template_incompleteIng) as ImageView
     var template_incompleteTxt : RelativeLayout = itemView!!.findViewById(R.id.template_incompleteTxt) as RelativeLayout
